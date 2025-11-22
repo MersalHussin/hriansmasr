@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1C54B3;
+  --color-yellow: #EF8A1B;
+  --color-yellow-v2: #EFB61B;
+  --color-black-v2: #3F3F3F;
+  --color-white-v2: #F5F5F5;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    direction: rtl;
+}
+
+body.ltr-text h1,
+body.ltr-text h2,
+body.ltr-text h3,
+body.ltr-text h4,
+body.ltr-text h5,
+body.ltr-text h6,
+body.ltr-text p,
+body.ltr-text button,
+body.ltr-text a,
+body.ltr-text span {
+    direction: ltr;
+    text-align: left;
+}
