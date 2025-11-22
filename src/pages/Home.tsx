@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { useTranslation } from 'react-i18next'
 import ServiceCard from "../components/ServiceCard"
+// import Feedback from "../components/Feedback"
 
 function Home() {
   const { t } = useTranslation()
@@ -26,7 +27,7 @@ function Home() {
       </div>
     </section>  
     <section className="about">
-      <h1 className="title">من نحن</h1>
+      <h1 className="title text-primary">من نحن</h1>
       <div className="container mx-auto px-4 flex justify-evenly items-center">
     <div className="image">
           <img className="rounded-4xl w-[600px] rounded-tl-sm border-primary border-5" src="/images/about-image.jpg" alt="image" />
@@ -39,8 +40,8 @@ function Home() {
         
       </div>
     </section>  
-    <section className="about">
-      <h1 className="title"> خدماتنا</h1>
+    <section className="services">
+      <h1 className="title text-primary"> خدماتنا</h1>
       <div className="container mx-auto max-w-330 px-4 flex flex-wrap gap-6 justify-evenly items-center">
         <ServiceCard image="/public/images/about-image.jpg" titleAr="خدمة تالتة" titleEn="Optimizing LinkedIn" />
         <ServiceCard image="/public/images/about-image.jpg" titleAr="خدمة تانية" titleEn="HR Consalting " />
@@ -49,6 +50,9 @@ function Home() {
         <ServiceCard image="/public/images/about-image.jpg" titleAr="خدمة تانية" titleEn="Training" />
         <ServiceCard image="/public/images/about-image.jpg" titleAr="خدمة تانية" titleEn="Public corporate training" />
       </div>
+      </section>  
+    <section className="feedback">
+      {/* <Feedback/> */}
       </section>  
    
     </>

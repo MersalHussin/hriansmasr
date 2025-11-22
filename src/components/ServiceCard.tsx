@@ -11,7 +11,7 @@ interface IProps {
 const ServiceCard = ({ image, titleEn, titleAr, Icon }: IProps) => {
   return (
     // التغيير هنا: استبدلنا h-96 بـ aspect-square
-    <div className="group border-4 border-primary relative w-100 aspect-square rounded-4xl overflow-hidden shadow-xl cursor-pointer">
+    <div className="group border-4 border-primary relative w-100 aspect-square rounded-3xl overflow-hidden shadow-xl cursor-pointer">
       
       {/* 1. صورة الخلفية المتغيرة */}
       <img 
