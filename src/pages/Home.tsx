@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { useTranslation } from 'react-i18next'
 import ServiceCard from "../components/ServiceCard"
-// import Feedback from "../components/Feedback"
+import Feedback from "../components/Feedback"
 
 function Home() {
   const { t } = useTranslation()
@@ -52,7 +52,7 @@ function Home() {
       </div>
       </section>  
     <section className="feedback">
-      {/* <Feedback/> */}
+      <Feedback/>
       </section>  
    
     </>
