@@ -33,15 +33,16 @@ i18n.use(initReactI18next).init({
         faq4Q: 'كم يستغرق تنفيذ خطة التطوير أو الاستشارة؟',
         faq4A: 'يعتمد الوقت على طبيعة المشروع والمتطلبات المحددة.',
         faq5Q: 'كيف يمكن البدء معكم؟',
-        faq5A: 'يمكنك التواصل معنا اليوم لمناقشة احتياجاتك والبدء في رحلة النجاح.'
+        faq5A: 'يمكنك التواصل معنا اليوم لمناقشة احتياجاتك والبدء في رحلة النجاح.',
+        aboutFounder: 'عن المؤسس'
       }
     },
     en: {
       translation: {
         home: 'Home',
-        about: 'About',
+        about: 'About Us',
         services: 'Services',
-        clients: 'Clients',
+        clients: 'Our Clients',
         faq: 'FAQ',
         contact: 'Contact Us',
         heroTitle: 'Your business deserves better',

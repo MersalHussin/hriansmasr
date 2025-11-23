@@ -1,14 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
+  
   const menuItems = [
-    { label: 'الرئيسية', href: '#' },
-    { label: 'من نحن', href: '#' },
-    { label: 'الخدمات', href: '#' },
-    { label: 'عملائنا', href: '#' },
-    { label: 'الأسئلة الشائعة', href: '#' },
-    { label: 'عن المؤسس', href: '#' },
+    { label: t('home'), href: '#' },
+    { label: t('about'), href: '#' },
+    { label: t('services'), href: '#' },
+    { label: t('clients'), href: '#' },
+    { label: t('faq'), href: '#' },
+    { label: t('founder'), href: '#' },
   ];
 
   const socialLinks = [
@@ -38,7 +41,7 @@ const Footer: React.FC = () => {
                   <a
                     href={item.href}
                     className={`hover:text-yellow-v2 transition-colors duration-200 ${
-                      item.label === 'الرئيسية' ? 'text-yellow-v2 font-semibold' : ''
+                      item.label === t('home') ? 'text-yellow-v2 font-semibold' : ''
                     }`}
                   >
                     {item.label}
