@@ -24,8 +24,8 @@ i18n.use(initReactI18next).init({
         clients: 'Clients',
         faq: 'FAQ',
         contact: 'Contact Us',
-        heroTitle: 'The best for your company, that\'s our mission',
-        heroDesc: 'We work with you step by step to develop your operations, strengthen your team, and elevate your company\'s performance.',
+        heroTitle: 'Your business deserves better',
+        heroDesc: 'We streamline operations, empower teams, and boost performance — together.',
         explore: 'Explore'
       }
     }
