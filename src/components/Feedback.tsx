@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import Slider from "react-slick"
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 const Feedback = () => {
+    const { t } = useTranslation()
     const [isOpen, setIsOpen] = useState(false)
     const [currentImage, setCurrentImage] = useState(0)
     const [activeSlide, setActiveSlide] = useState(0)
@@ -70,7 +72,7 @@ const Feedback = () => {
 
     return (
         <section className="feedback bg-[url('/images/Feedback-Background.jpg')] bg-cover bg-center min-h-screen py-16 flex flex-col justify-center items-center relative">
-            <h1 className="title text-white text-3xl md:text-5xl font-bold mb-8">أراء عملائنا</h1>
+            <h1 className="title text-white text-3xl md:text-5xl font-bold mb-8">{t('feedbackTitle')}</h1>
             
             <div className="container mx-auto px-4 md:px-20">
                 <Slider {...settings}>

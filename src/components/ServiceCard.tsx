@@ -1,4 +1,3 @@
-import { ArrowRight } from 'lucide-react'; 
 import type { ElementType } from 'react';
 
 interface IProps {
@@ -54,7 +53,6 @@ const ServiceCard = ({ image, titleEn, titleAr, Icon }: IProps) => {
         <div className="h-0 overflow-hidden group-hover:h-12 transition-all duration-500 delay-75 mt-0 group-hover:mt-6">
           <button className="flex items-center gap-2 bg-white text-blue-900 px-6 py-2 rounded-full text-sm font-bold shadow-lg hover:bg-blue-50 transition-colors">
             <span>تفاصيل الخدمة</span>
-            <ArrowRight size={16} />
           </button>
         </div>
 

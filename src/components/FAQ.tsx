@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useTranslation } from 'react-i18next'
 
 interface FAQItem {
   id: string
@@ -16,56 +17,33 @@ interface FAQSectionProps {
 }
 
 export function FAQ({
-  title = "الأسئلة الشائعة",
-  subtitle = "ابحث عن إجابات للأسئلة المتكررة هنا.",
-  support = "إذا كنت تحتاج مزيد من الدعم",
-  faqItems = [
-    {
-      id: "1",
-      question: "ما الخدمات التي تقدمها آسر لأرجية مصر؟",
-      answer: "نقدم مجموعة شاملة من الخدمات في مجال التطوير والاستشارة للشركات.",
-    },
-    {
-      id: "2",
-      question: "كيف نساعدك الشركات على تحسين بنائها؟",
-      answer:
-        "نساعد الشركات على تحسين بنائها من خلال تحليل طبيعة عملياتك، وتصميم حلول مخصصة بخطوة بخطوة تحقيق نتائج فعّالة قابلة للقياس.",
-    },
-    {
-      id: "3",
-      question: "هل خدماتنا مناسبة للشركات الصغيرة والمتوسطة؟",
-      answer: "نعم، خدماتنا مصممة خصيصاً للشركات من جميع الأحجام.",
-    },
-    {
-      id: "4",
-      question: "كم يستغرق تنفيذ خطة التطوير أو الاستشارة؟",
-      answer: "يعتمد الوقت على طبيعة المشروع والمتطلبات المحددة.",
-    },
-    {
-      id: "5",
-      question: "كيف يمكن البدء معكم؟",
-      answer: "يمكنك التواصل معنا اليوم لمناقشة احتياجاتك والبدء في رحلة النجاح.",
-    },
-  ],
-  contactButtonText = "تواصل معنا",
   onContactClick = () => {},
 }: FAQSectionProps) {
+  const { t } = useTranslation()
   const [openId, setOpenId] = useState<string>("2")
+
+  const faqItems = [
+    { id: "1", question: t('faq1Q'), answer: t('faq1A') },
+    { id: "2", question: t('faq2Q'), answer: t('faq2A') },
+    { id: "3", question: t('faq3Q'), answer: t('faq3A') },
+    { id: "4", question: t('faq4Q'), answer: t('faq4A') },
+    { id: "5", question: t('faq5Q'), answer: t('faq5A') },
+  ]
 
   const toggleFAQ = (id: string) => {
     setOpenId(openId === id ? "" : id)
   }
 
   return (
-    <section dir="rtl" className="w-full bg-white py-12 px-4 md:py-16 lg:py-20">
+    <section dir="rtl" className="faq-section w-full bg-white py-12 px-4 md:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Right Section - Title and CTA */}
           <div className="order-1 lg:order-1 flex flex-col items-center lg:items-start lg:pl-4">
             <div className="w-full lg:w-auto text-center lg:text-right mb-8 lg:mb-12">
-              <h2 className="text-5xl md:text-7xl font-extrabold text-primary mb-4 leading-tight">{title}</h2>
-              <p className="text-gray-600 text-xl md:text-2xl font-extrabold leading-relaxed whitespace-pre-line">{subtitle}</p>
-              <p className="text-gray-600 text-xl md:text-2xl font-semibold leading-relaxed whitespace-pre-line">{support}</p>
+              <h2 className="text-5xl md:text-7xl font-extrabold text-primary mb-4 leading-tight">{t('faqTitle')}</h2>
+              <p className="text-gray-600 text-xl md:text-2xl font-extrabold leading-relaxed whitespace-pre-line">{t('faqSubtitle')}</p>
+              <p className="text-gray-600 text-xl md:text-2xl font-semibold leading-relaxed whitespace-pre-line">{t('faqSupport')}</p>
             </div>
 
             {/* Contact Button */}
@@ -73,7 +51,7 @@ export function FAQ({
               onClick={onContactClick}
               className="cursor-pointer w-full lg:w-100 bg-yellow hover:bg-yellow-v2 text-white font-semibold py-3 px-6 rounded-lg transition-colors text-lg md:text-xl shadow-md hover:shadow-lg"
             >
-              {contactButtonText}
+              {t('contact')}
             </button>
           </div>
 

@@ -17,16 +17,32 @@ body {
     direction: rtl;
 }
 
-body.ltr-text h1,
-body.ltr-text h2,
-body.ltr-text h3,
-body.ltr-text h4,
-body.ltr-text h5,
-body.ltr-text h6,
-body.ltr-text p,
-body.ltr-text button,
-body.ltr-text a,
-body.ltr-text span {
+body.ltr-text nav ul {
     direction: ltr;
+}
+
+body.ltr-text .hero .text {
+    text-align: center;
+}
+
+body.ltr-text .hero .buttons {
+    flex-direction: row-reverse;
+}
+
+body.ltr-text .about {
+    direction: ltr;
+}
+
+body.ltr-text .faq-section {
+    direction: ltr;
+}
+
+body.ltr-text .faq-section h2,
+body.ltr-text .faq-section p,
+body.ltr-text .faq-section span {
     text-align: left;
+}
+
+body.ltr-text footer nav ul {
+    direction: ltr;
 }

@@ -1,6 +1,8 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ClientsSection: React.FC = () => {
+  const { t } = useTranslation();
   const clients = [
     { id: 1, name: 'ITCAN', image: '/public/images/Clients/1.png' },
     { id: 2, name: 'ITCAN', image: '/public/images/Clients/2.png' },
@@ -18,7 +20,7 @@ const ClientsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* العنوان */}
         <div className="text-center mb-12">
-          <h1 className='title text-primary text-2xl'>نتشرف بـ العمل مع</h1>
+          <h1 className='title text-primary text-2xl'>{t('clientsTitle')}</h1>
         </div>
 
         {/* شبكة الشعارات */}

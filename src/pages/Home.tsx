@@ -29,20 +29,20 @@ function Home() {
       </div>
     </section>  
     <section className="about py-16">
-      <h1 className="title text-primary text-center text-3xl md:text-5xl mb-8">من نحن</h1>
+      <h1 className="title text-primary text-center text-3xl md:text-5xl mb-8">{t('aboutTitle')}</h1>
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-evenly items-center gap-8">
         <div className="image w-full md:w-auto">
           <img className="rounded-4xl w-full md:w-[600px] rounded-tl-sm border-primary border-5" src="/images/about-image.jpg" alt="image" />
         </div>
         <div className="max-w-[600px] w-full">
-          <h1 className="text-2xl md:text-3xl font-extrabold text-primary">نحن في اتش أرجية مصر</h1>
-          <p className="text-lg md:text-xl mt-2 font-semibold text-black-v2">نحن في H RG مصر نعمل على تمكين الشركات من النمو بثقة من خلال تقديم حلول احترافية تدعم التطوير، وترفع كفاءة العمل، وتبني أساس قوي للنجاح. نجمع بين الخبرة، والرؤية الواضحة، والفهم الحقيقي لاحتياجات السوق، لنقدّم خدمات تساعد الشركات على تحسين أدائها واتخاذ قرارات أفضل.</p>
-          <Link className="bg-yellow block w-fit mt-3 py-3 px-6 text-white rounded-md text-lg md:text-xl font-semibold" to="/founder">عن المؤسس</Link>
+          <h1 className="text-2xl md:text-3xl font-extrabold text-primary">{t('aboutHeading')}</h1>
+          <p className="text-lg md:text-xl mt-2 font-semibold text-black-v2">{t('aboutDesc')}</p>
+          <Link className="bg-yellow block w-fit mt-3 py-3 px-6 text-white rounded-md text-lg md:text-xl font-semibold" to="/founder">{t('founder')}</Link>
         </div>
       </div>
     </section>  
     <section className="services">
-      <h1 className="title text-primary"> خدماتنا</h1>
+      <h1 className="title text-primary">{t('servicesTitle')}</h1>
       <div className="container mx-auto max-w-330 px-4 flex flex-wrap gap-6 justify-evenly items-center">
         <ServiceCard image="/public/images/about-image.jpg" titleAr="خدمة تالتة" titleEn="Optimizing LinkedIn" />
         <ServiceCard image="/public/images/about-image.jpg" titleAr="خدمة تانية" titleEn="HR Consalting " />
