@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import Slider from "react-slick"
 import 'slick-carousel/slick/slick.css'
@@ -9,13 +9,45 @@ const Feedback = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [currentImage, setCurrentImage] = useState(0)
     const [activeSlide, setActiveSlide] = useState(0)
+    const [isMobile, setIsMobile] = useState(false)
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 1080)
+        }
+        checkMobile()
+        window.addEventListener('resize', checkMobile)
+        return () => window.removeEventListener('resize', checkMobile)
+    }, [])
     
     const feedbacks = [
-        '/images/Feedback/1.png',
-        '/images/Feedback/1.png',
-        '/images/Feedback/1.png',
-        '/images/Feedback/2.png',
-        '/images/Feedback/1.png'
+        '/images/Feedback/1.webp',
+        '/images/Feedback/2.webp',
+        '/images/Feedback/3.webp',
+        '/images/Feedback/4.webp',
+        '/images/Feedback/5.webp',
+        '/images/Feedback/6.webp',
+        '/images/Feedback/7.webp',
+        '/images/Feedback/8.webp',
+        '/images/Feedback/9.webp',
+        '/images/Feedback/10.webp',
+        '/images/Feedback/11.webp',
+        '/images/Feedback/12.webp',
+        '/images/Feedback/13.webp',
+        '/images/Feedback/14.webp',
+        '/images/Feedback/15.webp',
+        '/images/Feedback/16.webp',
+        '/images/Feedback/17.webp',
+        '/images/Feedback/18.webp',
+        '/images/Feedback/19.webp',
+        '/images/Feedback/20.webp',
+        '/images/Feedback/21.webp',
+        '/images/Feedback/22.webp',
+        '/images/Feedback/23.webp',
+        '/images/Feedback/24.webp',
+        '/images/Feedback/25.webp',
+
+    
     ]
 
     const openPreview = (index: number) => {
@@ -38,36 +70,16 @@ const Feedback = () => {
     }
 
     const settings = {
-        centerMode: true,
+        centerMode: !isMobile,
         centerPadding: '0',
-        slidesToShow: 3,
+        slidesToShow: isMobile ? 1 : 3,
         infinite: true,
         speed: 500,
         focusOnSelect: true,
         arrows: true,
         autoplay: true,
         autoplaySpeed: 5000,
-        afterChange: (current: number) => setActiveSlide(current),
-        responsive: [
-            {
-                breakpoint: 1280,
-                settings: {
-                    slidesToShow: 1,
-                    arrows: false,
-                    autoplay: true,
-                    autoplaySpeed: 5000
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    arrows: false,
-                    autoplay: true,
-                    autoplaySpeed: 5000
-                }
-            }
-        ]
+        afterChange: (current: number) => setActiveSlide(current)
     }
 
     return (
@@ -112,7 +124,7 @@ const Feedback = () => {
                         <div className="flex gap-4 mt-6">
                             <button 
                                 onClick={(e) => { e.stopPropagation(); prevImage(); }}
-                                className="bg-yellow text-white p-4 rounded-full hover:bg-yellow-v2"
+                                className="bg-yellow text-white p-4 rounded-full hover:bg-yellow-v2 active:bg-yellow-v2 transition-colors"
                             >
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -120,7 +132,7 @@ const Feedback = () => {
                             </button>
                             <button 
                                 onClick={(e) => { e.stopPropagation(); nextImage(); }}
-                                className="bg-yellow text-white p-4 rounded-full hover:bg-yellow-v2"
+                                className="bg-yellow text-white p-4 rounded-full hover:bg-yellow-v2 active:bg-yellow-v2 transition-colors"
                             >
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -159,6 +171,15 @@ const Feedback = () => {
                 }
                 .slick-next {
                     right: 0;
+                }
+                @media (max-width: 1080px) {
+                    .slick-slide {
+                        opacity: 1 !important;
+                        transform: scale(1) !important;
+                    }
+                    .slick-slide img {
+                        border: 4px solid #EFB61B !important;
+                    }
                 }
             `}</style>
         </section>

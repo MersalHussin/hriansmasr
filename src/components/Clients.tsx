@@ -28,12 +28,12 @@ const ClientsSection: React.FC = () => {
           {clients.map((client) => (
             <div
               key={client.id}
-              className="flex items-center justify-center p-4 bg-white rounded-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group"
+              className="flex items-center justify-center p-4 bg-white rounded-lg hover:shadow-lg active:shadow-lg transition-all duration-300 transform hover:-translate-y-1 active:-translate-y-1 cursor-pointer group"
             >
               <img
                 src={client.image}
                 alt={client.name}
-                className="w-full h-auto max-h-30 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
+                className="w-full h-auto max-h-30 object-contain filter md:grayscale md:group-hover:grayscale-0 transition-all duration-300 md:opacity-70 md:group-hover:opacity-100"
               />
             </div>
           ))}

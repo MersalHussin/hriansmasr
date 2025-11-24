@@ -10,20 +10,20 @@ interface IProps {
 const ServiceCard = ({ image, titleEn, titleAr, Icon }: IProps) => {
   return (
     // التغيير هنا: استبدلنا h-96 بـ aspect-square
-    <div className="group border-4 border-primary relative w-100 aspect-square rounded-3xl overflow-hidden shadow-xl cursor-pointer">
+    <div className="group border-4 border-primary relative w-full aspect-square rounded-3xl overflow-hidden shadow-xl cursor-pointer active:scale-95 transition-transform">
       
       {/* 1. صورة الخلفية المتغيرة */}
       <img 
         src={image} 
         alt={titleEn} 
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-active:scale-110"
       />
 
       {/* 2. طبقة الـ Overlay */}
       {/* ملاحظة: تأكد أنك تستخدم Tailwind v4 للكلاس bg-linear-to-b وإلا استخدم bg-gradient-to-b */}
       <div className="absolute inset-0 bg-linear-to-b from-transparent to-primary 
-                      group-hover:from-primary/80 group-hover:to-primary
-                      group-hover:opacity-95 transition-all duration-500 ease-in-out">
+                      group-hover:from-primary/80 group-hover:to-primary group-active:from-primary/80 group-active:to-primary
+                      group-hover:opacity-95 group-active:opacity-95 transition-all duration-500 ease-in-out">
       </div>
 
       {/* 3. أيقونة الخدمة */}
@@ -51,7 +51,7 @@ const ServiceCard = ({ image, titleEn, titleAr, Icon }: IProps) => {
         
         {/* الزر */}
         <div className="h-0 overflow-hidden group-hover:h-12 transition-all duration-500 delay-75 mt-0 group-hover:mt-6">
-          <button className="flex items-center gap-2 bg-white text-blue-900 px-6 py-2 rounded-full text-sm font-bold shadow-lg hover:bg-blue-50 transition-colors">
+          <button className="flex items-center gap-2 bg-white text-blue-900 px-6 py-2 rounded-full text-sm font-bold shadow-lg hover:bg-blue-50 active:bg-blue-100 transition-colors">
             <span>تفاصيل الخدمة</span>
           </button>
         </div>

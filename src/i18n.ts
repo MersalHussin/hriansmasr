@@ -8,7 +8,7 @@ i18n.use(initReactI18next).init({
         home: 'الرئيسية',
         about: 'من نحن',
         services: 'الخدمات',
-        clients: 'عملائنا',
+        clients: 'اراء عملائنا',
         faq: 'الأسئلة الشائعة',
         contact: 'تواصل معنا',
         heroTitle: 'شركتك تستحق الأفضل وده دورنا',
