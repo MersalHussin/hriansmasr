@@ -4,14 +4,14 @@ import { useTranslation } from 'react-i18next';
 const ClientsSection: React.FC = () => {
   const { t } = useTranslation();
   const clients = [
-    { id: 1, name: 'ITCAN', image: '/public/images/Clients/1.png' },
-    { id: 2, name: 'ITCAN', image: '/public/images/Clients/2.png' },
-    { id: 3, name: 'ITCAN', image: '/public/images/Clients/3.png' },
-    { id: 4, name: 'ITCAN', image: '/public/images/Clients/4.png' },
-    { id: 5, name: 'ITCAN', image: '/public/images/Clients/5.png' },
-    { id: 6, name: 'ITCAN', image: '/public/images/Clients/6.png' },
-    { id: 7, name: 'ITCAN', image: '/public/images/Clients/7.png' },
-    { id: 8, name: 'ITCAN', image: '/public/images/Clients/8.png' },
+    { id: 1, name: 'شاي العروسة', image: '/images/Clients/1.png' },
+    { id: 2, name: 'مكرونة حواء', image: '/images/Clients/2.png' },
+    { id: 3, name: 'مستشفى علاء عزت', image: '/images/Clients/3.png' },
+    { id: 4, name: 'ITCAN', image: '/images/Clients/4.png' },
+    { id: 5, name: 'الشمعدان', image: '/images/Clients/5.png' },
+    { id: 6, name: 'المدرسة المصرية الدولية بـ التجمع الخامس', image: '/images/Clients/6.png' },
+    { id: 7, name: '6 أكتوبر', image: '/images/Clients/7.png' },
+    { id: 8, name: 'NPH', image: '/images/Clients/8.png' },
 
   ];
 

@@ -35,7 +35,7 @@ function FounderPage() {
           <p className="text-base md:text-lg lg:text-xl mt-2 font-semibold text-black-v2">{t('founderBio')}</p>
         </div>
         <div className="image w-full md:w-auto">
-          <img className="rounded-4xl w-full md:w-[600px] rounded-br-sm border-primary border-5" src="/images/about-image.jpg" alt="image" />
+          <img className="rounded-4xl w-full md:w-[600px] rounded-br-sm border-primary border-5" src="/public/images/TV/3.jpg" alt="صورة للمؤسس في الراديو 90:90" />
         </div>
       </div>
     </section>
@@ -56,7 +56,7 @@ function FounderPage() {
           ].map((episode) => (
             <a key={episode.id} href={episode.link} target="_blank" rel="noopener noreferrer" className="block group">
               <div className="relative overflow-hidden rounded-md border-primary border-5">
-                <img className="w-full h-auto transition-transform duration-300 group-hover:scale-110 group-active:scale-110" src={`/public/images/TV/${episode.id}.jpg`} alt={t(episode.titleKey)} />
+                <img className="w-full h-auto transition-transform duration-300 group-hover:scale-110 group-active:scale-110" src={`/images/TV/${episode.id}.jpg`} alt={t(episode.titleKey)} />
                 <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-primary via-primary/80 to-transparent p-4 pt-8">
                   <p className="text-white text-base md:text-lg font-bold text-center">{t(episode.titleKey)}</p>
                 </div>
@@ -70,18 +70,18 @@ function FounderPage() {
       <h1 className="title text-primary">{t('trainingProgramsTitle')}</h1>
         <div className="container max-w-7xl mx-auto px-4">
         <div className="flex flex-col justify-center items-center gap-8">
-          <img className="w-full rounded-lg" src="/public/images/courses image.jpg" alt="image" />
+          <img className="w-full rounded-lg" src="/images/courses image.jpg" alt="البرامج التدريبية" />
           <h1 className="text-black text-md  w-full sm:w-[700px] lg:w-[1000px] md:text-2xl font-medium text-center">{t('trainingProgramsDesc')}
           <span className="text-primary font-semibold  mt-2">
            {t('universitiesList')}
           </span>
           </h1>
           <div className="flex flex-wrap justify-center gap-4 md:gap-8 items-center">
-            <img className="w-20 md:w-24 transition-transform duration-300 hover:scale-110 active:scale-110 cursor-pointer" src="/public/images/Universteies/1.png" alt="" />
-            <img className="w-20 md:w-24 transition-transform duration-300 hover:scale-110 active:scale-110 cursor-pointer" src="/public/images/Universteies/2.png" alt="" />
-            <img className="w-20 md:w-24 transition-transform duration-300 hover:scale-110 active:scale-110 cursor-pointer" src="/public/images/Universteies/3.png" alt="" />
-            <img className="w-20 md:w-24 transition-transform duration-300 hover:scale-110 active:scale-110 cursor-pointer" src="/public/images/Universteies/4.png" alt="" />
-            <img className="w-20 md:w-24 transition-transform duration-300 hover:scale-110 active:scale-110 cursor-pointer" src="/public/images/Universteies/5.png" alt="" />
+            <img className="w-20 md:w-24 transition-transform duration-300 hover:scale-110 active:scale-110 cursor-pointer" src="/images/Universteies/1.png" alt="جامعة مصر المعلوماتية" />
+            <img className="w-20 md:w-24 transition-transform duration-300 hover:scale-110 active:scale-110 cursor-pointer" src="/images/Universteies/2.png" alt="جامعة مصر للعلوم والتكنولوجي" />
+            <img className="w-20 md:w-24 transition-transform duration-300 hover:scale-110 active:scale-110 cursor-pointer" src="/images/Universteies/3.png" alt="جامعة الأسكندرية" />
+            <img className="w-20 md:w-24 transition-transform duration-300 hover:scale-110 active:scale-110 cursor-pointer" src="/images/Universteies/4.png" alt="جامعة مايو" />
+            <img className="w-20 md:w-24 transition-transform duration-300 hover:scale-110 active:scale-110 cursor-pointer" src="/images/Universteies/5.png" alt="جامعة النيل" />
           </div>
         </div>
       </div>
