@@ -11,15 +11,14 @@ const Footer: React.FC = () => {
     { label: t('services'), href: '#' },
     { label: t('clients'), href: '#' },
     { label: t('faq'), href: '#' },
-    { label: t('founder'), href: '#' },
+    { label: t('founder'), href: '/founder' },
   ];
 
   const socialLinks = [
-      { icon: 'fa-brands fa-facebook', href: '#', label: 'Facebook', color: 'hover:text-yellow' },
-    { icon: 'fa-brands fa-whatsapp', href: '#', label: 'WhatsApp', color: 'hover:text-yellow' },
-    { icon: 'fa-brands fa-instagram', href: '#', label: 'Instagram', color: 'hover:text-yellow' },
-    { icon: 'fa-brands fa-linkedin', href: '#', label: 'LinkedIn', color: 'hover:text-yellow' },
-    { icon: 'fa-brands fa-youtube', href: '#', label: 'YouTube', color: 'hover:text-yellow' },
+    { icon: 'fa-brands fa-facebook', href: 'https://www.facebook.com/groups/hregy/', label: 'Facebook', color: 'hover:text-yellow' },
+    { icon: 'fa-brands fa-linkedin', href: 'https://www.linkedin.com/in/ahmednagyeldokmesy/', label: 'LinkedIn', color: 'hover:text-yellow' },
+    { icon: 'fa-brands fa-instagram', href: 'https://www.instagram.com/ahmedeldokhmesyoffical/?hl=ar', label: 'Instagram', color: 'hover:text-yellow' },
+    { icon: 'fa-brands fa-youtube', href: 'https://www.youtube.com/@AhmednagyEldokhmesy', label: 'YouTube', color: 'hover:text-yellow' },
   ];
 
   return (
@@ -27,9 +26,9 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mt-[-50px] mx-auto">
         {/* الشعار */}
         <div className="flex justify-center mb-8">
-          <div className="bg-white rounded-b-2xl px-8 py-8 shadow-xl">
-            <img src="/images/logoBlue.svg" className="text-2xl sm:text-3xl font-bold text-primary text-center" />
-          </div>
+          <Link to="/" className="bg-white rounded-b-2xl px-8 py-8 shadow-xl">
+            <img src="/images/logoBlue.svg" className="text-2xl sm:text-3xl font-bold text-primary text-center cursor-pointer" />
+          </Link>
         </div>
 
         {/* القائمة */}

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useTranslation } from 'react-i18next'
+import { Link } from "react-router-dom"
 
 interface FAQItem {
   id: string
@@ -47,12 +48,12 @@ export function FAQ({
             </div>
 
             {/* Contact Button */}
-            <button
+            <Link to="/contact"
               onClick={onContactClick}
-              className="cursor-pointer w-full lg:w-100 bg-yellow hover:bg-yellow-v2 text-white font-semibold py-3 px-6 rounded-lg transition-colors text-lg md:text-xl shadow-md hover:shadow-lg"
+              className="cursor-pointer text-center w-full lg:w-100 bg-yellow hover:bg-yellow-v2 text-white font-semibold py-3 px-6 rounded-lg transition-colors text-lg md:text-xl shadow-md hover:shadow-lg"
             >
               {t('contact')}
-            </button>
+            </Link>
           </div>
 
           {/* Left Section - FAQs */}

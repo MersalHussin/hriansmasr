@@ -1,61 +1,88 @@
 import ClientsSection from "../components/Clients"
 import FAQ from "../components/FAQ"
 import Feedback from "../components/Feedback"
+import { useTranslation } from 'react-i18next'
+import { useEffect } from 'react'
+import Breadcrumb from '../components/Breadcrumb'
+import SEO from '../components/SEO'
 
 function FounderPage() {
+  const { t } = useTranslation()
+  
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+  
   return(
     <>
-     <div className="relative w-full bg-primary text-white pt-12 pb-20 rounded-b-[180px]">
+    <SEO 
+      title="عن المؤسس - أحمد ناجي الدخميسي | HRins Egypt"
+      description="أحمد ناجي الدخميسي - خبير موارد بشرية بخبرة أكثر من 16 عاماً. مؤسس HRins Egypt ومدير الموارد البشرية لشركة أودن"
+      keywords="أحمد الدخميسي, خبير HR, مستشار موارد بشرية, HRins Egypt, لقاءات تليفزيونية"
+    />
+     <div className="relative w-full bg-primary text-white pt-12 pb-20 rounded-b-[80px] md:rounded-b-[180px]">
       <div className="max-w-6xl mx-auto px-4 flex justify-center items-center flex-col">
-        <p className="text-center text-white text-3xl font-bold mb-2">عن المؤسس</p>
-        <img src="/images/LogoEldokhmesy.svg" className="text-center max-w-120  mt-3"></img>
+        <p className="text-center text-white text-2xl md:text-3xl font-bold mb-2">{t('founderPageTitle')}</p>
+        <img src="/images/LogoEldokhmesy.svg" className="text-center w-full max-w-[300px] md:max-w-[480px] mt-3" alt="Logo" />
+        <Breadcrumb currentPage={t('founder')} />
       </div>
     </div>
-    <section className="about-founder">
-      <h1 className="title text-primary">عن المؤسس</h1>
+    <section className="about-founder py-16">
+      <h1 className="title text-primary">{t('founderPageTitle')}</h1>
         <div className="container max-w-7xl mx-auto px-4 flex flex-col-reverse md:flex-row justify-evenly items-center gap-8">
-        <div className="max-w-[600px] w-full ">
-          <h1 className="text-2xl md:text-3xl font-extrabold text-primary">أحمد ناجي الدخميسي</h1>
-          <p className="text-lg md:text-xl mt-2 font-semibold text-black-v2">مستشار وخبير موارد بشرية، بخبرة تمتد لأكثر من 16 عامًًا في تطوير الأفراد وبناء نظم الموارد البشرية الاحترافية. قمت بتأسيس شركة اتش ارجيه مصر ( HRins Egypt ) لتقديم حلول مبتكرة وعملية لتمكين الأفراد والمؤسسات من تحقيق أداء استثنائي ومستدام.مديرالموارد البشرية لشركة اودن للاستثمارات المالية من اهم شركات الخبرات في البورصة المصرية</p>
+        <div className="max-w-[600px] w-full">
+          <h1 className="text-2xl md:text-3xl font-extrabold text-primary">{t('founderName')}</h1>
+          <p className="text-base md:text-lg lg:text-xl mt-2 font-semibold text-black-v2">{t('founderBio')}</p>
         </div>
-        <div className="image w-full md:w-auto ">
+        <div className="image w-full md:w-auto">
           <img className="rounded-4xl w-full md:w-[600px] rounded-br-sm border-primary border-5" src="/images/about-image.jpg" alt="image" />
         </div>
       </div>
     </section>
     <section className="tv">
-      <h1 className="title text-primary">اللقاءات التليفزونية</h1>
-        <div className="container max-w-7xl mx-auto px-4 flex flex-col-reverse md:flex-row justify-evenly items-center gap-8">
-        <div className="image w-full md:w-auto flex gap-5 flex-wrap justify-center ">
-          <img className="w-full w-300px md:w-[400px] rounded-md border-primary border-5" src="/public/images/TV/Rectangle 14.jpg" alt="image" />
-          <img className="w-full md:w-[400px] rounded-md border-primary border-5" src="/public/images/TV/Rectangle 14.jpg" alt="image" />
-          <img className="w-full md:w-[400px] rounded-md border-primary border-5" src="/public/images/TV/Rectangle 14.jpg" alt="image" />
-          <img className="w-full md:w-[400px] rounded-md border-primary border-5" src="/public/images/TV/Rectangle 14.jpg" alt="image" />
-          <img className="w-full md:w-[400px] rounded-md border-primary border-5" src="/public/images/TV/Rectangle 14.jpg" alt="image" />
-          <img className="w-full md:w-[400px] rounded-md border-primary border-5" src="/public/images/TV/Rectangle 14.jpg" alt="image" />
-          <img className="w-full md:w-[400px] rounded-md border-primary border-5" src="/public/images/TV/Rectangle 14.jpg" alt="image" />
-          <img className="w-full md:w-[400px] rounded-md border-primary border-5" src="/public/images/TV/Rectangle 14.jpg" alt="image" />
-          <img className="w-full md:w-[400px] rounded-md border-primary border-5" src="/public/images/TV/Rectangle 14.jpg" alt="image" />
+      <h1 className="title text-primary">{t('tvInterviewsTitle')}</h1>
+        <div className="container max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            { id: 1, titleKey: 'tvEpisode1', link: 'https://youtube.com/watch?v=example1' },
+            { id: 2, titleKey: 'tvEpisode2', link: 'https://youtube.com/watch?v=example2' },
+            { id: 3, titleKey: 'tvEpisode3', link: 'https://youtube.com/watch?v=example3' },
+            { id: 4, titleKey: 'tvEpisode4', link: 'https://youtube.com/watch?v=example4' },
+            { id: 5, titleKey: 'tvEpisode5', link: 'https://youtube.com/watch?v=example5' },
+            { id: 6, titleKey: 'tvEpisode6', link: 'https://youtube.com/watch?v=example6' },
+            { id: 7, titleKey: 'tvEpisode7', link: 'https://youtube.com/watch?v=example7' },
+            { id: 8, titleKey: 'tvEpisode8', link: 'https://youtube.com/watch?v=example8' },
+            { id: 9, titleKey: 'tvEpisode9', link: 'https://youtube.com/watch?v=example9' },
+          ].map((episode) => (
+            <a key={episode.id} href={episode.link} target="_blank" rel="noopener noreferrer" className="block group">
+              <div className="relative overflow-hidden rounded-md border-primary border-5">
+                <img className="w-full h-auto transition-transform duration-300 group-hover:scale-110 group-active:scale-110" src={`/public/images/TV/${episode.id}.jpg`} alt={t(episode.titleKey)} />
+                <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-primary via-primary/80 to-transparent p-4 pt-8">
+                  <p className="text-white text-base md:text-lg font-bold text-center">{t(episode.titleKey)}</p>
+                </div>
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </section>
-    <section className="h-screen">
-      <h1 className="title text-primary">البرامج التدريبية</h1>
-        <div className="container max-w-7xl mx-auto px-4 flex flex-col-reverse md:flex-row justify-evenly items-center gap-8">
-        <div className="image w-full md:w-auto flex flex-col gap-5">
-          <img className="w-full w-300px md:w-full " src="/public/images/courses image.jpg" alt="image" />
-          <h1 className="max-w-4xl text-black text-2xl font-medium">برامج تدريبية متميزة بالتعاون مع أبرز الجامعات المصرية مثل:
+    <section className="py-16">
+      <h1 className="title text-primary">{t('trainingProgramsTitle')}</h1>
+        <div className="container max-w-7xl mx-auto px-4">
+        <div className="flex flex-col justify-center items-center gap-8">
+          <img className="w-full rounded-lg" src="/public/images/courses image.jpg" alt="image" />
+          <h1 className="text-black text-md  w-full sm:w-[700px] lg:w-[1000px] md:text-2xl font-medium text-center">{t('trainingProgramsDesc')}
 
-          <span className="text-primary font-semibold">
-           جامعة الإسكندرية - جامعة مصر للعلوم والتكنولوجي - جامعة مدينة زويل - جامعة مايو - جامعة مصر المعلوماتية - وغيرها من الجامعات...
+          <span className="text-primary font-semibold block mt-2">
+           {t('universitiesList')}
           </span>
           </h1>
-          <div className="univertisys justify-center gap-5 items-center flex">
-            <img className="w-25" src="/public/images/Universteies/1.png" alt="" />
-            <img className="w-25" src="/public/images/Universteies/2.png" alt="" />
-            <img className="w-25" src="/public/images/Universteies/3.png" alt="" />
-            <img className="w-25" src="/public/images/Universteies/4.png" alt="" />
-            <img className="w-25" src="/public/images/Universteies/5.png" alt="" />
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 items-center">
+            <img className="w-20 md:w-24 transition-transform duration-300 hover:scale-110 active:scale-110 cursor-pointer" src="/public/images/Universteies/1.png" alt="" />
+            <img className="w-20 md:w-24 transition-transform duration-300 hover:scale-110 active:scale-110 cursor-pointer" src="/public/images/Universteies/2.png" alt="" />
+            <img className="w-20 md:w-24 transition-transform duration-300 hover:scale-110 active:scale-110 cursor-pointer" src="/public/images/Universteies/3.png" alt="" />
+            <img className="w-20 md:w-24 transition-transform duration-300 hover:scale-110 active:scale-110 cursor-pointer" src="/public/images/Universteies/4.png" alt="" />
+            <img className="w-20 md:w-24 transition-transform duration-300 hover:scale-110 active:scale-110 cursor-pointer" src="/public/images/Universteies/5.png" alt="" />
           </div>
         </div>
       </div>

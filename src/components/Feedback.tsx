@@ -117,7 +117,7 @@ const Feedback = () => {
                         <img 
                             src={feedbacks[currentImage]}
                             alt="preview"
-                            className="max-w-[90%] max-h-[70vh] object-contain"
+                            className="max-w-[90%] max-h-[70vh] object-contain rounded-2xl"
                             onClick={(e) => e.stopPropagation()}
                         />
 
