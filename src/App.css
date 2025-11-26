@@ -14,6 +14,7 @@
     font-size: 45px;
   }
 }
+
 .title::after{
   content: "";
     display: flex;
@@ -30,6 +31,14 @@
   transform: scale(0.8);
   z-index: 0;
   transition: 0.3s;
+}
+@media (max-width: 414px) {
+  .title {
+    font-size: 30px;
+  }
+  .title::after{
+  transform: scale(0.5);
+}
 }
 .title:hover::after{
   transform: scale(0.85) rotate(3deg);

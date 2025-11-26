@@ -8,9 +8,12 @@ interface IProps {
 }
 
 const ServiceCard = ({ image, titleEn, titleAr, Icon }: IProps) => {
+  const whatsappMessage = `السلام عليكم استاذ احمد كنت عاوز استفسر عن "${titleAr}"`;
+  const whatsappUrl = `https://wa.me/201141778555?text=${encodeURIComponent(whatsappMessage)}`;
+  
   return (
     // التغيير هنا: استبدلنا h-96 بـ aspect-square
-    <div className="group border-4 border-primary relative w-full aspect-square rounded-3xl overflow-hidden shadow-xl cursor-pointer active:scale-95 transition-transform">
+    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="group border-4 border-primary relative w-full aspect-square rounded-3xl overflow-hidden shadow-xl cursor-pointer active:scale-95 transition-transform block">
       
       {/* 1. صورة الخلفية المتغيرة */}
       <img 
@@ -51,14 +54,14 @@ const ServiceCard = ({ image, titleEn, titleAr, Icon }: IProps) => {
         
         {/* الزر */}
         <div className="h-0 overflow-hidden group-hover:h-12 transition-all duration-500 delay-75 mt-0 group-hover:mt-6">
-          <button className="flex items-center gap-2 bg-white text-blue-900 px-6 py-2 rounded-full text-sm font-bold shadow-lg hover:bg-blue-50 active:bg-blue-100 transition-colors">
-            <span>تفاصيل الخدمة</span>
-          </button>
+          <span className="flex items-center gap-2 bg-white text-blue-900 px-6 py-2 rounded-full text-sm font-bold shadow-lg hover:bg-blue-50 active:bg-blue-100 transition-colors">
+            <span>استفسر الآن</span>
+          </span>
         </div>
 
       </div>
 
-    </div>
+    </a>
   );
 };
 

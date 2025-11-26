@@ -118,7 +118,7 @@ function ContactPage() {
                     <button
                       type="button"
                       onClick={() => handleServiceTypeChange('inquiry')}
-                      className={`py-3 px-4 rounded-lg font-semibold transition-all ${
+                      className={`py-3 cursor-pointer px-4 rounded-lg font-semibold transition-all ${
                         formData.serviceType === 'inquiry'
                           ? 'bg-primary text-white shadow-lg'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -129,7 +129,7 @@ function ContactPage() {
                     <button
                       type="button"
                       onClick={() => handleServiceTypeChange('consultation')}
-                      className={`py-3 px-4 rounded-lg font-semibold transition-all ${
+                      className={`py-3 px-4 cursor-pointer rounded-lg font-semibold transition-all ${
                         formData.serviceType === 'consultation'
                           ? 'bg-primary text-white shadow-lg'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -187,7 +187,7 @@ function ContactPage() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    dir="ltr"
+                    dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all"
                     placeholder={t('emailPlaceholder')}
                   />
