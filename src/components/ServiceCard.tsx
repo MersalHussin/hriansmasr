@@ -8,7 +8,7 @@ interface IProps {
 }
 
 const ServiceCard = ({ image, titleEn, titleAr, Icon }: IProps) => {
-  const whatsappMessage = `السلام عليكم استاذ احمد كنت عاوز استفسر عن "${titleAr}"`;
+  const whatsappMessage = ` ${titleEn}  السلام عليكم استاذ احمد كنت عاوز استفسر عن خدمة`;
   const whatsappUrl = `https://wa.me/201141778555?text=${encodeURIComponent(whatsappMessage)}`;
   
   return (
@@ -48,7 +48,7 @@ const ServiceCard = ({ image, titleEn, titleAr, Icon }: IProps) => {
           {titleEn}
         </h3>
         
-        <p className="text-lg md:text-xl font-medium text-blue-100" dir="rtl">
+        <p className="text-[12px] font-medium text-blue-100" dir="rtl">
           {titleAr}
         </p>
         
