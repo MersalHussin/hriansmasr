@@ -7,7 +7,6 @@
   padding:40px 20px;
   position: relative;
     z-index: 1;
-
 }
 @media (max-width: 768px) {
   .title {
@@ -87,4 +86,9 @@ section{
     opacity: 1;
     transform: none;
   }
+}
+
+button{
+  outline: none;
+  border: none;
 }

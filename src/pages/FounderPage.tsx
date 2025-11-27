@@ -16,9 +16,9 @@ function FounderPage() {
   return(
     <>
     <SEO 
-      title="عن المؤسس - أحمد ناجي الدخميسي | HRins Egypt"
-      description="أحمد ناجي الدخميسي - خبير موارد بشرية بخبرة أكثر من 16 عاماً. مؤسس HRins Egypt ومدير الموارد البشرية لشركة أودن"
-      keywords="أحمد الدخميسي, خبير HR, مستشار موارد بشرية, HRins Egypt, لقاءات تليفزيونية"
+      title="عن المؤسس - أحمد ناجي الدخميسي | Hrians Egypt"
+      description="أحمد ناجي الدخميسي - خبير موارد بشرية بخبرة أكثر من 16 عاماً. مؤسس Hrians Egypt ومدير الموارد البشرية لشركة أودن"
+      keywords="أحمد الدخميسي, خبير HR, مستشار موارد بشرية, Hrians Egypt, لقاءات تليفزيونية"
     />
      <div className="relative w-full bg-primary text-white pt-12 pb-20 rounded-b-[80px] md:rounded-b-[180px]">
       <div className="max-w-6xl mx-auto px-4 flex justify-center items-center flex-col">
@@ -35,7 +35,7 @@ function FounderPage() {
           <p className="text-base md:text-lg lg:text-xl mt-2 font-semibold text-black-v2">{t('founderBio')}</p>
         </div>
         <div className="image w-full md:w-auto">
-          <img className="rounded-4xl w-full md:w-[600px] rounded-br-sm border-primary border-5" src="/public/images/TV/3.jpg" alt="صورة للمؤسس في الراديو 90:90" />
+          <img className="rounded-4xl w-full md:w-[600px] rounded-br-sm border-primary border-5" src="/images/TV/3.jpg" alt="صورة للمؤسس في الراديو 90:90" />
         </div>
       </div>
     </section>
