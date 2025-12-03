@@ -35,7 +35,7 @@ function FounderPage() {
           <p className="text-base md:text-lg lg:text-xl mt-2 font-semibold text-black-v2">{t('founderBio')}</p>
         </div>
         <div className="image w-full md:w-auto">
-          <img className="rounded-4xl w-full md:w-[600px] rounded-br-sm border-primary border-5" src="/images/TV/3.jpg" alt="صورة للمؤسس في الراديو 90:90" />
+          <img className="rounded-4xl w-full md:w-[600px] rounded-br-sm border-primary border-5" src="/images/TV/3.webp" alt="صورة للمؤسس في الراديو 90:90" />
         </div>
       </div>
     </section>
@@ -56,7 +56,7 @@ function FounderPage() {
           ].map((episode) => (
             <a key={episode.id} href={episode.link} target="_blank" rel="noopener noreferrer" className="block group">
               <div className="relative overflow-hidden rounded-md border-primary border-5">
-                <img className="w-full h-auto transition-transform duration-300 group-hover:scale-110 group-active:scale-110" src={`/images/TV/${episode.id}.jpg`} alt={t(episode.titleKey)} />
+                <img className="w-full h-auto transition-transform duration-300 group-hover:scale-110 group-active:scale-110" src={`/images/TV/${episode.id}.webp`} alt={t(episode.titleKey)} />
                 <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-primary via-primary/80 to-transparent p-4 pt-8">
                   <p className="text-white text-base md:text-lg font-bold text-center">{t(episode.titleKey)}</p>
                 </div>
@@ -70,7 +70,7 @@ function FounderPage() {
       <h1 className="title text-primary">{t('trainingProgramsTitle')}</h1>
         <div className="container max-w-7xl mx-auto px-4">
         <div className="flex flex-col justify-center items-center gap-8">
-          <img className="w-full rounded-lg" src="/images/courses image.jpg" alt="البرامج التدريبية" />
+          <img className="w-full rounded-lg" src="/images/courses image.webp" alt="البرامج التدريبية" />
           <h1 className="text-black text-md  w-full sm:w-[700px] lg:w-[1000px] md:text-2xl font-medium text-center">{t('trainingProgramsDesc')}
           <span className="text-primary font-semibold  mt-2">
            {t('universitiesList')}

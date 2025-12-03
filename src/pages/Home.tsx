@@ -56,7 +56,7 @@ function Home() {
       <h1 className="title text-primary text-center text-3xl md:text-5xl mb-8 animate-on-scroll fade-in-up">{t('aboutTitle')}</h1>
       <div className="container max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-evenly items-center gap-8">
         <div className="image w-full md:w-auto animate-on-scroll fade-in-up md:fade-in-left">
-          <img className="rounded-4xl w-full md:w-[600px] rounded-tl-sm border-primary border-5" src="/images/about-image.jpg" alt="فريق أتش أرجية مصر" loading="lazy" />
+          <img className="rounded-4xl w-full md:w-[600px] rounded-tl-sm border-primary border-5" src="/images/about-image.webp" alt="فريق أتش أرجية مصر" loading="lazy" />
         </div>
         <div className="max-w-[600px] w-full animate-on-scroll fade-in-up md:fade-in-right">
           <h1 className="text-2xl md:text-3xl font-extrabold text-primary">{t('aboutHeading')}</h1>
@@ -68,11 +68,11 @@ function Home() {
     <section id="services" className="services">
       <h1 className="title text-primary animate-on-scroll fade-in-up">{t('servicesTitle')}</h1>
       <div className="container mx-auto max-w-7xl px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.1s'}}><ServiceCard image="/images/Services/Training Cor.jpg" titleAr="برامج تدريب متكاملة لتطوير مهارات فرق العمل داخل الشركات." titleEn="Corporate Training Solutions" /></div>
-        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.2s'}}><ServiceCard image="/images/Services/Component 5.jpg" titleAr="استشارات موارد بشرية لبناء أنظمة ولوائح فعالة تدعم نمو الشركة." titleEn="HR Consulting" /></div>
-        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.3s'}}><ServiceCard image="/images/Services/Career Coaching.jpg" titleAr="جلسات توجيه مهني تساعد الأفراد على رسم مسار وظيفي ناجح." titleEn="Career Coaching" /></div>
-        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.4s'}}><ServiceCard image="/images/Services/6.jpg" titleAr="كتابة سيرة ذاتية احترافية تبرز قدراتك وخبراتك بشكل مثالي." titleEn="CV Writing" /></div>
-        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.5s'}}><ServiceCard image="/images/Services/1.jpg" titleAr="تحسين حسابك على لينكدإن ليعكس خبرتك ويزيد فرص ظهورك للوظائف." titleEn="LinkedIn Optimization" /></div>
+        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.1s'}}><ServiceCard image="/public/images/Services/Training.webp" titleAr="برامج تدريب متكاملة لتطوير مهارات فرق العمل داخل الشركات." titleEn="Corporate Training Solutions" /></div>
+        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.2s'}}><ServiceCard image="/images/Services/Component 5.webp" titleAr="استشارات موارد بشرية لبناء أنظمة ولوائح فعالة تدعم نمو الشركة." titleEn="HR Consulting" /></div>
+        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.3s'}}><ServiceCard image="/images/Services/Career Coaching.webp" titleAr="جلسات توجيه مهني تساعد الأفراد على رسم مسار وظيفي ناجح." titleEn="Career Coaching" /></div>
+        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.4s'}}><ServiceCard image="/images/Services/6.webp" titleAr="كتابة سيرة ذاتية احترافية تبرز قدراتك وخبراتك بشكل مثالي." titleEn="CV Writing" /></div>
+        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.5s'}}><ServiceCard image="/images/Services/1.webp" titleAr="تحسين حسابك على لينكدإن ليعكس خبرتك ويزيد فرص ظهورك للوظائف." titleEn="LinkedIn Optimization" /></div>
       </div>
       </section>  
       {/* Feedback Section */}
