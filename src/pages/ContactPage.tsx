@@ -63,9 +63,9 @@ function ContactPage() {
   return (
     <>
     <SEO 
-      title="تواصل معنا | HRins Egypt - استشارات موارد بشرية"
-      description="تواصل مع فريق HRins Egypt للحصول على استشارات موارد بشرية وتدريب مهني متخصص. نحن هنا لمساعدتك"
-      keywords="تواصل, استفسار, استشارة, HRins Egypt, موارد بشرية"
+      title="تواصل معنا | HRians Egypt - استشارات موارد بشرية"
+      description="تواصل مع فريق HRians Egypt للحصول على استشارات موارد بشرية وتدريب مهني متخصص. نحن هنا لمساعدتك"
+      keywords="تواصل, استفسار, استشارة, HRians Egypt, موارد بشرية"
     />
       <div className="relative w-full bg-primary text-white pt-12 pb-20 rounded-b-[80px] md:rounded-b-[180px]">
         <div className="max-w-6xl mx-auto px-4 flex justify-center items-center flex-col">

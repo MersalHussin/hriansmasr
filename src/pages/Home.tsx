@@ -30,13 +30,13 @@ function Home() {
   return (
     <>
     <SEO 
-      title="أتش أرجية مصر | HRins Egypt - استشارات موارد بشرية"
+      title="أتش أرجية مصر | HRians Egypt - استشارات موارد بشرية"
       description="شركة أتش أرجية مصر تقدم حلول مبتكرة في الموارد البشرية، التدريب المهني، كتابة CV، وتحسين لينكدإن"
       keywords="موارد بشرية, HR, تدريب مهني, كتابة CV, لينكدإن, استشارات HR"
     />
     <section id="home" className="hero flex items-center bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center min-h-[calc(100vh-90px)] py-10">
       <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row justify-evenly items-center gap-8">
-        <div className="data w-full md:max-w-[700px] animate-on-scroll fade-in-up md:fade-in-left">
+        <div className="data w-full md:max-w-[700px]">
           <div className="text flex flex-col gap-5 justify-center items-center">
             <img src="/images/Auth.svg" alt="شعار أتش أرجية مصر" className="w-[250px] md:w-[300px]" loading="lazy" />
             <h1 className="text-primary font-extrabold leading-tight max-w-[400px] md:max-w-full text-[42px] sm:text-[50px] md:text-5xl lg:text-6xl xl:text-7xl text-center">{t('heroTitle')}</h1>
@@ -47,7 +47,7 @@ function Home() {
             <Link to="/contact" className="border-3 border-primary font-semibold p-3 px-8 text-xl md:text-2xl text-primary rounded-xl w-full md:w-auto text-center">{t('contact')}</Link>
           </div>
         </div>
-        <div className="image w-full md:max-w-[1000px] animate-on-scroll fade-in-up md:fade-in-right">
+        <div className="image w-full md:max-w-[1000px]">
           <img src="/images/Mr Ahmed Hero.webp" alt="أحمد ناجي الدخميسي - خبير موارد بشرية" className="w-full" loading="eager" />
         </div>
       </div>
@@ -68,7 +68,7 @@ function Home() {
     <section id="services" className="services">
       <h1 className="title text-primary animate-on-scroll fade-in-up">{t('servicesTitle')}</h1>
       <div className="container mx-auto max-w-7xl px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.1s'}}><ServiceCard image="/public/images/Services/Training.webp" titleAr="برامج تدريب متكاملة لتطوير مهارات فرق العمل داخل الشركات." titleEn="Corporate Training Solutions" /></div>
+        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.1s'}}><ServiceCard image="/images/Services/Training Cor.webp" titleAr="برامج تدريب متكاملة لتطوير مهارات فرق العمل داخل الشركات." titleEn="Corporate Training Solutions" /></div>
         <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.2s'}}><ServiceCard image="/images/Services/Component 5.webp" titleAr="استشارات موارد بشرية لبناء أنظمة ولوائح فعالة تدعم نمو الشركة." titleEn="HR Consulting" /></div>
         <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.3s'}}><ServiceCard image="/images/Services/Career Coaching.webp" titleAr="جلسات توجيه مهني تساعد الأفراد على رسم مسار وظيفي ناجح." titleEn="Career Coaching" /></div>
         <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.4s'}}><ServiceCard image="/images/Services/6.webp" titleAr="كتابة سيرة ذاتية احترافية تبرز قدراتك وخبراتك بشكل مثالي." titleEn="CV Writing" /></div>

@@ -4,15 +4,14 @@ import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
+  const location = window.location;
   
-  const menuItems = [
-    { label: t('home'), href: '#' },
-    { label: t('about'), href: '#' },
-    { label: t('services'), href: '#' },
-    { label: t('clients'), href: '#' },
-    { label: t('faq'), href: '#' },
-    { label: t('founder'), href: '/founder' },
-  ];
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   const socialLinks = [
     { icon: 'fa-brands fa-facebook', href: 'https://www.facebook.com/groups/hregy/', label: 'Facebook', color: 'hover:text-yellow' },
@@ -34,23 +33,35 @@ const Footer: React.FC = () => {
         {/* القائمة */}
         <nav className="mb-8">
           <ul className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 text-sm sm:text-base">
-            {menuItems.map((item, index) => (
-              <React.Fragment key={index}>
-                <li>
-                  <a
-                    href={item.href}
-                    className={`hover:text-yellow-v2 transition-colors duration-200 ${
-                      item.label === t('home') ? 'text-yellow-v2 font-semibold' : ''
-                    }`}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-                {index < menuItems.length - 1 && (
-                  <li className="hidden sm:block text-white/50">|</li>
-                )}
-              </React.Fragment>
-            ))}
+            {location.pathname === '/' ? (
+              <>
+                <li><span onClick={() => scrollToSection('home')} className="hover:text-yellow-v2 transition-colors duration-200 cursor-pointer">{t('home')}</span></li>
+                <li className="hidden sm:block text-white/50">|</li>
+                <li><span onClick={() => scrollToSection('about')} className="hover:text-yellow-v2 transition-colors duration-200 cursor-pointer">{t('about')}</span></li>
+                <li className="hidden sm:block text-white/50">|</li>
+                <li><span onClick={() => scrollToSection('services')} className="hover:text-yellow-v2 transition-colors duration-200 cursor-pointer">{t('services')}</span></li>
+                <li className="hidden sm:block text-white/50">|</li>
+                <li><span onClick={() => scrollToSection('clients')} className="hover:text-yellow-v2 transition-colors duration-200 cursor-pointer">{t('clients')}</span></li>
+                <li className="hidden sm:block text-white/50">|</li>
+                <li><span onClick={() => scrollToSection('faq')} className="hover:text-yellow-v2 transition-colors duration-200 cursor-pointer">{t('faq')}</span></li>
+                <li className="hidden sm:block text-white/50">|</li>
+                <li><Link to="/founder" className="hover:text-yellow-v2 transition-colors duration-200">{t('founder')}</Link></li>
+              </>
+            ) : (
+              <>
+                <li><Link to="/#home" className="hover:text-yellow-v2 transition-colors duration-200">{t('home')}</Link></li>
+                <li className="hidden sm:block text-white/50">|</li>
+                <li><Link to="/#about" className="hover:text-yellow-v2 transition-colors duration-200">{t('about')}</Link></li>
+                <li className="hidden sm:block text-white/50">|</li>
+                <li><Link to="/#services" className="hover:text-yellow-v2 transition-colors duration-200">{t('services')}</Link></li>
+                <li className="hidden sm:block text-white/50">|</li>
+                <li><Link to="/#clients" className="hover:text-yellow-v2 transition-colors duration-200">{t('clients')}</Link></li>
+                <li className="hidden sm:block text-white/50">|</li>
+                <li><Link to="/#faq" className="hover:text-yellow-v2 transition-colors duration-200">{t('faq')}</Link></li>
+                <li className="hidden sm:block text-white/50">|</li>
+                <li><Link to="/founder" className="hover:text-yellow-v2 transition-colors duration-200">{t('founder')}</Link></li>
+              </>
+            )}
           </ul>
         </nav>
 
