@@ -72,7 +72,8 @@ i18n.use(initReactI18next).init({
         serviceTypeLabel: 'نوع الخدمة',
         selectService: 'اختر نوع الخدمة',
         inquiry: 'استفسار',
-        consultation: 'استشارة'
+        consultation: 'استشارة',
+        gallery: 'معرض الصور'
       }
     },
     en: {
@@ -143,7 +144,8 @@ i18n.use(initReactI18next).init({
         serviceTypeLabel: 'Service Type',
         selectService: 'Select service type',
         inquiry: 'Inquiry',
-        consultation: 'Consultation'
+        consultation: 'Consultation',
+        gallery:"Gallery"
       }
     }
   },
