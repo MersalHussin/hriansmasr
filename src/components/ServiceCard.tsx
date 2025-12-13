@@ -4,12 +4,14 @@ interface IProps {
     image: string;
     titleEn: string;
     titleAr: string;
+    subtitle?: string;
+    customWhatsapp?: string;
     Icon?: ElementType;
 }
 
-const ServiceCard = ({ image, titleEn, titleAr, Icon }: IProps) => {
+const ServiceCard = ({ image, titleEn, titleAr, subtitle, customWhatsapp, Icon }: IProps) => {
   const whatsappMessage = ` ${titleEn}  السلام عليكم استاذ احمد كنت عاوز استفسر عن خدمة`;
-  const whatsappUrl = `https://wa.me/201141778555?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = customWhatsapp || `https://wa.me/201141778555?text=${encodeURIComponent(whatsappMessage)}`;
   
   return (
     // التغيير هنا: استبدلنا h-96 بـ aspect-square
@@ -44,8 +46,9 @@ const ServiceCard = ({ image, titleEn, titleAr, Icon }: IProps) => {
                       bottom-10 transition-all duration-500 ease-out
                       group-hover:bottom-1/2 group-hover:translate-y-1/2">
         
-        <h3 className="text-xl md:text-3xl font-extrabold mb-2 drop-shadow-lg uppercase tracking-wide">
+        <h3 className="text-xl md:text-3xl font-extrabold mb-2 drop-shadow-lg capitalize tracking-wide">
           {titleEn}
+          {subtitle && <span className="text-sm block mt-1">({subtitle})</span>}
         </h3>
         
         <p className="text-[12px] font-medium text-blue-100" dir="rtl">
