@@ -73,7 +73,7 @@ i18n.use(initReactI18next).init({
         selectService: 'اختر نوع الخدمة',
         inquiry: 'استفسار',
         consultation: 'استشارة',
-        gallery: 'معرض الصور'
+        gallery: 'خريجو برامجنا التدريبية'
       }
     },
     en: {
@@ -145,7 +145,7 @@ i18n.use(initReactI18next).init({
         selectService: 'Select service type',
         inquiry: 'Inquiry',
         consultation: 'Consultation',
-        gallery:"Gallery"
+        gallery:"Training Program Graduates"
       }
     }
   },
