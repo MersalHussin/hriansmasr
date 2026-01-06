@@ -10,7 +10,7 @@ interface IProps {
 }
 
 const ServiceCard = ({ image, titleEn, titleAr, subtitle, customWhatsapp, Icon }: IProps) => {
-  const whatsappMessage = ` ${titleEn}  السلام عليكم استاذ احمد كنت عاوز استفسر عن خدمة`;
+  const whatsappMessage = ` ${titleEn}  السلام عليكم دكتور احمد كنت عاوز استفسر عن خدمة`;
   const whatsappUrl = customWhatsapp || `https://wa.me/201141778555?text=${encodeURIComponent(whatsappMessage)}`;
   
   return (
@@ -21,6 +21,8 @@ const ServiceCard = ({ image, titleEn, titleAr, subtitle, customWhatsapp, Icon }
       <img 
         src={image} 
         alt={titleEn} 
+        loading="lazy"
+        decoding="async"
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-active:scale-110"
       />
 
@@ -56,7 +58,7 @@ const ServiceCard = ({ image, titleEn, titleAr, subtitle, customWhatsapp, Icon }
         </p>
         
         {/* الزر */}
-        <div className="h-0 overflow-hidden group-hover:h-12 transition-all duration-500 delay-75 mt-0 group-hover:mt-6">
+        <div className="mt-6 transition-all duration-500">
           <span className="flex items-center gap-2 bg-white text-blue-900 px-6 py-2 rounded-full text-sm font-bold shadow-lg hover:bg-blue-50 active:bg-blue-100 transition-colors">
             <span>استفسر الآن</span>
           </span>

@@ -70,8 +70,8 @@ function Home() {
     <section id="services" className="services">
       <h1 className="title text-primary animate-on-scroll fade-in-up">{t('servicesTitle')}</h1>
       <div className="container mx-auto max-w-7xl px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.1s'}}><ServiceCard image="/images/Services/Training Cor2.webp" titleAr="برامج تدريب متكاملة لتطوير مهارات فرق العمل داخل الشركات." titleEn="Corporate Training Solutions" /></div>
-        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.5s'}}><ServiceCard image="/images/Services/Training Coruse.webp" titleAr="برنامج تدريبي عملي يمشي معاك خطوة بخطوة في طريق الموارد البشرية" titleEn="HR Roadmap Program" customWhatsapp="https://wa.me/201097828846" /></div>
+        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.1s'}}><ServiceCard image="/images/Services/Training Coruse.webp" titleAr="برامج تدريب متكاملة لتطوير مهارات فرق العمل داخل الشركات." titleEn="Corporate Training Solutions" /></div>
+        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.5s'}}><ServiceCard image="/images/Services/Training Cor2.webp" titleAr="برنامج تدريبي عملي يمشي معاك خطوة بخطوة في طريق الموارد البشرية" titleEn="HR Roadmap Program" customWhatsapp="https://wa.me/201097828846" /></div>
         <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.2s'}}><ServiceCard image="/images/Services/Component 5.webp" titleAr="استشارات موارد بشرية لبناء أنظمة ولوائح فعالة تدعم نمو الشركة." titleEn="HR Consulting" /></div>
         <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.3s'}}><ServiceCard image="/images/Services/Career Coaching.webp" titleAr="جلسات توجيه مهني تساعد الأفراد على رسم مسار وظيفي ناجح." titleEn="Career Coaching" /></div>
         <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.4s'}}><ServiceCard image="/images/Services/6.webp" titleAr="كتابة سيرة ذاتية احترافية تبرز قدراتك وخبراتك بشكل مثالي." titleEn="CV Writing" /></div>
