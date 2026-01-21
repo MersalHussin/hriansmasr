@@ -1,6 +1,7 @@
 import ClientsSection from "../components/Clients"
 import FAQ from "../components/FAQ"
 import Feedback from "../components/Feedback"
+import Articles from "../components/Articles"
 import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
 import Breadcrumb from '../components/Breadcrumb'
@@ -66,6 +67,7 @@ function FounderPage() {
         </div>
       </div>
     </section>
+    <Articles/>
     <section className="py-16">
       <h1 className="title text-primary">{t('trainingProgramsTitle')}</h1>
         <div className="container max-w-7xl mx-auto px-4">

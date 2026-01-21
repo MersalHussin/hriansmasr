@@ -73,7 +73,9 @@ i18n.use(initReactI18next).init({
         selectService: 'اختر نوع الخدمة',
         inquiry: 'استفسار',
         consultation: 'استشارة',
-        gallery: 'خريجو برامجنا التدريبية'
+        gallery: 'خريجو برامجنا التدريبية',
+        articlesTitle: 'كُتب عني',
+        readArticle: 'قراءة المقالة'
       }
     },
     en: {
@@ -145,7 +147,9 @@ i18n.use(initReactI18next).init({
         selectService: 'Select service type',
         inquiry: 'Inquiry',
         consultation: 'Consultation',
-        gallery:"Training Program Graduates"
+        gallery:"Training Program Graduates",
+        articlesTitle: 'Written About Me',
+        readArticle: 'Read Article'
       }
     }
   },
