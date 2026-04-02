@@ -216,7 +216,7 @@ function HiddenMarketPage() {
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[100px] pointer-events-none" />
         
         <div className="container mx-auto px-4 max-w-4xl text-center relative z-10">
-          <h2 className="title text-white animate-on-scroll fade-in-up drop-shadow-lg">هل بتعاني من كده؟</h2>
+          <h2 className="title text-white animate-on-scroll fade-in-up drop-shadow-lg">هل بتعاني من إنك</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12">
             {[
               "بتبعت CV على طول ومش بتلاقي رد",
@@ -369,7 +369,7 @@ function HiddenMarketPage() {
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
           <div className="text-center mb-16">
             <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-brand-dark)]/20 bg-white px-5 py-2 text-sm font-bold text-[var(--color-brand-dark)] mb-4 shadow-sm animate-on-scroll fade-in-up">
-              🎯 المخرجات
+              المخرجات
             </span>
             <h2 className="text-4xl md:text-5xl font-black text-[var(--color-brand-dark)] mb-6 animate-on-scroll fade-in-up">
               هتخرج من الكورس وعندك ايه؟

@@ -60,14 +60,14 @@ const ReelsFeedback = () => {
             <div className="container mx-auto px-4 md:px-20 relative z-10">
                 <div className="text-center mb-12">
                     <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-brand-dark)]/20 bg-[var(--color-brand-dark)]/5 px-5 py-2 text-sm font-bold text-[var(--color-brand-dark)] mb-4 shadow-sm">
-                        🎬 تجارب وقصص نجاح
+                    تجارب وقصص نجاح
                     </span>
                     <h2 className="text-[var(--color-brand-dark)] text-3xl md:text-5xl font-black mb-4">
-                        Reels من طلاب الكورس
+آراء المتدربين
                     </h2>
-                    <p className="text-slate-600 max-w-2xl mx-auto text-base md:text-xl font-bold">
+                    {/* <p className="text-slate-600 max-w-2xl mx-auto text-base md:text-xl font-bold">
                         اتفرج على الفيديوهات من داخل الموقع واسحب يمين وشمال لاكتشاف باقي الريلز وتجارب الشباب خطوة بخطوة
-                    </p>
+                    </p> */}
                 </div>
 
                 <div className="reels-slider">
@@ -87,7 +87,7 @@ const ReelsFeedback = () => {
                                             allowFullScreen
                                         />
                                     </div>
-                                    <div className="mt-5 flex justify-center">
+                                    {/* <div className="mt-5 flex justify-center">
                                         <a
                                             href={reel.link}
                                             target="_blank"
@@ -97,7 +97,7 @@ const ReelsFeedback = () => {
                                             <i className="fa-brands fa-youtube text-lg group-hover:scale-110 transition-transform" />
                                             شاهد على يوتيوب
                                         </a>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         ))}

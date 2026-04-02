@@ -25,14 +25,14 @@ function Home() {
           {/* Header Title Section */}
           <div className="text-center mb-16 flex flex-col items-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-5 py-2 text-sm font-bold text-primary mb-6 shadow-sm">
-              <i className="fa-solid fa-briefcase text-yellow"></i> برامج تنفيذية للارتقاء بمسيرتك المهنية
+              <i className="fa-solid fa-gem text-yellow"></i> استثمر في قيمتك المهنية
             </span>
             <h1 className="text-primary font-extrabold text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight drop-shadow-sm">
-              استثمر في مسارك المهني مع
-              <span className="text-yellow block md:inline md:mr-3">أفضل الخبراء</span>
+              مكانك الحقـــــيقي
+              <span className=" block  md:mr-3">أكبر مما تـــــتخيل</span>
             </h1>
             <p className="text-slate-600 text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed">
-              مسارات مهنية مبنية على التطبيق العملي للوصول لهدفك بسرعة واحترافية.
+              نحن لا نقدم مجرد دورات تدريبية، بل نبني معك مساراً مهنياً يعكس حجم خبرتك الحقيقية ويضعك في المكانة التي تستحقها في سوق العمل.
             </p>
           </div>
 
@@ -47,29 +47,29 @@ function Home() {
               {/* Card Image */}
               <div className="relative h-64 md:h-72 w-full overflow-hidden bg-slate-100">
                 <img 
-                  src="./images/The-Hidden/Course.jpg" // عدل مسار الصورة هنا
+                  src="./images/The-Hidden/Course.jpg"
                   alt="The Hidden Market Masterclass" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   onError={(e) => { e.currentTarget.src = 'https://placehold.co/800x600/0A2552/FFFFFF/png?text=The+Hidden+Market+Masterclass&font=Montserrat' }}
                 />
-                <div className="absolute top-5 right-5 bg-yellow text-white text-xs font-extrabold px-4 py-2 rounded-lg shadow-lg">
-                  🔥 البرنامج التنفيذي
+                <div className="absolute top-5 right-5 bg-yellow text-[var(--color-brand-dark)] text-xs font-black px-4 py-2 rounded-lg shadow-lg">
+                  🔥 للمحترفين فقط
                 </div>
               </div>
 
               {/* Card Body */}
               <div className="p-8 md:p-10 flex flex-col flex-1">
-                <h2 className="text-primary font-extrabold text-2xl md:text-3xl mb-3 flex items-center justify-between">
+                <h2 className="text-primary font-black text-2xl md:text-3xl mb-3 flex items-center justify-between" style={{fontFamily: "Calistoga"}}>
                   The Hidden Market
                 </h2>
-                <span className="text-yellow-v2 font-bold text-lg mb-4 block">للمحترفين وأصحاب الخبرات</span>
-                <p className="text-slate-600 text-base leading-relaxed mb-10 flex-1">
-                  أعد صياغة تواجدك المهني واكتشف كيف تدير صفقاتك الوظيفية وتصل للفرص المخفية لتصبح الخيار الأول لصناع القرار.
+                <span className="text-yellow-v2 font-bold text-lg mb-4 block">هندسة النفوذ المهني</span>
+                <p className="text-slate-600 text-base leading-relaxed mb-10 flex-1 font-medium">
+                  أعد صياغة صورتك المهنية لتعكس قيمتك الحقيقية. تعلم كيف تجعل الشركات الكبرى تبحث عنك وتتفاوض معك، وكيف تقتنص الفرص المخفية التي لا تُعلن للعامة.
                 </p>
                 
                 {/* Card Button */}
                 <div className="w-full bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white border border-primary/10 group-hover:border-primary font-bold py-4 rounded-xl text-center transition-colors duration-300 flex items-center justify-center gap-2">
-                  اعرف تفاصيل الكورس <i className="fa-solid fa-arrow-left"></i>
+                  اكتشف قوة البراند الخاص بك <i className="fa-solid fa-arrow-left"></i>
                 </div>
               </div>
             </Link>
@@ -82,29 +82,29 @@ function Home() {
               {/* Card Image */}
               <div className="relative h-64 md:h-72 w-full overflow-hidden bg-slate-100">
                 <img 
-                  src="./images/HR-Roodmap/Course-2.jpg" // عدل مسار الصورة هنا
+                  src="./images/HR-Roodmap/Course-2.jpg"
                   alt="HR Roadmap" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   onError={(e) => { e.currentTarget.src = 'https://placehold.co/800x600/EF8A1B/FFFFFF/png?text=HR+Roadmap&font=Montserrat' }}
                 />
-                <div className="absolute top-5 right-5 bg-primary text-white text-xs font-extrabold px-4 py-2 rounded-lg shadow-lg">
-                  🗺️ خطوة بخطوة
+                <div className="absolute top-5 right-5 bg-primary text-white text-xs font-black px-4 py-2 rounded-lg shadow-lg">
+                  🗺️ دليلك للاحتراف
                 </div>
               </div>
 
               {/* Card Body */}
               <div className="p-8 md:p-10 flex flex-col flex-1">
-                <h2 className="text-primary font-extrabold text-2xl md:text-3xl mb-3 flex items-center justify-between">
+                <h2 className="text-primary font-black text-2xl md:text-3xl mb-3 flex items-center justify-between" style={{fontFamily: "Calistoga"}}>
                   HR Roadmap
                 </h2>
-                <span className="text-primary/60 font-bold text-lg mb-4 block">مسار المبتدئين</span>
-                <p className="text-slate-600 text-base leading-relaxed mb-10 flex-1">
-                  خطة تدريب ومسار عملي من الصفر حتى مرحلة الاحتراف. بنوفرلك كل الأدوات والخبرة اللي محتاجها عشان تبدأ وتطور نفسك صح في مجال الـ HR.
+                <span className="text-primary/60 font-bold text-lg mb-4 block">نبني معك أساساً صلباً</span>
+                <p className="text-slate-600 text-base leading-relaxed mb-10 flex-1 font-medium">
+                  استثمر في بدايتك الصحيحة بمجال الموارد البشرية. خطة متكاملة تأخذ بيدك من الشغف الأولي إلى الاحتراف الحقيقي، لتصبح كادراً مؤثراً يضيف قيمة لأي مؤسسة.
                 </p>
                 
                 {/* Card Button */}
                 <div className="w-full bg-yellow/10 text-yellow-v2 group-hover:bg-yellow group-hover:text-white border border-yellow/20 group-hover:border-yellow font-bold py-4 rounded-xl text-center transition-colors duration-300 flex items-center justify-center gap-2">
-                  استكشف المسار <i className="fa-solid fa-arrow-left"></i>
+                  ابدأ رحلة بناء قيمتك <i className="fa-solid fa-arrow-left"></i>
                 </div>
               </div>
             </Link>
