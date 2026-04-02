@@ -1,89 +1,125 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { Link, useLocation } from 'react-router-dom';
 
 const Footer: React.FC = () => {
-  const { t } = useTranslation();
-  const location = window.location;
-  
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
+  const location = useLocation();
+  const isHiddenMarket = location.pathname === '/hidden-market-masterclass';
 
   const socialLinks = [
-    { icon: 'fa-brands fa-facebook', href: 'https://www.facebook.com/groups/hregy/', label: 'Facebook', color: 'hover:text-yellow' },
-    { icon: 'fa-brands fa-linkedin', href: 'https://www.linkedin.com/in/ahmednagyeldokmesy/', label: 'LinkedIn', color: 'hover:text-yellow' },
-    { icon: 'fa-brands fa-instagram', href: 'https://www.instagram.com/ahmedeldokhmesyoffical/?hl=ar', label: 'Instagram', color: 'hover:text-yellow' },
-    { icon: 'fa-brands fa-youtube', href: 'https://www.youtube.com/@AhmednagyEldokhmesy', label: 'YouTube', color: 'hover:text-yellow' },
+    { icon: 'fa-brands fa-facebook', href: 'https://www.facebook.com/groups/hregy/', label: 'Facebook' },
+    { icon: 'fa-brands fa-linkedin', href: 'https://www.linkedin.com/in/ahmednagyeldokmesy/', label: 'LinkedIn' },
+    { icon: 'fa-brands fa-instagram', href: 'https://www.instagram.com/ahmedeldokhmesyoffical/?hl=ar', label: 'Instagram' },
+    { icon: 'fa-brands fa-youtube', href: 'https://www.youtube.com/@AhmednagyEldokhmesy', label: 'YouTube' },
+    { icon: 'fa-brands fa-tiktok', href: '#', label: 'TikTok' },
   ];
 
   return (
-    <footer className="bg-linear-to-r from-primary via-primary to-primary text-white py-12 px-4 sm:px-6 lg:px-8" dir="rtl">
-      <div className="max-w-7xl mt-[-50px] mx-auto">
-        {/* الشعار */}
-        <div className="flex justify-center mb-8">
-          <Link to="/" className="bg-white rounded-b-2xl px-8 py-8 shadow-xl">
-            <img src="/images/logoBlue.svg" className="text-2xl sm:text-3xl font-bold text-primary text-center cursor-pointer" />
-          </Link>
+    <footer className={`${isHiddenMarket ? 'bg-[#0A2552]' : 'bg-primary'} border-t border-white/5 pt-16 pb-0 relative overflow-hidden transition-colors duration-500`} dir="rtl">
+      {/* Background decorations */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-yellow/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-yellow/5 rounded-full blur-[100px] pointer-events-none" />
+
+      <div className="container mx-auto px-4 max-w-7xl relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-6 mb-12">
+          
+          {/* Logo & About */}
+          <div className="col-span-1 md:col-span-5 flex flex-col items-center md:items-start">
+            <Link to="/" className="mb-6 block bg-white/5 backdrop-blur-md p-4 rounded-3xl border border-white/10 hover:border-yellow/30 transition-colors">
+              {isHiddenMarket ? (
+                <img src="/Logo_Hidden.svg" alt="The Hidden Market Logo" className="h-14 md:h-16 object-contain" />
+              ) : (
+                <img src="/images/logo.png" alt="HRians Egypt Logo" className="h-14 md:h-16 object-contain" />
+              )}
+            </Link>
+            <p className="text-white/70 text-sm md:text-base text-center md:text-right leading-relaxed max-w-sm mb-6">
+              أكاديمية أتش أرجية مصر بقيادة أحمد ناجي الدخميسي، بتوفرلك برامج تدريبية ومسارات مهنية حقيقية هتساعدك تطور كاريرك وتبني علامتك الشخصية في سوق العمل.
+            </p>
+            <div className="flex gap-4">
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:bg-yellow hover:text-white hover:border-yellow transition-all duration-300 hover:-translate-y-1 shadow-lg"
+                >
+                  <i className={`${social.icon} text-lg`}></i>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div className="col-span-1 md:col-span-3">
+            <h3 className="text-white font-extrabold text-xl mb-6 relative inline-block">
+              روابط سريعة
+              <span className="absolute -bottom-2 right-0 w-1/2 h-1 bg-yellow rounded-full"></span>
+            </h3>
+            <ul className="space-y-4">
+              <li>
+                <Link to="/" className="text-white/80 hover:text-yellow transition-colors flex items-center gap-2">
+                  <i className="fa-solid fa-angle-left text-xs"></i> الرئيسية
+                </Link>
+              </li>
+              <li>
+                <Link to="/founder" className="text-white/80 hover:text-yellow transition-colors flex items-center gap-2">
+                  <i className="fa-solid fa-angle-left text-xs"></i> عن المؤسس
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-white/80 hover:text-yellow transition-colors flex items-center gap-2">
+                  <i className="fa-solid fa-angle-left text-xs"></i> تواصل معنا
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Courses */}
+          <div className="col-span-1 md:col-span-4">
+            <h3 className="text-white font-extrabold text-xl mb-6 relative inline-block">
+              برامجنا التدريبية
+              <span className="absolute -bottom-2 right-0 w-1/2 h-1 bg-yellow rounded-full"></span>
+            </h3>
+            <ul className="space-y-4">
+              <li>
+                <Link to="/hidden-market-masterclass" className="group flex items-center gap-3 bg-white/5 border border-white/10 p-3 rounded-2xl hover:bg-white/10 hover:border-yellow/30 transition-all">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow to-yellow-v2 flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
+                    <i className="fa-solid fa-user-secret"></i>
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold text-sm">The Hidden Market</h4>
+                    <p className="text-white/50 text-xs mt-1">اكتشف الوظائف الخفية</p>
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <Link to="/hr-roadmap" className="group flex items-center gap-3 bg-white/5 border border-white/10 p-3 rounded-2xl hover:bg-white/10 hover:border-yellow/30 transition-all">
+                  <div className="w-10 h-10 rounded-xl bg-orange-500 flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
+                    <i className="fa-solid fa-map-location-dot"></i>
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold text-sm">HR Roadmap</h4>
+                    <p className="text-white/50 text-xs mt-1">خارطة طريق الموارد البشرية</p>
+                  </div>
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        {/* القائمة */}
-        <nav className="mb-8">
-          <ul className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 text-sm sm:text-base">
-            {location.pathname === '/' ? (
-              <>
-                <li><span onClick={() => scrollToSection('home')} className="hover:text-yellow-v2 transition-colors duration-200 cursor-pointer">{t('home')}</span></li>
-                <li className="hidden sm:block text-white/50">|</li>
-                <li><span onClick={() => scrollToSection('about')} className="hover:text-yellow-v2 transition-colors duration-200 cursor-pointer">{t('about')}</span></li>
-                <li className="hidden sm:block text-white/50">|</li>
-                <li><span onClick={() => scrollToSection('services')} className="hover:text-yellow-v2 transition-colors duration-200 cursor-pointer">{t('services')}</span></li>
-                <li className="hidden sm:block text-white/50">|</li>
-                <li><span onClick={() => scrollToSection('clients')} className="hover:text-yellow-v2 transition-colors duration-200 cursor-pointer">{t('clients')}</span></li>
-                <li className="hidden sm:block text-white/50">|</li>
-                <li><span onClick={() => scrollToSection('faq')} className="hover:text-yellow-v2 transition-colors duration-200 cursor-pointer">{t('faq')}</span></li>
-                <li className="hidden sm:block text-white/50">|</li>
-                <li><Link to="/founder" className="hover:text-yellow-v2 transition-colors duration-200">{t('founder')}</Link></li>
-              </>
-            ) : (
-              <>
-                <li><Link to="/#home" className="hover:text-yellow-v2 transition-colors duration-200">{t('home')}</Link></li>
-                <li className="hidden sm:block text-white/50">|</li>
-                <li><Link to="/#about" className="hover:text-yellow-v2 transition-colors duration-200">{t('about')}</Link></li>
-                <li className="hidden sm:block text-white/50">|</li>
-                <li><Link to="/#services" className="hover:text-yellow-v2 transition-colors duration-200">{t('services')}</Link></li>
-                <li className="hidden sm:block text-white/50">|</li>
-                <li><Link to="/#clients" className="hover:text-yellow-v2 transition-colors duration-200">{t('clients')}</Link></li>
-                <li className="hidden sm:block text-white/50">|</li>
-                <li><Link to="/#faq" className="hover:text-yellow-v2 transition-colors duration-200">{t('faq')}</Link></li>
-                <li className="hidden sm:block text-white/50">|</li>
-                <li><Link to="/founder" className="hover:text-yellow-v2 transition-colors duration-200">{t('founder')}</Link></li>
-              </>
-            )}
-          </ul>
-        </nav>
-
-        {/* أيقونات التواصل الاجتماعي */}
-        <div className="flex justify-center items-center gap-4 sm:gap-6 mb-8">
-          {socialLinks.map((social, index) => (
-            <a
-              key={index}
-              href={social.href}
-              aria-label={social.label}
-              className={`transform hover:scale-110 transition-all duration-200 ${social.color}`}
-            >
-              <i className={`${social.icon} text-2xl sm:text-3xl`}></i>
-            </a>
-          ))}
-        </div>
-
-        {/* زر التصميم */}
-        <div className="flex justify-center">
-          <Link to='https://mersal.top' className=" bg-yellow text-white hover:bg-white hover:text-primary  font-medium px-8 py-5  -mb-12 rounded-t-xl  hover:shadow-xl transform  transition-all duration-200 text-sm sm:text-base">
-            Designed & Developed in Fire by Marsal
-          </Link>
+        {/* Bottom Bar */}
+        <div className="border-t border-white/10 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-white/60 text-sm text-center md:text-right">
+            جميع الحقوق محفوظة © {new Date().getFullYear()} - أتش أرجية مصر
+          </p>
+          <a 
+            href="https://mersal.top" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-white/50 hover:text-white transition-colors text-sm bg-white/5 px-4 py-2 rounded-full border border-white/5"
+          >
+            Developed in Fire by <strong className="text-yellow">Marsal</strong> 🔥
+          </a>
         </div>
       </div>
     </footer>

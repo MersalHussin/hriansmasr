@@ -1,143 +1,188 @@
-import { Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
+import { Link, useLocation } from 'react-router-dom'
+import { useState } from 'react'
+
+const courseLinks = [
+  { to: '/hidden-market-masterclass', label: 'Hidden Market Masterclass' },
+  { to: '/hr-roadmap', label: 'HR Roadmap' },
+]
+
+const hiddenMarketLinks = [
+  { to: '#problem', label: 'المشكلة' },
+  { to: '#modules', label: 'محتوى الكورس' },
+  { to: '#outcomes', label: 'ماذا ستتعلم؟' },
+  { to: '#feedback', label: 'آراء المتدربين' },
+  { to: '#reels-feedback', label: 'تجارب الطلاب' },
+]
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState('home')
-  const { t, i18n } = useTranslation()
-  const location = window.location
+  const location = useLocation()
 
-  useEffect(() => {
-    if (i18n.language === 'en') {
-      document.body.classList.add('ltr-text')
-      document.documentElement.style.setProperty('--text-align', 'left')
-    } else {
-      document.body.classList.remove('ltr-text')
-      document.documentElement.style.setProperty('--text-align', 'right')
-    }
-  }, [i18n.language])
+  const closeMenu = () => setIsOpen(false)
 
-  useEffect(() => {
-    if (location.pathname !== '/') return
-    
-    const handleScroll = () => {
-      const sections = ['home', 'about', 'services', 'clients', 'faq']
-      const scrollPosition = window.scrollY + 150
-      
-      for (const section of sections) {
-        const element = document.getElementById(section)
-        if (element) {
-          const { offsetTop, offsetHeight } = element
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section)
-            break
-          }
-        }
-      }
-    }
-    
-    window.addEventListener('scroll', handleScroll)
-    handleScroll()
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [location.pathname])
+  const isActive = (path: string) => location.pathname === path
+  
+  const isHiddenMarket = location.pathname === '/hidden-market-masterclass'
 
-  const toggleLang = () => {
-    const newLang = i18n.language === 'ar' ? 'en' : 'ar'
-    i18n.changeLanguage(newLang)
-  }
-
-  const closeMenu = () => {
-    setIsOpen(false)
-  }
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      closeMenu()
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault()
+    closeMenu()
+    const target = document.getElementById(targetId.substring(1))
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop - 90,
+        behavior: 'smooth',
+      })
     }
   }
 
   return (
-    <nav className='bg-primary h-[90px] w-full fixed flex items-center z-99'>
+    <nav className={`${isHiddenMarket ? 'bg-[#0A2552] border-b border-white/5' : 'bg-primary'} h-[90px] w-full fixed flex items-center z-99 transition-colors`}>
       <div className='container mx-auto px-4 flex items-center justify-between text-white'>
-        <Link to="/"><img src="/images/logo.png" className='h-8 md:h-12 cursor-pointer' alt="" /></Link>
-        
+        {isHiddenMarket ? (
+          <Link to="/" onClick={closeMenu}>
+            <img src="/Logo_Hidden.svg" className='h-8 md:h-12 cursor-pointer object-contain' alt="The Hidden Market Masterclass" />
+          </Link>
+        ) : (
+          <Link to="/" onClick={closeMenu}>
+            <img src="/images/logo.png" className='h-8 md:h-12 cursor-pointer object-contain' alt="HRians Egypt" />
+          </Link>
+        )}
+
         {/* Overlay */}
         {isOpen && (
-          <div 
-            className='fixed inset-0 bg-black/50 backdrop-blur-sm lg:hidden z-40'
-            onClick={closeMenu}
-          />
+          <div className='fixed inset-0 bg-black/50 backdrop-blur-sm lg:hidden z-40' onClick={closeMenu} />
         )}
 
         {/* Desktop Menu */}
-        <ul className='hidden lg:flex flex-row items-center space-x-4'>
-          {location.pathname === '/' ? (
+        <ul className='hidden lg:flex flex-row items-center gap-2'>
+          {isHiddenMarket ? (
             <>
-              <li className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded cursor-pointer ${activeSection === 'home' ? 'text-yellow-v2' : ''}`} onClick={() => scrollToSection('home')}>{t('home')}</li>
-              <li className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded cursor-pointer ${activeSection === 'about' ? 'text-yellow-v2' : ''}`} onClick={() => scrollToSection('about')}>{t('about')}</li>
-              <li className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded cursor-pointer ${activeSection === 'services' ? 'text-yellow-v2' : ''}`} onClick={() => scrollToSection('services')}>{t('services')}</li>
-              <li className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded cursor-pointer ${activeSection === 'clients' ? 'text-yellow-v2' : ''}`} onClick={() => scrollToSection('clients')}>{t('clients')}</li>
-              <li className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded cursor-pointer ${activeSection === 'faq' ? 'text-yellow-v2' : ''}`} onClick={() => scrollToSection('faq')}>{t('faq')}</li>
+              <li>
+                <Link to="/" className="hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors">
+                  الرئيسية
+                </Link>
+              </li>
+              {hiddenMarketLinks.map(link => (
+                <li key={link.to}>
+                  <a
+                    href={link.to}
+                    onClick={(e) => handleScroll(e, link.to)}
+                    className="hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors cursor-pointer"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </>
           ) : (
             <>
-              <li className='hover:text-yellow-v2 px-3 py-2 font-bold rounded'><Link to="/#home">{t('home')}</Link></li>
-              <li className='hover:text-yellow-v2 px-3 py-2 font-bold rounded'><Link to="/#about">{t('about')}</Link></li>
-              <li className='hover:text-yellow-v2 px-3 py-2 font-bold rounded'><Link to="/#services">{t('services')}</Link></li>
-              <li className='hover:text-yellow-v2 px-3 py-2 font-bold rounded'><Link to="/#clients">{t('clients')}</Link></li>
-              <li className='hover:text-yellow-v2 px-3 py-2 font-bold rounded'><Link to="/#faq">{t('faq')}</Link></li>
+              <li>
+                <Link to="/" className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors ${isActive('/') ? 'text-yellow-v2' : ''}`}>
+                  الرئيسية
+                </Link>
+              </li>
+              {courseLinks.map(link => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors ${isActive(link.to) ? 'text-yellow-v2' : ''}`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link to="/contact" className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors ${isActive('/contact') ? 'text-yellow-v2' : ''}`}>
+                  تواصل معنا
+                </Link>
+              </li>
             </>
           )}
         </ul>
 
-        {/* Mobile Menu */}
-        <div className={`fixed top-0 left-0 h-screen w-64 bg-primary shadow-2xl transform transition-transform duration-300 ease-in-out lg:hidden z-50 ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}>
-          <div className='h-[90px] flex items-center px-6'>
-            <Link to="/" onClick={closeMenu}><img src="/images/logo.png" className='h-8 cursor-pointer' alt="" /></Link>
+        {/* Desktop CTA */}
+        <div className='hidden lg:flex items-center gap-2'>
+          <a
+            href="https://wa.me/201097828846"
+            target="_blank"
+            rel="noopener noreferrer"
+            className='bg-yellow text-white px-4 py-2 rounded cursor-pointer text-base font-bold hover:bg-yellow-v2 transition-colors'
+          >
+            سجّل دلوقتي
+          </a>
+        </div>
+
+        {/* Mobile Menu Drawer */}
+        <div className={`fixed top-0 left-0 h-screen w-64 shadow-2xl transform transition-transform duration-300 ease-in-out lg:hidden z-50 ${
+          isHiddenMarket ? 'bg-[#0A2552]' : 'bg-primary'
+        } ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+          <div className='h-[90px] flex items-center px-6 border-b border-white/5'>
+            {isHiddenMarket ? (
+              <img src="/Logo_Hidden.svg" className='h-8 cursor-pointer object-contain' alt="The Hidden Market Masterclass" onClick={closeMenu} />
+            ) : (
+              <img src="/images/logo.png" className='h-8 cursor-pointer object-contain' alt="HRians Egypt" onClick={closeMenu} />
+            )}
           </div>
-          <ul className='flex flex-col p-6 space-y-4'>
-            {location.pathname === '/' ? (
+          <ul className='flex flex-col p-6 space-y-2'>
+            {isHiddenMarket ? (
               <>
-                <li className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors cursor-pointer ${activeSection === 'home' ? 'text-yellow-v2' : ''}`} onClick={() => scrollToSection('home')}>{t('home')}</li>
-                <li className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors cursor-pointer ${activeSection === 'about' ? 'text-yellow-v2' : ''}`} onClick={() => scrollToSection('about')}>{t('about')}</li>
-                <li className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors cursor-pointer ${activeSection === 'services' ? 'text-yellow-v2' : ''}`} onClick={() => scrollToSection('services')}>{t('services')}</li>
-                <li className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors cursor-pointer ${activeSection === 'clients' ? 'text-yellow-v2' : ''}`} onClick={() => scrollToSection('clients')}>{t('clients')}</li>
-                <li className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors cursor-pointer ${activeSection === 'faq' ? 'text-yellow-v2' : ''}`} onClick={() => scrollToSection('faq')}>{t('faq')}</li>
+                <li>
+                  <Link to="/" onClick={closeMenu} className="block px-3 py-2 font-bold rounded transition-colors hover:text-yellow-v2">
+                    الرئيسية
+                  </Link>
+                </li>
+                {hiddenMarketLinks.map(link => (
+                  <li key={link.to}>
+                    <a
+                      href={link.to}
+                      onClick={(e) => handleScroll(e, link.to)}
+                      className="block px-3 py-2 font-bold rounded transition-colors hover:text-yellow-v2 cursor-pointer"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
               </>
             ) : (
               <>
-                <li className='hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors'><Link to="/#home" onClick={closeMenu}>{t('home')}</Link></li>
-                <li className='hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors'><Link to="/#about" onClick={closeMenu}>{t('about')}</Link></li>
-                <li className='hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors'><Link to="/#services" onClick={closeMenu}>{t('services')}</Link></li>
-                <li className='hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors'><Link to="/#clients" onClick={closeMenu}>{t('clients')}</Link></li>
-                <li className='hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors'><Link to="/#faq" onClick={closeMenu}>{t('faq')}</Link></li>
+                <li>
+                  <Link to="/" onClick={closeMenu} className={`block px-3 py-2 font-bold rounded transition-colors hover:text-yellow-v2 ${isActive('/') ? 'text-yellow-v2' : ''}`}>
+                    الرئيسية
+                  </Link>
+                </li>
+                {courseLinks.map(link => (
+                  <li key={link.to}>
+                    <Link
+                      to={link.to}
+                      onClick={closeMenu}
+                      className={`block px-3 py-2 font-bold rounded transition-colors hover:text-yellow-v2 ${isActive(link.to) ? 'text-yellow-v2' : ''}`}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+                <li>
+                  <Link to="/contact" onClick={closeMenu} className={`block px-3 py-2 font-bold rounded transition-colors hover:text-yellow-v2 ${isActive('/contact') ? 'text-yellow-v2' : ''}`}>
+                    تواصل معنا
+                  </Link>
+                </li>
               </>
             )}
-            <li className='border-t border-white/20 pt-4'>
-              <button onClick={() => { toggleLang(); closeMenu(); }} className='text-white flex items-center px-3 py-2 rounded hover:text-yellow-v2 transition-colors w-full'>
-                <img src="/Languages.svg" alt="" className='ml-2' />{i18n.language === 'ar' ? 'العربية' : 'English'}
-              </button>
-            </li>
-            <li>
-              <Link to="/contact" onClick={closeMenu} className='bg-yellow text-white px-6 py-2 rounded font-medium hover:bg-yellow-v2 transition-colors w-full block text-center'>{t('contact')}</Link>
+            <li className='pt-4'>
+              <a
+                href="https://wa.me/201097828846"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMenu}
+                className='bg-yellow text-white px-6 py-2 rounded font-bold hover:bg-yellow-v2 transition-colors w-full block text-center'
+              >
+                سجّل دلوقتي
+              </a>
             </li>
           </ul>
         </div>
 
-        {/* Desktop Language & Contact */}
-        <div className='hidden lg:flex items-center gap-2'>
-          <button onClick={toggleLang} className='text-white flex items-center px-4 py-2 rounded cursor-pointer font-bold hover:text-yellow-v2'>
-            {i18n.language === 'ar' ? 'العربية' : 'English'}
-            <img src="/Languages.svg" alt="" className='ml-2' />
-          </button>
-          <Link to="/contact" className='bg-yellow text-white px-4 py-2 rounded cursor-pointer text-xl font-medium hover:bg-yellow-v2'>{t('contact')}</Link>
-        </div>
-        
         {/* Burger Button */}
         <button onClick={() => setIsOpen(!isOpen)} className='lg:hidden text-white z-50'>
           <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
@@ -146,7 +191,6 @@ function Navbar() {
         </button>
       </div>
     </nav>
-
   )
 }
 

@@ -46,12 +46,10 @@ const Feedback = () => {
         '/images/Feedback/23.webp',
         '/images/Feedback/24.webp',
         '/images/Feedback/25.webp',
-
-    
     ]
 
     const openPreview = (index: number) => {
-        if (index === activeSlide) {
+        if (isMobile || index === activeSlide) {
             setCurrentImage(index)
             setIsOpen(true)
         }
@@ -82,23 +80,33 @@ const Feedback = () => {
         afterChange: (current: number) => setActiveSlide(current)
     }
 
-    return (
-        <section className="feedback bg-[url('/images/Feedback-Background.jpg')] bg-cover bg-center min-h-screen py-16 flex flex-col justify-center items-center relative">
-            <h1 className="title text-white text-3xl md:text-5xl font-bold mb-8">{t('feedbackTitle')}</h1>
-            
-            <div className="container mx-auto px-4 md:px-20">
-                <Slider {...settings}>
-                    {feedbacks.map((feedback, index) => (
-                        <div key={index} className="px-2 md:px-4">
-                            <img 
-                                className="w-full max-w-[400px] h-[300px] md:h-[400px] object-cover rounded-2xl mx-auto transition-all duration-300 cursor-pointer"
-                                src={feedback}
-                                alt="feedback"
-                                onClick={() => openPreview(index)}
-                            />
-                        </div>
-                    ))}
-                </Slider>
+  return (
+        <section className="feedback bg-[linear-gradient(135deg,#0A2552_0%,#12397A_100%)] min-h-[90vh] py-20 flex flex-col justify-center items-center relative overflow-hidden">
+            <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-5 mix-blend-overlay pointer-events-none" />
+            <div className="absolute -top-20 -left-14 h-72 w-72 rounded-full bg-yellow/10 blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-20 -right-14 h-72 w-72 rounded-full bg-yellow-v2/10 blur-3xl pointer-events-none" />
+
+            <div className="relative z-10 w-full">
+                <h1 className="title text-white text-3xl md:text-5xl font-bold mb-2">{t('feedbackTitle')}</h1>
+                <p className="text-center text-white/85 text-base md:text-lg px-4 max-w-3xl mx-auto mb-10">
+                    نتائج حقيقية من ناس طبقت وخدت خطوات قوية في السوق
+                </p>
+
+                <div className="container mx-auto px-4 md:px-20 feedback-slider">
+                    <Slider {...settings}>
+                        {feedbacks.map((feedback, index) => (
+                            <div key={index} className="px-2 md:px-4">
+                                <img
+                                    className="w-full max-w-[400px] h-[300px] md:h-[400px] object-cover rounded-2xl mx-auto transition-all duration-300 cursor-pointer"
+                                    src={feedback}
+                                    alt="feedback"
+                                    onClick={() => openPreview(index)}
+                                />
+                            </div>
+                        ))}
+                    </Slider>
+                    <p className="text-center text-white/70 text-sm mt-5">اضغط على الصورة لعرضها بالحجم الكامل</p>
+                </div>
             </div>
 
             {isOpen && (
@@ -144,40 +152,48 @@ const Feedback = () => {
             )}
 
             <style>{`
-                .slick-slide {
+                .feedback-slider .slick-slide {
                     opacity: 0.5;
                     transform: scale(0.85);
                     transition: all 0.5s ease;
                 }
-                .slick-center {
+                .feedback-slider .slick-center {
                     opacity: 1;
                     transform: scale(1);
                 }
-                .slick-center img {
+                .feedback-slider .slick-center img {
                     border: 4px solid #EFB61B ;
                 }
-                .slick-prev, .slick-next {
+
+                .feedback-slider .slick-prev,
+                .feedback-slider .slick-next {
                     width: 50px;
                     height: 50px;
                     background: #EF8A1B;
                     border-radius: 50%;
                     z-index: 10;
                 }
-                .slick-prev:hover, .slick-next:hover {
+
+                .feedback-slider .slick-prev:hover,
+                .feedback-slider .slick-next:hover {
                     background: #EFB61B;
                 }
-                .slick-prev {
+
+                .feedback-slider .slick-prev {
                     left: 0;
                 }
-                .slick-next {
+
+                .feedback-slider .slick-next {
                     right: 0;
                 }
+
                 @media (max-width: 1080px) {
-                    .slick-slide {
+                    .feedback-slider .slick-slide {
                         opacity: 1 !important;
                         transform: scale(1) !important;
                     }
-                    .slick-slide img {
+
+                    .feedback-slider .slick-slide img {
                         border: 4px solid #EFB61B !important;
                     }
                 }

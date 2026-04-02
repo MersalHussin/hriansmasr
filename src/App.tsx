@@ -7,6 +7,8 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Founder from './pages/FounderPage'
 import Contact from './pages/ContactPage'
+import HiddenMarketPage from './pages/HiddenMarketPage'
+import HRRoadmapPage from './pages/HRRoadmapPage'
 import Footer from './components/Footer'
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
           <div className='h-[90px]'></div>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/hidden-market-masterclass" element={<HiddenMarketPage />} />
+        <Route path="/hr-roadmap" element={<HRRoadmapPage />} />
         <Route path="/founder" element={<Founder />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<h1>Error</h1>} />

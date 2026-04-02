@@ -1,93 +1,112 @@
 import { Link } from "react-router-dom"
-import { useTranslation } from 'react-i18next'
-import { useEffect } from 'react'
-import ServiceCard from "../components/ServiceCard"
-import Feedback from "../components/Feedback"
-import FAQ from "../components/FAQ"
-import ClientsSection from "../components/Clients"
-import SEO from '../components/SEO'
-import Course from "../components/Course"
-// import Course from "../components/Course"
+import { useEffect } from "react"
+import SEO from "../components/SEO"
 
 function Home() {
-  const { t } = useTranslation()
-  
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show')
-        }
-      })
-    }, { threshold: 0.1 })
 
-    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el))
-    return () => observer.disconnect()
-  }, [])
-  
   return (
     <>
-    <SEO 
-      title="أتش أرجية مصر | HRians Egypt - استشارات موارد بشرية"
-      description="شركة أتش أرجية مصر تقدم حلول مبتكرة في الموارد البشرية، التدريب المهني، كتابة CV، وتحسين لينكدإن"
-      keywords="موارد بشرية, HR, تدريب مهني, كتابة CV, لينكدإن, استشارات HR"
-    />
-    <section id="home" className="hero flex items-center bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center min-h-[calc(100vh-90px)] py-10">
-      <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row justify-evenly items-center gap-8">
-        <div className="data w-full md:max-w-[700px]">
-          <div className="text flex flex-col gap-5 justify-center items-center">
-            <img src="/images/Auth.svg" alt="شعار أتش أرجية مصر" className="w-[250px] md:w-[300px]" loading="lazy" />
-            <h1 className="text-primary font-extrabold leading-tight max-w-[400px] md:max-w-full text-[42px] sm:text-[50px] md:text-5xl lg:text-6xl xl:text-7xl text-center">{t('heroTitle')}</h1>
-            <p className="max-w-[500px] text-black-v2 text-lg md:text-xl font-medium text-center">{t('heroDesc')}</p>
+      <SEO
+        title="أتش أرجية مصر | HRians Egypt - كورسات موارد بشرية"
+        description="اختر الكورس المناسب لك من كورسات أتش أرجية مصر في الموارد البشرية"
+        keywords="موارد بشرية, HR, كورس, تدريب مهني"
+      />
+      <section className="relative min-h-[calc(100vh-90px)] overflow-hidden py-16 px-4 bg-[radial-gradient(circle_at_15%_20%,rgba(239,138,27,0.18),transparent_45%),radial-gradient(circle_at_85%_20%,rgba(28,84,179,0.2),transparent_35%),linear-gradient(180deg,#ffffff_0%,#f7f9ff_100%)]">
+        <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-10" />
+        <div className="absolute -top-16 left-0 h-72 w-72 rounded-full bg-primary/15 blur-3xl" />
+        <div className="absolute -bottom-16 right-0 h-72 w-72 rounded-full bg-yellow/20 blur-3xl" />
+
+        <div className="relative z-10 mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <img src="/images/Auth.svg" alt="HRians Egypt" className="w-[200px] md:w-[260px] mx-auto mb-6" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white/80 px-4 py-2 text-sm font-bold text-primary mb-4">
+              برامج احترافية بتقودك للشغل الحقيقي
+            </span>
+            <h1 className="text-primary font-extrabold text-4xl md:text-6xl mb-4 leading-tight">
+              اختار البرنامج اللي هيعمل
+              <span className="text-yellow block md:inline md:mr-2">نقلة في كاريرك</span>
+            </h1>
+            <p className="text-black-v2 text-lg md:text-xl font-medium max-w-[620px] mx-auto leading-relaxed">
+              مسارات عملية + تطبيقات واقعية + دعم مباشر علشان توصل أسرع للنتيجة اللي مستنيها
+            </p>
           </div>
-          <div className="buttons flex flex-col md:flex-row gap-4 mt-6 justify-center  items-center">
-            <button onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })} className="bg-primary font-semibold border-3 border-primary p-3 px-10 text-xl md:text-2xl text-white rounded-xl w-full md:w-auto text-center cursor-pointer">{t('explore')}</button>
-            <Link to="/contact" className="border-3 border-primary font-semibold p-3 px-8 text-xl md:text-2xl text-primary rounded-xl w-full md:w-auto text-center">{t('contact')}</Link>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+            <Link
+              to="/hidden-market-masterclass"
+              className="group relative overflow-hidden rounded-4xl border border-white/40 bg-white/85 backdrop-blur-xl shadow-[0_30px_80px_-35px_rgba(28,84,179,0.55)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_35px_90px_-30px_rgba(28,84,179,0.75)]"
+            >
+              <div className="absolute inset-0 bg-[linear-gradient(135deg,#1C54B3_0%,#163f85_50%,#0f2d5f_100%)]" />
+              <div className="absolute -top-16 -left-8 h-44 w-44 rounded-full bg-yellow/35 blur-3xl" />
+              <div className="absolute bottom-0 right-0 h-48 w-48 rounded-full bg-white/10 blur-2xl" />
+
+              <div className="relative p-8 flex flex-col min-h-[340px] justify-between text-center">
+                <div>
+                  <div className="bg-yellow text-white text-sm font-extrabold px-4 py-1 rounded-full mb-4 inline-block shadow-lg shadow-yellow/30">
+                    🔥 الأكثر طلباً
+                  </div>
+                  <h2 className="text-white font-extrabold text-3xl leading-tight mb-3">
+                    The Hidden Market
+                    <span className="block text-yellow-v2">Masterclass</span>
+                  </h2>
+                  <p className="text-white/85 text-base leading-relaxed">
+                    تعلم أسرار الوصول للوظائف غير المعلنة وازاي تخلي الفرص هي اللي تدور عليك
+                  </p>
+                </div>
+
+                <div className="mt-8 inline-flex items-center justify-center gap-2 bg-yellow text-white font-extrabold px-8 py-3 rounded-xl text-lg transition-all duration-300 group-hover:bg-yellow-v2 group-hover:scale-105">
+                  ابدأ دلوقتي
+                  <span aria-hidden="true">←</span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              to="/hr-roadmap"
+              className="group relative overflow-hidden rounded-4xl border border-white/60 bg-white/85 backdrop-blur-xl shadow-[0_30px_80px_-35px_rgba(239,138,27,0.55)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_35px_90px_-30px_rgba(239,138,27,0.75)]"
+            >
+              <div className="absolute inset-0 bg-[linear-gradient(145deg,#EF8A1B_0%,#EFB61B_70%,#ffc95e_100%)]" />
+              <div className="absolute -bottom-14 -right-8 h-44 w-44 rounded-full bg-primary/30 blur-3xl" />
+
+              <div className="relative p-8 flex flex-col min-h-[340px] justify-between text-center">
+                <div>
+                  <div className="bg-primary text-white text-sm font-extrabold px-4 py-1 rounded-full mb-4 inline-block">
+                    🗺️ خطوة بخطوة
+                  </div>
+                  <h2 className="text-white font-extrabold text-3xl leading-tight mb-3">HR Roadmap</h2>
+                  <p className="text-white/90 text-base leading-relaxed">
+                    خطة تدريب عملية من الصفر للاحتراف بكل الأدوات اللي محتاجها عشان تبدأ صح
+                  </p>
+                </div>
+
+                <div className="mt-8 inline-flex items-center justify-center gap-2 bg-primary text-white font-extrabold px-8 py-3 rounded-xl text-lg transition-all duration-300 group-hover:bg-primary/90 group-hover:scale-105">
+                  اعرف أكتر
+                  <span aria-hidden="true">←</span>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-black-v2 font-medium mb-3">مش عارف تختار؟</p>
+            <a
+              href="https://wa.me/201097828846"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#25D366] text-white font-bold px-7 py-3.5 rounded-xl hover:bg-[#1ebe5d] transition-all duration-300 hover:scale-105 shadow-lg shadow-[#25D366]/30"
+            >
+              <i className="fa-brands fa-whatsapp text-xl" />
+              تواصل معنا على واتساب
+            </a>
           </div>
         </div>
-        <div className="image w-full md:max-w-[1000px]">
-          <img src="/images/Mr Ahmed Hero.webp" alt="أحمد ناجي الدخميسي - خبير موارد بشرية" className="w-full" loading="eager" />
-        </div>
-      </div>
-    </section>  
-    <section id="about" className="about py-16">
-      <h1 className="title text-primary text-center text-3xl md:text-5xl mb-8 animate-on-scroll fade-in-up">{t('aboutTitle')}</h1>
-      <div className="container max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-evenly items-center gap-8">
-        <div className="image w-full md:w-auto animate-on-scroll fade-in-up md:fade-in-left">
-          <img className="rounded-4xl w-full md:w-[600px] rounded-tl-sm border-primary border-5" src="/images/about-image.webp" alt="فريق أتش أرجية مصر" loading="lazy" />
-        </div>
-        <div className="max-w-[600px] w-full animate-on-scroll fade-in-up md:fade-in-right">
-          <h1 className="text-2xl md:text-3xl font-extrabold text-primary">{t('aboutHeading')}</h1>
-          <p className="text-lg md:text-xl mt-2 font-semibold text-black-v2">{t('aboutDesc')}</p>
-          <Link className="bg-yellow block w-fit mt-3 py-3 px-6 text-white rounded-md text-lg md:text-xl font-semibold" to="/founder">{t('founder')}</Link>
-        </div>
-      </div>
-    </section>  
-    <section id="services" className="services">
-      <h1 className="title text-primary animate-on-scroll fade-in-up">{t('servicesTitle')}</h1>
-      <div className="container mx-auto max-w-7xl px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.1s'}}><ServiceCard image="/images/Services/Training Coruse.webp" titleAr="برامج تدريب متكاملة لتطوير مهارات فرق العمل داخل الشركات." titleEn="Corporate Training Solutions" /></div>
-        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.5s'}}><ServiceCard image="/images/Services/Training Cor2.webp" titleAr="برنامج تدريبي عملي يمشي معاك خطوة بخطوة في طريق الموارد البشرية" titleEn="HR Roadmap Program" customWhatsapp="https://wa.me/201097828846" /></div>
-        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.2s'}}><ServiceCard image="/images/Services/Component 5.webp" titleAr="استشارات موارد بشرية لبناء أنظمة ولوائح فعالة تدعم نمو الشركة." titleEn="HR Consulting" /></div>
-        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.3s'}}><ServiceCard image="/images/Services/Career Coaching.webp" titleAr="جلسات توجيه مهني تساعد الأفراد على رسم مسار وظيفي ناجح." titleEn="Career Coaching" /></div>
-        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.4s'}}><ServiceCard image="/images/Services/6.webp" titleAr="كتابة سيرة ذاتية احترافية تبرز قدراتك وخبراتك بشكل مثالي." titleEn="CV Writing" /></div>
-        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.5s'}}><ServiceCard image="/images/Services/1.webp" titleAr="تحسين حسابك على لينكدإن ليعكس خبرتك ويزيد فرص ظهورك للوظائف." titleEn="LinkedIn Optimization" /></div>
-        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.5s'}}><ServiceCard image="/images/Services/Students & Fresh Graduates.webp" titleAr="أساعدك تحدد طريقك بدري، وتبني ملف شخصي محترم، وتبدأ رحلتك المهنية بثقة بدل ما تضيع وقتك في تجارب عشوائية." titleEn="Personal Branding Consultation"  subtitle=" Students & Fresh Graduates" /></div>
-        <div className="animate-on-scroll fade-in-up" style={{animationDelay: '0.5s'}}><ServiceCard image="/images/Services/Business Owners.webp" titleAr="موجهة للقادة والإداريين الكبار وأصحاب الشركات لبناء علامة شخصية قيادية تعكس خبرتك وتزود تأثيرك أمام العملاء" titleEn="Personal Branding Consultation" subtitle="Executives, Business Owners & Providers" /></div>
-      </div>
-      </section>  
-      <div className=""><Course/></div>
-      {/* Feedback Section */}
-      <div id="clients" className="animate-on-scroll fade-in-up"><Feedback/></div>
-      <div className="animate-on-scroll fade-in-up"><ClientsSection/></div>
-      <div id="faq" className="animate-on-scroll fade-in-up"><FAQ/></div>
-   
+      </section>
     </>
   )
 }
 
 export default Home
+  

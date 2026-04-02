@@ -43,9 +43,9 @@
   transform: scale(0.85) rotate(3deg);
 }
 
-section{
+/* section{
   margin-bottom: 50px;
-}
+} */
 
 /* Animations */
 .animate-on-scroll {
