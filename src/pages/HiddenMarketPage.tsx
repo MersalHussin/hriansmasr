@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 import SEO from "../components/SEO"
-import Feedback from "../components/Feedback"
+// import Feedback from "../components/Feedback"
 import ReelsFeedback from "../components/ReelsFeedback"
 import { t } from "i18next"
 
@@ -48,20 +48,48 @@ const courseStages = [
 ]
 
 const outcomes = [
-  "توصل لوظائف مش بتتعلن للعامة",
-  "تبني شبكة علاقات مهنية قوية",
-  "تحوّل LinkedIn لمصدر فرص حقيقي",
-  "تعرف تتواصل مع decision makers",
-  "تبني Personal Brand مميزة",
-  "تحصل على عروض وظيفية بدون تقديم",
+  { text: "توصل لوظائف مش بتتعلن للعامة", icon: "fa-solid fa-briefcase" },
+  { text: "تبني شبكة علاقات مهنية قوية", icon: "fa-solid fa-users" },
+  { text: "تحوّل LinkedIn لمصدر فرص حقيقي", icon: "fa-brands fa-linkedin-in" },
+  { text: "تعرف تتواصل مع decision makers", icon: "fa-solid fa-handshake" },
+  { text: "تبني Personal Brand مميزة", icon: "fa-solid fa-star" },
+  { text: "تحصل على عروض وظيفية بدون تقديم", icon: "fa-solid fa-envelope-open-text" },
 ]
 
-const stats = [
-  { num: "+500", label: "خريج ناجح" },
-  { num: "70%", label: "من الوظائف مخفية" },
-  { num: "+8", label: "ساعات محتوى" },
-  { num: "4.9★", label: "تقييم الكورس" },
+const features = [
+  {
+    icon: "fa-solid fa-briefcase",
+    title: "محتوى حصري للمحترفين",
+    desc: "تدريب عملي 100% مصمم خصيصاً لأصحاب الخبرات والمناصب لتجاوز الطرق التقليدية في التوظيف، والدخول مباشرة في دائرة صناع القرار."
+  },
+  {
+    icon: "fa-solid fa-user-secret",
+    title: "اختراق السوق الخفي",
+    desc: "تعلم استراتيجيات الوصول للوظائف اللي مبتنزلش في إعلانات، وإزاي تخلي الشركات هي اللي تتفاوض معاك مش العكس."
+  },
+  {
+    icon: "fa-solid fa-wand-magic-sparkles",
+    title: "مساعد الـ AI الشخصي",
+    desc: "هتتعلم توظف الذكاء الاصطناعي بشكل احترافي عشان يبنيلك بروفايل قوي ومحتوى يومي بيعكس خبرتك في دقائق."
+  },
+  {
+    icon: "fa-solid fa-file-signature",
+    title: "قوالب (Templates) ونماذج جاهزة",
+    desc: "مش هتبدأ من الصفر. هتاخد Scripts جاهزة للتواصل المباشر مع المديرين التنفيذيين والـ Headhunters بطريقة تضمن الرد."
+  },
+  {
+    icon: "fa-solid fa-handshake-angle",
+    title: "توجيه وتطبيق مباشر",
+    desc: "بتمشي خطوة بخطوة وبتطبق على أرض الواقع عشان تضمن أفضل النتايج لبروفايلك ولشبكة علاقاتك في أسرع وقت."
+  },
+  {
+    icon: "fa-solid fa-money-bill-trend-up",
+    title: "استراتيجيات التسعير والتفاوض",
+    desc: "إزاي تسعّر خبرتك صح، وتسوق لنفسك كـ (استشاري) مش مجرد موظف، وتقفل صفقاتك التفاوضية بقوة وبثقة."
+  }
 ]
+
+
 
 function HiddenMarketPage() {
   const observerRef = useRef<IntersectionObserver | null>(null)
@@ -85,51 +113,79 @@ function HiddenMarketPage() {
       />
 
       {/* ===== HERO ===== */}
-      <section className="relative overflow-hidden min-h-[calc(100vh-90px)] flex items-center bg-[linear-gradient(135deg,#0A2552_0%,#12397A_100%)] pt-[90px]">
+      <section className="relative overflow-hidden min-h-[calc(100vh-90px)] flex items-center bg-[linear-gradient(135deg,var(--color-brand-dark)_0%,var(--color-brand-light)_100%)] pt-[90px]">
+        {/* Abstract Background Elements */}
         <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-5 mix-blend-overlay" />
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-yellow/15 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[420px] h-[420px] bg-yellow-v2/15 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl pointer-events-none" />
-        <div className="absolute top-1/3 right-1/3 w-56 h-56 rounded-full border border-white/10" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,var(--color-brand-dark)_100%)] opacity-80" />
+        
+        {/* Glow Spheres */}
+        <div className="absolute top-20 left-10 w-[600px] h-[600px] bg-yellow/10 rounded-full blur-[120px] pointer-events-none mix-blend-screen" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/30 rounded-full blur-[100px] pointer-events-none mix-blend-screen" />
 
-        <div className="container mx-auto px-4 py-16 flex flex-col items-center justify-center gap-12 relative z-10">
-          <div className="text-center max-w-4xl mx-auto flex flex-col items-center">
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_10%,transparent_100%)] pointer-events-none" />
+
+        <div className="container mx-auto px-4 py-20 flex flex-col items-center justify-center gap-12 relative z-10">
+          <div className="text-center max-w-5xl mx-auto flex flex-col items-center">
             
-            <span className="inline-block bg-white/10 backdrop-blur-sm border border-white/20 text-white font-bold text-sm px-5 py-2 rounded-full mb-8 shadow-xl shadow-black/10">
-              🔥 البرنامج التدريبي الأكثر طلباً في مصر
-            </span>
+            {/* Executive Badge */}
+            <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 px-6 py-2.5 rounded-full mb-10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)] transform transition-transform hover:scale-105">
+              <span className="flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-2.5 w-2.5 rounded-full bg-yellow opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-yellow-v2"></span>
+              </span>
+              <span className="text-white/90 font-bold text-sm tracking-wide">البرنامج التنفيذي الحصري للمحترفين وأصحاب الخبرات</span>
+            </div>
 
+            {/* Logo */}
             <img 
               src="/Logo_Hidden.svg" 
               alt="The Hidden Market Masterclass Logo" 
-              className="w-full max-w-[650px] md:max-w-[800px] object-contain drop-shadow-2xl mb-8 hover:scale-105 transition-transform duration-700" 
+              className="w-full max-w-[600px] md:max-w-[750px] object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] mb-6" 
             />
             
-            <p className="text-white/90 text-xl md:text-2xl leading-relaxed mb-10 max-w-3xl font-medium">
-              اكتشف السوق الخفي للوظائف وتعلم كيف توصل للفرص اللي مش بتتعلن — وكن الخيار الأول لصناع القرار
+            {/* Main Promise */}
+            {/* <p className="text-yellow-v2 text-2xl md:text-3xl font-black mb-6 drop-shadow-md">
+              يوم واحد تدريبي (٦ ساعات) هينقلك في حتة تانية في مسارك المهني!
+            </p> */}
+            
+            {/* Subtitle */}
+            <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-12 max-w-3xl font-medium">
+              أعد صياغة تواجدك المهني، اخترق "السوق الخفي" للوظائف غير المعلنة، وتعلم المهارات لتصبح الخيار الأول لكبار صناع القرار بعيداً عن الطرق التقليدية.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-3 mb-12">
-              {["Mentorship مباشر", "Templates جاهزة", "استراتيجيات تطبيق فوري"].map((item) => (
-                <span key={item} className="bg-yellow/20 border border-yellow/40 text-yellow-v2 px-5 py-2.5 rounded-full text-base font-bold backdrop-blur-sm">
-                  {item}
-                </span>
+            {/* Core Pillars */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-14 w-full max-w-3xl">
+              {[
+                { icon: "fa-solid fa-user-tie", text: "استشارات تنفيذية" },
+                { icon: "fa-solid fa-network-wired", text: "بناء شبكة نفوذ" },
+                { icon: "fa-solid fa-handshake", text: "تفاوض احترافي" }
+              ].map((item) => (
+                <div key={item.text} className="flex flex-col items-center justify-center gap-3 bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-4 hover:bg-white/10 hover:border-yellow/20 transition-all duration-300 shadow-xl">
+                  <i className={`${item.icon} text-yellow-v2 text-2xl drop-shadow-md`} />
+                  <span className="text-white/90 text-sm md:text-base font-bold tracking-wide">{item.text}</span>
+                </div>
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-5 justify-center">
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-5 justify-center w-full max-w-lg">
               <a
                 href="https://wa.me/201097828846"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-yellow hover:bg-yellow-v2 text-white font-extrabold text-xl px-12 py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-xl shadow-yellow/30 flex items-center justify-center gap-2"
+                className="group relative flexitems-center justify-center bg-gradient-to-r from-yellow to-yellow-v2 text-[var(--color-brand-dark)] font-extrabold text-xl px-10 py-4 rounded-xl overflow-hidden shadow-[0_15px_30px_-10px_rgba(239,138,27,0.5)] transition-all duration-300 hover:scale-[1.02]"
               >
-                سجّل دلوقتي <i className="fa-brands fa-whatsapp text-2xl" />
+                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+                <span className="relative flex items-center justify-center gap-3">
+                 سجل دلوقتي <i className="fa-brands fa-whatsapp text-2xl" />
+                </span>
               </a>
               <button
                 onClick={() => document.getElementById("modules")?.scrollIntoView({ behavior: "smooth" })}
-                className="border-2 border-white/30 bg-white/5 backdrop-blur-sm text-white font-bold text-xl px-12 py-4 rounded-xl hover:bg-white/10 hover:border-white/50 transition-all duration-300"
+                className="group flex items-center justify-center border border-white/20 bg-white/5 backdrop-blur-md text-white font-bold text-xl px-10 py-4 rounded-xl hover:bg-white/10 hover:border-white/40 transition-all duration-300"
               >
-                اكتشف المحتوى ↓
+                  المحتوى  <i className="fa-solid fa-arrow-down ml-3 mr-3 text-sm group-hover:translate-y-1 transition-transform" />
               </button>
             </div>
           </div>
@@ -137,37 +193,25 @@ function HiddenMarketPage() {
       </section>
 
       {/* ===== About Ahmed Nagy ===== */}
-      <section className="about-founder py-20 bg-[linear-gradient(135deg,#0A2552_0%,#12397A_100%)] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-5 mix-blend-overlay pointer-events-none" />
-        <h1 className="title text-white relative z-10">{t('founderPageTitle')}</h1>
+      <section className="about-founder py-20 bg-slate-50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-[0.03] pointer-events-none grayscale" />
+        <h1 className="title text-[var(--color-brand-dark)] relative z-10">{t('founderPageTitle')}</h1>
         <div className="container max-w-7xl mx-auto px-4 flex flex-col-reverse md:flex-row justify-evenly items-center gap-8 relative z-10">
           <div className="max-w-[600px] w-full">
-            <h1 className="text-2xl md:text-3xl font-extrabold text-yellow-v2">{t('founderName')}</h1>
-            <p className="text-base md:text-lg lg:text-xl mt-4 font-semibold text-white/80 leading-relaxed">{t('founderBio')}</p>
+            <h1 className="text-2xl md:text-3xl font-black text-[var(--color-brand-dark)]">{t('founderName')}</h1>
+            <p className="text-base md:text-lg lg:text-xl mt-4 font-bold text-slate-600 leading-relaxed">{t('founderBio')}</p>
           </div>
           <div className="image w-full md:w-auto relative">
-            <div className="absolute -inset-4 bg-yellow/20 rounded-4xl rounded-br-sm blur-xl z-0" />
-            <img className="relative z-10 rounded-4xl w-full md:w-[600px] rounded-br-sm border-yellow/50 border-4 shadow-2xl" src="/images/TV/3.webp" alt="صورة للمؤسس في الراديو 90:90" />
+            <div className="absolute -inset-4 bg-[var(--color-brand-dark)]/10 rounded-4xl rounded-br-sm blur-xl z-0" />
+            <img className="relative z-10 rounded-4xl w-full md:w-[600px] rounded-br-sm border-white border-4 shadow-2xl" src="/images/TV/3.webp" alt="صورة للمؤسس في الراديو 90:90" />
           </div>
         </div>
       </section>
 
-      {/* ===== STATS ===== */}
-      <section id="stats" className="bg-yellow py-10 relative z-20 shadow-xl">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {stats.map((s, i) => (
-              <div key={i} className="animate-on-scroll fade-in-up" style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className="text-white font-extrabold text-4xl md:text-5xl">{s.num}</div>
-                <div className="text-white/90 font-semibold text-base mt-1">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* ===== PROBLEM ===== */}
-      <section id="problem" className="py-24 bg-[linear-gradient(135deg,#12397A_0%,#0A2552_100%)] relative overflow-hidden">
+      <section id="problem" className="py-24 bg-[linear-gradient(135deg,var(--color-brand-light)_0%,var(--color-brand-dark)_100%)] relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-5 mix-blend-overlay pointer-events-none" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[100px] pointer-events-none" />
         
@@ -196,7 +240,7 @@ function HiddenMarketPage() {
           </div>
           <div className="mt-16 animate-on-scroll fade-in-up">
             <div className="inline-block bg-gradient-to-r from-yellow/20 via-yellow-v2/20 to-yellow/20 p-[1px] rounded-2xl">
-              <div className="bg-[#0A2552] backdrop-blur-xl rounded-2xl px-8 py-5">
+              <div className="bg-[var(--color-brand-dark)] backdrop-blur-xl rounded-2xl px-8 py-5">
                 <p className="text-yellow-v2 font-extrabold text-2xl md:text-3xl">
                   الكورس ده هيغير طريقة تفكيرك في البحث عن الشغل 💡
                 </p>
@@ -206,8 +250,54 @@ function HiddenMarketPage() {
         </div>
       </section>
 
-      {/* ===== MODULES ===== */}
-      <section id="modules" className="py-24 bg-[linear-gradient(135deg,#1C54B3_0%,#12397A_45%,#0A2552_100%)] relative overflow-hidden">
+      {/* ===== FEATURES ===== */}
+      <section id="features" className="py-24 bg-slate-50 relative overflow-hidden text-right" dir="rtl">
+        <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-[0.03] pointer-events-none grayscale" />
+        <div className="absolute -top-32 -left-32 w-80 h-80 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-1/4 -right-20 w-64 h-64 bg-yellow/10 rounded-full blur-[80px] pointer-events-none" />
+        
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+          <div className="text-center mb-16 animate-on-scroll fade-in-up">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-brand-dark)]/20 bg-[var(--color-brand-dark)]/5 px-4 py-2 text-sm font-bold text-[var(--color-brand-dark)] mb-4">
+              <i className="fa-solid fa-star text-yellow-v2"></i> القيم المضافة
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black text-[var(--color-brand-dark)] mb-4">
+              ايه اللي بيميز <span className="text-primary">The Hidden Market</span>؟
+            </h2>
+            <div className="w-24 h-1.5 bg-[var(--color-brand-dark)] rounded-full mx-auto" />
+            <p className="text-slate-600 max-w-2xl mx-auto text-lg mt-6 font-bold">
+              الأسلوب والأدوات اللي هتغير مفهومك عن البحث عن فرص العمل، من الانتظار السلبي إلى الاستهداف المباشر لصناع القرار.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {features.map((feature, i) => (
+              <div 
+                key={i}
+                className="animate-on-scroll fade-in-up group flex flex-col bg-white border border-slate-200 p-8 rounded-3xl transition-all duration-300 hover:-translate-y-2 hover:border-[var(--color-brand-dark)]/30 hover:shadow-[0_20px_40px_-20px_rgba(10,37,82,0.15)] relative overflow-hidden"
+                style={{ animationDelay: `${i * 0.1}s` }}
+              >
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-slate-100 to-transparent rounded-bl-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
+                
+                <div className="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center mb-6 shadow-sm group-hover:bg-[var(--color-brand-dark)] group-hover:border-[var(--color-brand-dark)] transition-all duration-300">
+                  <i className={`${feature.icon} text-2xl text-[var(--color-brand-dark)] group-hover:text-yellow-v2 transition-colors duration-300`} />
+                </div>
+                
+                <h3 className="text-[var(--color-brand-dark)] font-extrabold text-xl mb-3 relative z-10">
+                  {feature.title}
+                </h3>
+                
+                <p className="text-slate-600 text-base leading-relaxed font-bold relative z-10">
+                  {feature.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== MODULES (TIMELINE) ===== */}
+      <section id="modules" className="py-24 bg-[linear-gradient(135deg,#1C54B3_0%,var(--color-brand-light)_45%,var(--color-brand-dark)_100%)] relative overflow-hidden text-right" dir="rtl">
         {/* Background Details */}
         <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-5 mix-blend-overlay pointer-events-none" />
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-yellow/10 rounded-full blur-[100px] pointer-events-none" />
@@ -224,40 +314,40 @@ function HiddenMarketPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="relative max-w-4xl mx-auto before:absolute before:inset-0 before:mr-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-transparent before:via-white/20 before:to-transparent">
             {courseStages.map((stage, i) => (
               <div
                 key={i}
-                className="animate-on-scroll fade-in-up group relative"
+                className="animate-on-scroll fade-in-up relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active mb-12"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
-                {/* Number Badge Background */}
-                <div className="absolute -top-6 -right-6 text-9xl font-black text-white/5 select-none pointer-events-none group-hover:text-yellow/5 transition-colors duration-500 z-0">
-                  0{i + 1}
+                {/* Icon Marker */}
+                <div className="flex items-center justify-center w-12 h-12 rounded-full border-4 border-[var(--color-brand-dark)] bg-gradient-to-br from-yellow to-yellow-v2 text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_15px_rgba(239,138,27,0.5)] z-10 transition-transform duration-500 group-hover:scale-110 ml-0 md:ml-0 mr-[-0.3rem] md:mr-0">
+                  <i className={`${stage.icon} text-xl`} />
                 </div>
                 
                 {/* Card Container */}
-                <div className="relative z-10 h-full flex flex-col bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 transition-all duration-500 hover:bg-white/10 hover:-translate-y-2 hover:shadow-[0_20px_40px_-20px_rgba(239,138,27,0.3)] hover:border-yellow/30">
+                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] relative z-10 flex flex-col bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-8 transition-all duration-500 hover:bg-white/10 hover:-translate-y-2 hover:shadow-[0_20px_40px_-20px_rgba(239,138,27,0.3)] hover:border-yellow/30">
+                  
+                  {/* Number Badge Background */}
+                  <div className="absolute top-2 left-6 text-7xl font-black text-white/5 select-none pointer-events-none group-hover:text-yellow/5 transition-colors duration-500 z-0">
+                    0{i + 1}
+                  </div>
                   
                   {/* Card Header */}
-                  <div className="flex items-start gap-5 mb-8 border-b border-white/10 pb-6">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow to-yellow-v2 flex items-center justify-center shrink-0 shadow-lg shadow-yellow/20 group-hover:scale-110 transition-transform duration-500">
-                      <i className={`${stage.icon} text-white text-3xl`} />
-                    </div>
-                    <div>
-                      <h3 className="font-extrabold text-white text-2xl md:text-3xl mb-2">{stage.title}</h3>
-                      <div className="inline-block bg-white/10 text-yellow text-sm font-bold px-3 py-1 rounded-md">
-                        {stage.subtitle}
-                      </div>
+                  <div className="relative z-10 mb-6 border-b border-white/10 pb-5">
+                    <h3 className="font-extrabold text-white text-2xl md:text-3xl mb-2">{stage.title}</h3>
+                    <div className="inline-block bg-white/10 text-yellow text-sm font-bold px-3 py-1 rounded-md">
+                      {stage.subtitle}
                     </div>
                   </div>
 
                   {/* Card Content (Points) */}
-                  <ul className="flex-1 space-y-4">
+                  <ul className="relative z-10 space-y-4">
                     {stage.points.map((point, idx) => (
                       <li key={idx} className="flex items-start gap-4">
-                        <div className="mt-1.5 w-2 h-2 rounded-full bg-yellow shrink-0 shadow-[0_0_8px_rgba(239,138,27,0.8)]" />
-                        <p className="text-white/80 leading-relaxed text-sm md:text-base">
+                        <div className="mt-2 w-2 h-2 rounded-full bg-yellow shrink-0 shadow-[0_0_8px_rgba(239,138,27,0.8)]" />
+                        <p className="text-white/80 leading-relaxed text-sm md:text-base font-medium">
                           <strong className="text-white ml-2 drop-shadow-sm">{point.highlight}</strong>
                           {point.text}
                         </p>
@@ -272,32 +362,43 @@ function HiddenMarketPage() {
       </section>
 
       {/* ===== OUTCOMES ===== */}
-      <section id="outcomes" className="py-24 bg-[linear-gradient(135deg,#0A2552_0%,#194B9E_100%)] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-10 mix-blend-overlay" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-[500px] bg-yellow/5 rounded-full blur-[120px] pointer-events-none" />
+      <section id="outcomes" className="py-24 bg-slate-50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-[0.03] grayscale pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-[500px] bg-[var(--color-brand-light)]/5 rounded-full blur-[120px] pointer-events-none" />
         
-        <div className="container mx-auto px-4 max-w-5xl relative z-10">
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 animate-on-scroll fade-in-up">
-              هتخرج من الكورس وعندك
+            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-brand-dark)]/20 bg-white px-5 py-2 text-sm font-bold text-[var(--color-brand-dark)] mb-4 shadow-sm animate-on-scroll fade-in-up">
+              🎯 المخرجات
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black text-[var(--color-brand-dark)] mb-6 animate-on-scroll fade-in-up">
+              هتخرج من الكورس وعندك ايه؟
             </h2>
-            <div className="w-24 h-1.5 bg-yellow rounded-full mx-auto animate-on-scroll fade-in-up" style={{ animationDelay: "0.1s" }} />
+            <p className="text-slate-600 max-w-2xl mx-auto text-lg md:text-xl font-bold animate-on-scroll fade-in-up" style={{ animationDelay: "0.1s" }}>
+              كل اللى هتحتاجه عشان تبدأ وتنجح وتطور مسارك المهنى فى مجال الموارد البشرية هتلاقيه مجهز ليك فى الكورس
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {outcomes.map((o, i) => (
               <div
                 key={i}
-                className="animate-on-scroll fade-in-up group relative overflow-hidden"
+                className="animate-on-scroll fade-in-up group bg-white border border-slate-200 rounded-[32px] p-6 md:p-8 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-15px_rgba(10,37,82,0.1)] hover:-translate-y-2 hover:border-[var(--color-brand-light)]/30 transition-all duration-500 relative overflow-hidden flex items-center gap-6"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="flex items-start gap-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full transition-transform hover:-translate-y-1 hover:border-yellow/30">
-                  <div className="w-10 h-10 rounded-xl bg-yellow text-white flex items-center justify-center shrink-0 font-bold text-lg shadow-lg shadow-yellow/20 group-hover:scale-110 transition-transform duration-300">
-                    <i className="fa-solid fa-check" />
-                  </div>
-                  <span className="text-white/90 font-medium text-lg leading-snug mt-1">{o}</span>
+                <div className="absolute inset-0 bg-gradient-to-l from-slate-50/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                
+                <div className="absolute left-[-5%] top-[50%] -translate-y-1/2 text-[10rem] font-black text-slate-50 group-hover:text-[var(--color-brand-light)]/5 transition-colors duration-500 select-none z-0" style={{ fontFamily: 'Calistoga' }}>
+                  {(i + 1).toString().padStart(2, '0')}
                 </div>
+                
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-[1.2rem] bg-gradient-to-br from-[var(--color-brand-dark)] to-[var(--color-brand-light)] text-yellow shadow-xl shadow-[var(--color-brand-dark)]/20 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500 relative z-10">
+                  <i className={`${o.icon} text-3xl md:text-4xl`} />
+                </div>
+                
+                <h3 className="text-[var(--color-brand-dark)] font-black text-xl lg:text-2xl leading-relaxed relative z-10">
+                  {o.text}
+                </h3>
               </div>
             ))}
           </div>
@@ -305,63 +406,123 @@ function HiddenMarketPage() {
       </section>
 
       {/* ===== COURSE IMAGES ===== */}
-      <section id="gallery" className="py-24 bg-[linear-gradient(135deg,#0e2e66_0%,#0A2552_100%)] relative overflow-hidden">
+      <section id="gallery" className="py-24 bg-[linear-gradient(135deg,#0e2e66_0%,var(--color-brand-dark)_100%)] relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-5 mix-blend-overlay pointer-events-none" />
         <div className="absolute top-1/2 left-0 w-80 h-80 bg-primary/20 rounded-full blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
-          <h2 className="title text-yellow-v2 animate-on-scroll fade-in-up drop-shadow-xl">من داخل الكورس</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-12">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
-              <div key={n} className="animate-on-scroll fade-in-up group overflow-hidden rounded-2xl md:rounded-3xl border border-white/10 shadow-2xl relative block">
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A2552] to-transparent opacity-0 group-hover:opacity-50 transition-opacity duration-300 z-10" />
-                <img
-                  src={`/images/Course/${n}.webp`}
-                  alt={`محتوى الكورس ${n}`}
-                  className="w-full h-32 md:h-48 object-cover group-hover:scale-110 transition-transform duration-700 relative z-0"
-                  loading="lazy"
-                />
-              </div>
-            ))}
+          <div className="text-center mb-16 animate-on-scroll fade-in-up">
+            <span className="inline-flex items-center gap-2 rounded-full border border-yellow/20 bg-yellow/10 px-4 py-2 text-sm font-bold text-yellow mb-4">
+              من داخل الكورس
+            </span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white">
+              صور من الورش العملية
+            </h2>
+          </div>
+          
+          {/* أسسنا شبكة Grid احترافية لعرض الصور بنمط ذكي (Bento Grid) */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[250px] md:auto-rows-[300px]">
+            
+            {/* Wide 1 (تأخذ مساحة عمودين) */}
+            <div className="animate-on-scroll fade-in-up group overflow-hidden rounded-3xl border border-white/10 shadow-2xl relative block md:col-span-2 md:row-span-1" style={{ animationDelay: '0.1s' }}>
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-dark)]/80 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-10" />
+              <img
+                src="https://scontent.fcai19-11.fna.fbcdn.net/v/t39.30808-6/658585923_26428782573408490_2506700317568725263_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeHdj8WuNmLtXOqrwUP8dnfwiVdjXk0v4rOJV2NeTS_isx8Fmq71s6v51L2XMQMGiVI2uSgBk2Md2Hoyfpdsaz0a&_nc_ohc=QXMWf55fDvAQ7kNvwEicTSs&_nc_oc=AdplGK8dZLrJDVzI8N7IAxkFYmH08S3lLlYoYCe6H24aXK_WjU_e2JYDu7rb3lregjs&_nc_zt=23&_nc_ht=scontent.fcai19-11.fna&_nc_gid=YrVPqg2c3QLRBBlGBsxa0w&_nc_ss=7a3a8&oh=00_Af2SOfvdl9yA57XFbsJTsSf_MBuPDwEkHRdm62zu39FxJw&oe=69D48A6B"
+                alt="تدريب السوق الخفي"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 relative z-0"
+                loading="lazy"
+              />
+            </div>
+
+            {/* Vertical 1 (تأخذ ارتفاع صفين وعرض عمود واحد) */}
+            <div className="animate-on-scroll fade-in-up group overflow-hidden rounded-3xl border border-white/10 shadow-2xl relative block md:col-span-1 md:row-span-2" style={{ animationDelay: '0.2s' }}>
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-dark)]/80 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-10" />
+              <img
+                src="https://scontent.fcai19-4.fna.fbcdn.net/v/t39.30808-6/660985895_26428772886742792_1263854306626122597_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeEBUs6HOQIBp-p-eJjrMloJ4tukWvPzzG_i26Ra8_PMb8XuTU8LmVXsGc1rT2GDolQRVNTJYvPHoG85nTTwxT-j&_nc_ohc=3TJdxqfeIKAQ7kNvwESDx-b&_nc_oc=AdpC2yVq6raI1-9N8jTIhdBN4Vn8l9uZ2CbHER6nL50sRWMwcp7ZPFSWmxN1mSO1f0c&_nc_zt=23&_nc_ht=scontent.fcai19-4.fna&_nc_gid=3BCrStEBF0Onl1tnI9_Rug&_nc_ss=7a3a8&oh=00_Af2vElXSxSDL0-06UbcOGVKH0s5CZqFNHHl3bo7iLipnsg&oe=69D49EEE"
+                alt="تفاعل وتدريب عملي"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 relative z-0"
+                loading="lazy"
+              />
+            </div>
+
+            {/* Vertical 2 (تأخذ ارتفاع صفين وعرض عمود واحد) */}
+            <div className="animate-on-scroll fade-in-up group overflow-hidden rounded-3xl border border-white/10 shadow-2xl relative block md:col-span-1 md:row-span-2" style={{ animationDelay: '0.3s' }}>
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-dark)]/80 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-10" />
+              <img
+                src="https://scontent.fcai19-4.fna.fbcdn.net/v/t39.30808-6/659801783_26428771773409570_3920793003010735135_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeEiwL2ilrPQ124TsmoEHTaO3kBaIxt2-4zeQFojG3b7jDWzM71RR55W-dpEsn1mcd_pZET7EEo3_V5aI9Nk_V7h&_nc_ohc=KznaEZ_Ux4YQ7kNvwFsGT68&_nc_oc=AdrYsLz8RJFb3vZHjTdC3L5tDPDDWldBlYgclfs6h576Ktmfg2fXge-Hci2Ocr3u2kw&_nc_zt=23&_nc_ht=scontent.fcai19-4.fna&_nc_gid=nNu6r_7Mlh-or470yrrmGA&_nc_ss=7a3a8&oh=00_Af3sURNUPQar8MS-hwtVf5820celf4a8CnnItsRHinAXSQ&oe=69D49823"
+                alt="نقاشات الورشة"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 relative z-0"
+                loading="lazy"
+              />
+            </div>
+
+            {/* Wide 2 (تأخذ مساحة عمودين) */}
+            <div className="animate-on-scroll fade-in-up group overflow-hidden rounded-3xl border border-white/10 shadow-2xl relative block md:col-span-2 md:row-span-1" style={{ animationDelay: '0.4s' }}>
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-dark)]/80 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-10" />
+              <img
+                src="https://scontent.fcai19-4.fna.fbcdn.net/v/t39.30808-6/657726655_26428782873408460_4552988750096273614_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeGTQpbr1mHtl0_0o8_nvxCgwZBCaJVJb8TBkEJolUlvxIlGO_WWSGgQ-DqzjXBznijMlveh1WtHDb3KlsTHjzAq&_nc_ohc=G_qpB_lZRtwQ7kNvwEdVgrY&_nc_oc=AdpHFBUKhaC8k5H0ME-PJZZZyxR-Qj5JNiM2fHjlHKUUpFiL0UpARIIoWDDeDL__yGE&_nc_zt=23&_nc_ht=scontent.fcai19-4.fna&_nc_gid=MtXMCCuC8M3Sfur7hg1vIA&_nc_ss=7a3a8&oh=00_Af30VW1dJurNuR2wX4Cxn3H33WLYnAjwCpq9-nkBhnYZww&oe=69D4B5FD"
+                alt="صورة جماعية"
+                className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700 relative z-0"
+                loading="lazy"
+              />
+            </div>
+
+            {/* Wide 3 (تأخذ العرض بالكامل من الأسفل) */}
+            <div className="animate-on-scroll fade-in-up group overflow-hidden rounded-3xl border border-white/10 shadow-2xl relative block md:col-span-4 md:row-span-1" style={{ animationDelay: '0.5s' }}>
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-dark)]/80 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-10" />
+              <img
+                src="https://scontent.fcai19-11.fna.fbcdn.net/v/t39.30808-6/660106537_26428778646742216_5394434949459489937_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeECTjmwQ33_Z2SP4C_Us2gG9NpPDKaAGfD02k8MpoAZ8PJ2d3ZJDNuxUNz3-PGBZeyfu7aCENiKtxIMp8xLJ4HS&_nc_ohc=-3eAqDFpQ9oQ7kNvwFZoHH3&_nc_oc=AdrhAgfjmeLnoMJ5v0VAZt1oDYHxbR17Qy98hzKLYv4lcecy3MUy60zDSksnVrZfbyM&_nc_zt=23&_nc_ht=scontent.fcai19-11.fna&_nc_gid=TF9MQNIsRcz76Feu9BEmBg&_nc_ss=7a3a8&oh=00_Af3mvbQqPWlECWsAotXH69qOufcTyTZCxI3_Y2WJcST1zw&oe=69D4888A"
+                alt="تطبيق عملي"
+                className="w-full h-full object-cover object-[center_30%] group-hover:scale-110 transition-transform duration-700 relative z-0"
+                loading="lazy"
+              />
+            </div>
+            
           </div>
         </div>
       </section>
 
       {/* ===== FEEDBACK ===== */}
-      <div id="feedback">
-        <Feedback />
-      </div>
-
       <div id="reels-feedback">
         <ReelsFeedback />
       </div>
 
       {/* ===== CTA ===== */}
-      <section id="cta" className="py-24 bg-[linear-gradient(135deg,#12397A_0%,#0A2552_100%)] text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-10 mix-blend-overlay" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-yellow/15 rounded-full blur-[100px] pointer-events-none" />
+      <section id="cta" className="py-24 bg-[var(--color-brand-dark)] text-center relative overflow-hidden border-t-[8px] border-yellow-v2">
+        <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-[0.03] mix-blend-overlay pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[var(--color-brand-light)]/20 rounded-full blur-[100px] pointer-events-none" />
+        
         <div className="container mx-auto px-4 relative z-10 max-w-4xl">
-          <div className="animate-on-scroll fade-in-up bg-white/5 backdrop-blur-2xl border border-white/10 p-10 md:p-16 rounded-[40px] shadow-[0_20px_40px_-20px_rgba(0,0,0,0.5)]">
-            <h2 className="text-white font-extrabold text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
-              هل أنت مستعد <span className="text-yellow-v2">لتغيير قواعد اللعبة؟</span>
+          <div className="animate-on-scroll fade-in-up flex flex-col items-center p-8 md:p-12">
+            
+            <div className="mb-6 inline-flex flex-wrap items-center justify-center gap-2 bg-yellow-v2/10 border border-yellow-v2/20 text-yellow-v2 px-6 py-2.5 rounded-full font-bold text-base md:text-lg shadow-lg">
+              <i className="fa-solid fa-hourglass-half" />
+              <span>الدفعة القادمة: <span className="bg-yellow-v2 text-[var(--color-brand-dark)] px-2 rounded font-black mr-1">١٨ أبريل</span> بس يوم</span>
+            </div>
+
+            <h2 className="text-white font-black text-3xl  text-yellow-v2 lg:text-4xl mb-6 leading-tight drop-shadow-sm">
+              هينقلك في حتة تانيةفي مسارك المهني!
             </h2>
-            <p className="text-white/80 text-lg md:text-xl font-medium mb-12 leading-relaxed max-w-2xl mx-auto">
-              انضم لأكتر من 500 خريج وابدأ رحلتك في اكتشاف السوق الخفي.. لاستقطاب أفضل الفرص قبل الإعلان عنها رسمياً!
+            
+            <p className="text-white/80 text-l font-bold mb-10 leading-relaxed max-w-2xl">
+              جاهز لاقتناص أفضل الفرص وتغيير مسارك المهني بـ ٦ ساعات مركزة؟ انضم لخريجينا وابدأ رحلتك الآن.
             </p>
             
-            <div className="flex flex-col items-center justify-center gap-6">
-              <a
-                href="https://wa.me/201097828846"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-yellow to-yellow-v2 text-white font-extrabold text-xl md:text-2xl px-12 py-5 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-[0_20px_40px_-10px_rgba(239,138,27,0.5)]"
-              >
-                تواصل معنا للحجز <i className="fa-brands fa-whatsapp text-3xl" />
-              </a>
-              <span className="flex items-center justify-center gap-2 text-white/60 text-sm font-semibold mt-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#25D366] animate-pulse" />
-                فريق الدعم متاح للرد فوراً على الواتساب
-              </span>
+            <a
+              href="https://wa.me/201097828846"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative inline-flex items-center justify-center gap-4 bg-yellow-v2 text-[var(--color-brand-dark)] font-black text-2xl px-14 py-6 rounded-full transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_30px_-10px_rgba(239,182,27,0.4)] hover:bg-yellow"
+            >
+              <i className="fa-brands fa-whatsapp text-4xl text-[#25D366]" />
+              سجل مكانك الآن
+              <i className="fa-solid fa-arrow-left text-lg opacity-50 group-hover:-translate-x-3 transition-transform" />
+            </a>
+            
+            <div className="flex items-center justify-center gap-3 mt-10 text-yellow text-base md:text-lg font-bold">
+              <div className="w-3 h-3 rounded-full bg-yellow animate-pulse" />
+              يسعدنا الرد على استفساراتك عبر واتساب في أي وقت
             </div>
+            
           </div>
         </div>
       </section>

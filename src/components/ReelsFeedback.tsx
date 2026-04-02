@@ -52,20 +52,20 @@ const ReelsFeedback = () => {
     }
 
     return (
-        <section className="py-20 bg-[linear-gradient(135deg,#12397A_0%,#0A2552_100%)] relative overflow-hidden">
-            <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-5 mix-blend-overlay pointer-events-none" />
-            <div className="absolute top-0 right-0 h-96 w-96 rounded-full bg-yellow/10 blur-[100px] pointer-events-none" />
-            <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-yellow/10 blur-[100px] pointer-events-none" />
+        <section className="py-20 bg-white relative overflow-hidden">
+            <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-[0.03] grayscale pointer-events-none" />
+            <div className="absolute top-0 right-0 h-96 w-96 rounded-full bg-var(--color-brand-dark)/5 blur-[100px] pointer-events-none" />
+            <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-yellow/5 blur-[100px] pointer-events-none" />
 
             <div className="container mx-auto px-4 md:px-20 relative z-10">
                 <div className="text-center mb-12">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-bold text-white mb-4">
+                    <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-brand-dark)]/20 bg-[var(--color-brand-dark)]/5 px-5 py-2 text-sm font-bold text-[var(--color-brand-dark)] mb-4 shadow-sm">
                         🎬 تجارب وقصص نجاح
                     </span>
-                    <h2 className="text-yellow text-3xl md:text-5xl font-extrabold mb-4">
+                    <h2 className="text-[var(--color-brand-dark)] text-3xl md:text-5xl font-black mb-4">
                         Reels من طلاب الكورس
                     </h2>
-                    <p className="text-white/80 max-w-2xl mx-auto text-base md:text-lg">
+                    <p className="text-slate-600 max-w-2xl mx-auto text-base md:text-xl font-bold">
                         اتفرج على الفيديوهات من داخل الموقع واسحب يمين وشمال لاكتشاف باقي الريلز وتجارب الشباب خطوة بخطوة
                     </p>
                 </div>
@@ -74,9 +74,9 @@ const ReelsFeedback = () => {
                     <Slider {...reelsSettings}>
                         {reels.map((reel, index) => (
                             <div key={reel.id} className="px-2 md:px-4">
-                                <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-[32px] p-4 hover:border-yellow/30 transition-colors duration-300">
-                                    <div className="overflow-hidden rounded-2xl border border-white/5 shadow-2xl relative group">
-                                        <div className="absolute inset-0 bg-yellow/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10" />
+                                <div className="bg-slate-50 border border-slate-200 rounded-[32px] p-4 hover:border-[var(--color-brand-dark)]/30 hover:shadow-xl transition-all duration-300">
+                                    <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm relative group">
+                                        <div className="absolute inset-0 bg-[var(--color-brand-dark)]/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10" />
                                         <iframe
                                             className="w-full aspect-9/16 bg-black"
                                             src={`https://www.youtube.com/embed/${reel.id}?rel=0&playsinline=1`}
@@ -87,15 +87,15 @@ const ReelsFeedback = () => {
                                             allowFullScreen
                                         />
                                     </div>
-                                    <div className="mt-4 flex justify-center">
+                                    <div className="mt-5 flex justify-center">
                                         <a
                                             href={reel.link}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 text-white/90 text-sm font-bold hover:text-yellow transition-colors group"
+                                            className="inline-flex items-center justify-center gap-2 bg-red-50 text-red-600 px-4 py-2 rounded-full text-sm font-black hover:bg-red-600 hover:text-white transition-all duration-300 group"
                                         >
-                                            <i className="fa-brands fa-youtube text-red-500 text-lg group-hover:scale-110 transition-transform" />
-                                            فتح الريل على يوتيوب
+                                            <i className="fa-brands fa-youtube text-lg group-hover:scale-110 transition-transform" />
+                                            شاهد على يوتيوب
                                         </a>
                                     </div>
                                 </div>
@@ -115,33 +115,36 @@ const ReelsFeedback = () => {
                 .reels-slider .slick-next {
                     width: 50px;
                     height: 50px;
-                    background: #EF8A1B;
+                    background: var(--color-brand-dark);
                     border-radius: 50%;
                     z-index: 10;
+                    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+                    transition: all 0.3s ease;
                 }
 
                 .reels-slider .slick-prev:hover,
                 .reels-slider .slick-next:hover {
-                    background: #EFB61B;
+                    background: var(--color-brand-light);
+                    transform: scale(1.1);
                 }
 
-                .reels-slider .slick-prev { left: -10px; }
-                .reels-slider .slick-next { right: -10px; }
+                .reels-slider .slick-prev { left: -15px; }
+                .reels-slider .slick-next { right: -15px; }
 
                 .reels-slider .slick-dots {
-                    bottom: -40px;
+                    bottom: -50px;
                 }
 
                 .reels-slider .slick-dots li button:before {
-                    color: white;
-                    opacity: 0.3;
-                    font-size: 10px;
+                    color: var(--color-brand-dark);
+                    opacity: 0.2;
+                    font-size: 12px;
                 }
 
                 .reels-slider .slick-dots li.slick-active button:before {
-                    color: #EF8A1B;
+                    color: var(--color-brand-dark);
                     opacity: 1;
-                    font-size: 12px;
+                    font-size: 14px;
                 }
 
                 @media (max-width: 768px) {

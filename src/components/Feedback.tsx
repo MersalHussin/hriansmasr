@@ -121,7 +121,7 @@ const Feedback = () => {
                     <div className="relative flex flex-col items-center">
                         <div className="text-white text-xl md:text-2xl font-bold mb-4">
                             {currentImage + 1} / {feedbacks.length}
-                        </div>
+                        </div>ژ
                         <img 
                             src={feedbacks[currentImage]}
                             alt="preview"

@@ -2,10 +2,12 @@
 
 @theme {
   --color-primary: #1C54B3;
-  --color-yellow: #EF8A1B;
-  --color-yellow-v2: #EFB61B;
+  --color-yellow: #FFC107;
+  --color-yellow-v2: #FFD54F;
   --color-black-v2: #3F3F3F;
   --color-white-v2: #F5F5F5;
+  --color-brand-dark: #0A2552;
+  --color-brand-light: #12397A;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
@@ -17,7 +19,7 @@ html {
 }
 
 body {
-    font-family: "Rubik", sans-serif;
+    font-family: "Calistoga", "Rubik", sans-serif;
     direction: rtl;
     overflow-x: hidden;
 }

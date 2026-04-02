@@ -37,8 +37,28 @@ function Navbar() {
   }
 
   return (
-    <nav className={`${isHiddenMarket ? 'bg-[#0A2552] border-b border-white/5' : 'bg-primary'} h-[90px] w-full fixed flex items-center z-99 transition-colors`}>
-      <div className='container mx-auto px-4 flex items-center justify-between text-white'>
+    <header className="fixed top-0 left-0 w-full z-50 flex flex-col">
+      {isHiddenMarket && (
+        <div className="bg-gradient-to-r from-yellow-300 to-yellow-500 py-1.5 sm:py-2 px-4 w-full flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 shadow-sm border-b border-yellow-600/20 z-[60]">
+          <div className="flex items-center gap-2 text-[var(--color-brand-dark)] text-xs sm:text-sm font-black text-center">
+            <span className="flex items-center gap-1.5 flex-wrap justify-center">
+              <i className="fa-solid fa-clock text-base animate-pulse" />
+               الكورس يوم واحد لمدة 6 ساعات متواصلة. الدفعة القادمة هتبدأ يوم 
+              <span className="bg-white/50 px-2 py-0.5 rounded text-[var(--color-brand-dark)] font-black">18 أبريل</span>
+            </span>
+          </div>
+          <a
+            href="https://wa.me/201097828846"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 bg-[var(--color-brand-dark)] text-white px-3 py-1 rounded-full text-xs font-bold shadow-md hover:bg-[var(--color-brand-light)] hover:scale-105 transition-all justify-center w-full sm:w-auto"
+          >
+            احجز مقعدك <i className="fa-brands fa-whatsapp text-base" />
+          </a>
+        </div>
+      )}
+      <nav className={`${isHiddenMarket ? 'bg-[#0A2552] border-b border-white/5' : 'bg-primary'} h-[90px] w-full flex items-center transition-colors relative z-[55]`}>
+        <div className='container mx-auto px-4 flex items-center justify-between text-white'>
         {isHiddenMarket ? (
           <Link to="/" onClick={closeMenu}>
             <img src="/Logo_Hidden.svg" className='h-8 md:h-12 cursor-pointer object-contain' alt="The Hidden Market Masterclass" />
@@ -191,6 +211,7 @@ function Navbar() {
         </button>
       </div>
     </nav>
+    </header>
   )
 }
 
