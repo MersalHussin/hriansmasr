@@ -200,6 +200,16 @@ function HiddenMarketPage() {
           <div className="max-w-[600px] w-full">
             <h1 className="text-2xl md:text-3xl font-black text-[var(--color-brand-dark)]">{t('founderName')}</h1>
             <p className="text-base md:text-lg lg:text-xl mt-4 font-bold text-slate-600 leading-relaxed">{t('founderBio')}</p>
+            <div className="mt-8 flex justify-center md:justify-start">
+              <a 
+                href="https://hriansmasr.com/founder" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="inline-flex items-center gap-2 bg-[var(--color-brand-dark)] hover:bg-[var(--color-brand-light)] text-white font-bold py-3 px-8 rounded-full transition-all hover:-translate-y-1 shadow-lg"
+              >
+                معلومات أكتر عن المحاضر <i className="fa-solid fa-arrow-left text-sm" />
+              </a>
+            </div>
           </div>
           <div className="image w-full md:w-auto relative">
             <div className="absolute -inset-4 bg-[var(--color-brand-dark)]/10 rounded-4xl rounded-br-sm blur-xl z-0" />

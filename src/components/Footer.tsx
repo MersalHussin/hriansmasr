@@ -62,9 +62,9 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/founder" className="text-white/80 hover:text-yellow transition-colors flex items-center gap-2">
-                  <i className="fa-solid fa-angle-left text-xs"></i> عن المؤسس
-                </Link>
+                <a href="https://hriansmasr.com/founder" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-yellow transition-colors flex items-center gap-2">
+                  <i className="fa-solid fa-angle-left text-xs"></i> عن المحاضر
+                </a>
               </li>
               <li>
                 <Link to="/contact" className="text-white/80 hover:text-yellow transition-colors flex items-center gap-2">

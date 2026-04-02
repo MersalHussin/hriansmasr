@@ -10,8 +10,7 @@ const hiddenMarketLinks = [
   { to: '#problem', label: 'المشكلة' },
   { to: '#modules', label: 'محتوى الكورس' },
   { to: '#outcomes', label: 'ماذا ستتعلم؟' },
-  { to: '#feedback', label: 'آراء المتدربين' },
-  { to: '#reels-feedback', label: 'تجارب الطلاب' },
+  { to: '#reels-feedback', label: 'تجارب المتدربين' },
 ]
 
 function Navbar() {
