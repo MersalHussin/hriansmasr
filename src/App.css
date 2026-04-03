@@ -92,3 +92,6 @@ button{
   outline: none;
   border: none;
 }
+.hero-rec{
+   background: linear-gradient(45deg, #ffd146, #ff7025);
+}

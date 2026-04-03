@@ -6,6 +6,7 @@ const Footer: React.FC = () => {
   const isHiddenMarket = location.pathname === '/hidden-market-masterclass';
 
   const socialLinks = [
+    { icon: 'fa-brands fa-whatsapp', href: 'https://wa.me/201097828846', label: 'WhatsApp' },
     { icon: 'fa-brands fa-facebook', href: 'https://www.facebook.com/groups/hregy/', label: 'Facebook' },
     { icon: 'fa-brands fa-linkedin', href: 'https://www.linkedin.com/in/ahmednagyeldokmesy/', label: 'LinkedIn' },
     { icon: 'fa-brands fa-instagram', href: 'https://www.instagram.com/ahmedeldokhmesyoffical/?hl=ar', label: 'Instagram' },

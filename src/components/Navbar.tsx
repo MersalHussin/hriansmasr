@@ -42,17 +42,19 @@ function Navbar() {
           <div className="flex items-center gap-2 text-[var(--color-brand-dark)] text-xs sm:text-sm font-black text-center">
             <span className="flex items-center gap-1.5 flex-wrap justify-center">
               <i className="fa-solid fa-clock text-base animate-pulse" />
+              <p className='text-sm'>
                الكورس يوم واحد لمدة 6 ساعات متواصلة. الدفعة القادمة هتبدأ يوم 
+              </p>
               <span className="bg-white/50 px-2 py-0.5 rounded text-[var(--color-brand-dark)] font-black">18 أبريل</span>
             </span>
           </div>
           <a
-            href="https://wa.me/201097828846"
+            href="https://docs.google.com/forms/d/1XBIyFfwF98HRQexWtOojaZNTxd5RDwuqP63GetjF-N0/viewform?chromeless=1&edit_requested=true"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 bg-[var(--color-brand-dark)] text-white px-3 py-1 rounded-full text-xs font-bold shadow-md hover:bg-[var(--color-brand-light)] hover:scale-105 transition-all justify-center w-full sm:w-auto"
           >
-            احجز مقعدك <i className="fa-brands fa-whatsapp text-base" />
+            احجز مقعدك <i className="fa-solid fa-file-signature text-base" />
           </a>
         </div>
       )}
@@ -123,7 +125,7 @@ function Navbar() {
         {/* Desktop CTA */}
         <div className='hidden lg:flex items-center gap-2'>
           <a
-            href="https://wa.me/201097828846"
+            href="https://docs.google.com/forms/d/1XBIyFfwF98HRQexWtOojaZNTxd5RDwuqP63GetjF-N0/viewform?chromeless=1&edit_requested=true"
             target="_blank"
             rel="noopener noreferrer"
             className='bg-yellow text-white px-4 py-2 rounded cursor-pointer text-base font-bold hover:bg-yellow-v2 transition-colors'
@@ -190,7 +192,7 @@ function Navbar() {
             )}
             <li className='pt-4'>
               <a
-                href="https://wa.me/201097828846"
+                href="https://docs.google.com/forms/d/1XBIyFfwF98HRQexWtOojaZNTxd5RDwuqP63GetjF-N0/viewform?chromeless=1&edit_requested=true"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={closeMenu}

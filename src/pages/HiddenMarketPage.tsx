@@ -47,6 +47,8 @@ const courseStages = [
   }
 ]
 
+const FORM_LINK = "https://docs.google.com/forms/d/1XBIyFfwF98HRQexWtOojaZNTxd5RDwuqP63GetjF-N0/viewform?chromeless=1&edit_requested=true";
+
 const outcomes = [
   { text: "توصل لوظائف مش بتتعلن للعامة", icon: "fa-solid fa-briefcase" },
   { text: "تبني شبكة علاقات مهنية قوية", icon: "fa-solid fa-users" },
@@ -126,68 +128,102 @@ function HiddenMarketPage() {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_10%,transparent_100%)] pointer-events-none" />
 
         <div className="container mx-auto px-4 py-20 flex flex-col items-center justify-center gap-12 relative z-10">
-          <div className="text-center max-w-5xl mx-auto flex flex-col items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
-            {/* Executive Badge */}
-            <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 px-6 py-2.5 rounded-full mb-10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)] transform transition-transform hover:scale-105">
-              <span className="flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-2.5 w-2.5 rounded-full bg-yellow opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-yellow-v2"></span>
-              </span>
-              <span className="text-white/90 font-bold text-sm tracking-wide">البرنامج التنفيذي الحصري للمحترفين وأصحاب الخبرات</span>
-            </div>
-
-            {/* Logo */}
-            <img 
-              src="/Logo_Hidden.svg" 
-              alt="The Hidden Market Masterclass Logo" 
-              className="w-full max-w-[600px] md:max-w-[750px] object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] mb-6" 
-            />
-            
-            {/* Main Promise */}
-            {/* <p className="text-yellow-v2 text-2xl md:text-3xl font-black mb-6 drop-shadow-md">
-              يوم واحد تدريبي (٦ ساعات) هينقلك في حتة تانية في مسارك المهني!
-            </p> */}
-            
-            {/* Subtitle */}
-            <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-12 max-w-3xl font-medium">
-              أعد صياغة تواجدك المهني، اخترق "السوق الخفي" للوظائف غير المعلنة، وتعلم المهارات لتصبح الخيار الأول لكبار صناع القرار بعيداً عن الطرق التقليدية.
-            </p>
-
-            {/* Core Pillars */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-14 w-full max-w-3xl">
-              {[
-                { icon: "fa-solid fa-user-tie", text: "استشارات تنفيذية" },
-                { icon: "fa-solid fa-network-wired", text: "بناء شبكة نفوذ" },
-                { icon: "fa-solid fa-handshake", text: "تفاوض احترافي" }
-              ].map((item) => (
-                <div key={item.text} className="flex flex-col items-center justify-center gap-3 bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-4 hover:bg-white/10 hover:border-yellow/20 transition-all duration-300 shadow-xl">
-                  <i className={`${item.icon} text-yellow-v2 text-2xl drop-shadow-md`} />
-                  <span className="text-white/90 text-sm md:text-base font-bold tracking-wide">{item.text}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-5 justify-center w-full max-w-lg">
-              <a
-                href="https://wa.me/201097828846"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative flexitems-center justify-center bg-gradient-to-r from-yellow to-yellow-v2 text-[var(--color-brand-dark)] font-extrabold text-xl px-10 py-4 rounded-xl overflow-hidden shadow-[0_15px_30px_-10px_rgba(239,138,27,0.5)] transition-all duration-300 hover:scale-[1.02]"
-              >
-                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-                <span className="relative flex items-center justify-center gap-3">
-                 سجل دلوقتي <i className="fa-brands fa-whatsapp text-2xl" />
+            {/* TEXT COLUMN */}
+            <div className="text-center lg:text-right flex flex-col items-center lg:items-start w-full">
+              
+              {/* Executive Badge */}
+              <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 px-5 py-2.5 rounded-full mb-8 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)] transform transition-transform hover:scale-105">
+                <span className="flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-2.5 w-2.5 rounded-full bg-yellow opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-yellow-v2"></span>
                 </span>
-              </a>
-              <button
-                onClick={() => document.getElementById("modules")?.scrollIntoView({ behavior: "smooth" })}
-                className="group flex items-center justify-center border border-white/20 bg-white/5 backdrop-blur-md text-white font-bold text-xl px-10 py-4 rounded-xl hover:bg-white/10 hover:border-white/40 transition-all duration-300"
-              >
-                  المحتوى  <i className="fa-solid fa-arrow-down ml-3 mr-3 text-sm group-hover:translate-y-1 transition-transform" />
-              </button>
+                <span className="text-white/90 font-bold text-sm tracking-wide">البرنامج التنفيذي الحصري للمحترفين</span>
+              </div>
+
+              {/* Logo */}
+              <img 
+                src="/Logo_Hidden.svg" 
+                alt="The Hidden Market Masterclass Logo" 
+                className="w-full max-w-[400px] object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] mb-6" 
+              />
+              
+              {/* Subtitle */}
+              <p className="text-white/80 text-xl md:text-3xl font-extrabold text-yellow-v2 mb-4 leading-tight">
+               من التنظير.. إلى غرفة العمليات
+              </p>
+              
+              {/* Refined Shorter Copy */}
+              <p className="text-white/80 text-md  leading-relaxed mb-8 max-w-lg font-medium">
+              اخترق "السوق الخفي" للوظائف، صِد أفضل الفرص قبل الإعلان عنها، واجبر صناع القرار على التفاوض معك بأساليب وتطبيقات عملية (100%).
+              </p>
+
+              {/* Core Pillars - Condensed */}
+              <div className="grid grid-cols-2 gap-3 mb-10 w-full max-w-lg">
+                {[
+                  { icon: "fa-solid fa-map-location-dot", text: "خريطة النفوذ والوصول" },
+                  { icon: "fa-solid fa-robot", text: "AI Scripting" },
+                  { icon: "fa-solid fa-briefcase", text: "محاكاة التفاوض" },
+                  { icon: "fa-solid fa-id-card", text: "الهيبة الرقمية" }
+                ].map((item) => (
+                  <div key={item.text} className="flex items-center gap-3 bg-white/5 border border-white/10 backdrop-blur-sm rounded-xl p-3 hover:bg-white/10 hover:border-yellow/20 transition-all duration-300 shadow-lg">
+                    <i className={`${item.icon} text-yellow-v2 mt-0.5 text-xl drop-shadow-md`} />
+                    <span className="text-white/90 text-sm font-bold tracking-wide leading-tight">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 w-full max-w-lg">
+                <a
+                  href={FORM_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative flexitems-center justify-center bg-gradient-to-r from-yellow to-yellow-v2 text-[var(--color-brand-dark)] font-extrabold text-lg px-8 py-3 rounded-xl overflow-hidden shadow-[0_15px_30px_-10px_rgba(239,138,27,0.5)] transition-all duration-300 hover:scale-[1.02] flex-1 text-center flex"
+                >
+                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+                  <span className="relative flex items-center justify-center gap-3">
+                   سجل دلوقتي <i className="fa-solid fa-file-signature text-xl" />
+                  </span>
+                </a>
+                <button
+                  onClick={() => document.getElementById("modules")?.scrollIntoView({ behavior: "smooth" })}
+                  className="group flex flex-1 items-center justify-center border border-white/20 bg-white/5 backdrop-blur-md text-white font-bold text-lg px-8 py-3 rounded-xl hover:bg-white/10 hover:border-white/40 transition-all duration-300"
+                >
+                    المحتوى  <i className="fa-solid fa-arrow-down mr-3 text-sm group-hover:translate-y-1 transition-transform" />
+                </button>
+              </div>
+              
             </div>
+
+            {/* IMAGE COLUMN */}
+            <div className="hidden lg:flex w-full relative h-[500px] items-center justify-center">
+              <div className="absolute -inset-4 bg-gradient-to-br from-[var(--color-brand-light)] to-[#0c224a] rounded-[2.5rem] transform rotate-3 scale-105 opacity-40 blur-2xl pointer-events-none"></div>
+              <div className="absolute inset-0 border-4 border-yellow-v2/30 rounded-[2.5rem] transform -rotate-3 scale-[1.02] pointer-events-none transition-transform hover:rotate-0 hover:scale-100 duration-500"></div>
+              
+              <div className="hero-rec relative w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl border-2 border-white/10 group cursor-pointer">
+                <img 
+                  src="/images/The-Hidden/Hero.png" 
+                  alt="The Hidden Market Training" 
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                />
+                
+                {/* Overlay Badge */}
+                <div className="absolute bottom-6 right-6 left-6 bg-[calc(var(--color-brand-dark)/0.85)] backdrop-blur-md border border-white/10 p-4 rounded-xl transform translate-y-2 group-hover:translate-y-0 opacity-90 group-hover:opacity-100 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-yellow rounded-xl flex items-center justify-center shrink-0">
+                      <i className="fa-solid fa-bullseye text-2xl text-[var(--color-brand-dark)]"></i>
+                    </div>
+                    <div>
+                      <strong className="block text-white text-lg font-black mb-0.5">أ. أحمد ناجي الدخميسي</strong>
+                      <span className="block text-white/70 text-sm font-medium">مستشار موارد بشرية وتنمية مهارات بشرية بخبرة ١٤ عام</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -496,6 +532,102 @@ function HiddenMarketPage() {
         <ReelsFeedback />
       </div>
 
+      {/* ===== EXECUTIVE DETAILS ===== */}
+      <section className="py-24 bg-slate-50 relative overflow-hidden" dir="rtl">
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            
+            {/* Why This Round is Different */}
+            <div className="bg-white p-8 md:p-10 rounded-[2rem] border border-slate-200 shadow-[0_20px_40px_-20px_rgba(10,37,82,0.08)]">
+              <h3 className="text-2xl md:text-3xl font-black text-[var(--color-brand-dark)] mb-8 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-yellow/20 flex items-center justify-center shrink-0">
+                  <i className="fa-solid fa-star text-yellow-v2 text-xl"></i>
+                </div>
+                لماذا هذا الراوند مختلف؟
+              </h3>
+              <ul className="space-y-6 text-slate-700 font-bold">
+                <li className="flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-full bg-[var(--color-brand-light)]/10 flex items-center justify-center shrink-0 mt-1">
+                    <i className="fa-solid fa-certificate text-[var(--color-brand-light)] text-sm"></i>
+                  </div>
+                  <p className="leading-relaxed"><strong className="text-[var(--color-brand-dark)] block text-lg mb-1 font-black">شهادة نجاح واقعية:</strong>النجاح لا يُحكى بل يُرى؛ مستوى الحضور القوي في الدفعة الأولى هو أكبر دليل على جودة المحتوى وقوة شبكة العلاقات (Networking) التي ستنضم إليها.</p>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-full bg-[var(--color-brand-light)]/10 flex items-center justify-center shrink-0 mt-1">
+                    <i className="fa-solid fa-crown text-[var(--color-brand-light)] text-sm"></i>
+                  </div>
+                  <p className="leading-relaxed"><strong className="text-[var(--color-brand-dark)] block text-lg mb-1 font-black">سقف التوقعات:</strong>بعد أن شرفنا في الدفعة السابقة القامة البيعية الأستاذ/ أحمد قطقطة كضيف شرف، نعدكم بمفاجأة في هذا الراوند ستكون هي "الضربة القاضية" في مسارك المهني.</p>
+                </li>
+              </ul>
+            </div>
+
+            {/* Attendance Conditions */}
+            <div className="bg-white p-8 md:p-10 rounded-[2rem] border border-slate-200 shadow-[0_20px_40px_-20px_rgba(10,37,82,0.08)]">
+              <h3 className="text-2xl md:text-3xl font-black text-[var(--color-brand-dark)] mb-8 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-yellow/20 flex items-center justify-center shrink-0">
+                  <i className="fa-solid fa-user-shield text-yellow-v2 text-xl"></i>
+                </div>
+                شروط الحضور
+              </h3>
+              <p className="text-slate-600 mb-8 font-bold text-lg border-b border-slate-100 pb-4">الحضور مقتصر فقط على:</p>
+              <ul className="space-y-4">
+                {[
+                  "أصحاب الشركات (Business Owners).",
+                  "المديرين التنفيذيين (C-Level & Directors).",
+                  "كبار المستشارين والخبراء (Senior Consultants)."
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-center gap-4 bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[var(--color-brand-dark)] to-[var(--color-brand-light)] flex items-center justify-center text-white shrink-0 shadow-md">
+                      <i className="fa-solid fa-check text-sm"></i>
+                    </div>
+                    <span className="font-bold text-[var(--color-brand-dark)] text-lg">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
+
+          <div className="bg-[linear-gradient(135deg,var(--color-brand-dark)_0%,#0e2e66_100%)] rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden shadow-2xl text-white border-4 border-white">
+              <div className="absolute top-0 left-0 w-64 h-64 bg-yellow/10 rounded-full blur-[80px] pointer-events-none" />
+              <div className="relative z-10">
+                <h3 className="text-3xl md:text-4xl font-black mb-12 text-center flex items-center justify-center gap-4 drop-shadow-md">
+                  التفاصيل التنفيذية
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                  <div className="flex flex-col justify-center p-6 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
+                    <i className="fa-solid fa-location-dot text-yellow-v2 text-4xl mb-4 drop-shadow-md"></i>
+                    <span className="text-white/60 text-sm mb-2 font-bold uppercase tracking-wider">المكان</span>
+                    <strong className="text-xl">The GrEEK Campus</strong>
+                    <span className="text-yellow text-sm mt-2 font-bold bg-yellow/10 py-1 px-3 rounded-full self-center">ومتاح أونلاين</span>
+                  </div>
+                  <div className="flex flex-col justify-center p-6 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
+                    <i className="fa-solid fa-calendar-days text-yellow-v2 text-4xl mb-4 drop-shadow-md"></i>
+                    <span className="text-white/60 text-sm mb-2 font-bold uppercase tracking-wider">الموعد</span>
+                    <strong className="text-xl mt-1">السبت</strong>
+                    <strong className="text-2xl text-yellow mt-1 font-black">18-04-2026</strong>
+                  </div>
+                  <div className="flex flex-col justify-center p-6 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
+                    <i className="fa-solid fa-clock text-yellow-v2 text-4xl mb-4 drop-shadow-md"></i>
+                    <span className="text-white/60 text-sm mb-2 font-bold uppercase tracking-wider">التوقيت</span>
+                    <strong className="text-xl">من 2:00 ظهراً</strong>
+                    <strong className="text-xl text-white/90">حتى 7:00 مساءً</strong>
+                  </div>
+                  <div className="flex flex-col justify-center p-6 bg-gradient-to-b from-yellow/20 to-yellow/5 border border-yellow/30 rounded-3xl relative overflow-hidden group">
+                    <div className="absolute inset-0 bg-yellow/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                    <div className="relative z-10">
+                      <i className="fa-solid fa-chair text-yellow text-4xl mb-3 animate-bounce drop-shadow-md"></i>
+                      <span className="text-white/80 block text-sm mb-1 font-bold">العدد المتبقي</span>
+                      <strong className="text-3xl font-black text-yellow block mb-1">3 مقاعد</strong>
+                      <span className="text-white/50 text-xs font-medium">من أصل 15 متدرباً</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===== CTA ===== */}
       <section id="cta" className="py-24 bg-[var(--color-brand-dark)] text-center relative overflow-hidden border-t-[8px] border-yellow-v2">
         <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-[0.03] mix-blend-overlay pointer-events-none" />
@@ -506,27 +638,25 @@ function HiddenMarketPage() {
             
             <div className="mb-6 inline-flex flex-wrap items-center justify-center gap-2 bg-yellow-v2/10 border border-yellow-v2/20 text-yellow-v2 px-6 py-2.5 rounded-full font-bold text-base md:text-lg shadow-lg">
               <i className="fa-solid fa-hourglass-half" />
-              <span>الدفعة القادمة: <span className="bg-yellow-v2 text-[var(--color-brand-dark)] px-2 rounded font-black mr-1">١٨ أبريل</span> بس يوم</span>
+              <span>الدفعة القادمة: <span className="bg-yellow-v2 text-[var(--color-brand-dark)] px-2 rounded font-black mr-1">١٨ أبريل</span></span>
             </div>
 
-            <h2 className="text-white font-black text-3xl  text-yellow-v2 lg:text-4xl mb-6 leading-tight drop-shadow-sm">
-              هينقلك في حتة تانيةفي مسارك المهني!
+            <h2 className="text-white font-black text-3xl  text-yellow-v2 lg:text-4xl mb-4 leading-tight drop-shadow-sm">
+              يوم واحد تدريبي (٦ ساعات) هينقلك في حتة تانية!
             </h2>
             
-            <p className="text-white/80 text-l font-bold mb-10 leading-relaxed max-w-2xl">
-              جاهز لاقتناص أفضل الفرص وتغيير مسارك المهني بـ ٦ ساعات مركزة؟ انضم لخريجينا وابدأ رحلتك الآن.
+            <p className="text-white/80 text-xl font-bold mb-4 leading-relaxed max-w-2xl">
+              "الفرص لا تُمنح لمن يتمنى.. بل لمن يستعد ويخترق."
             </p>
+
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 mb-10 w-full max-w-md mx-auto backdrop-blur-sm">
+              <span className="block text-white/70 text-sm font-bold mb-2">قيمة الاستثمار:</span>
+              <strong className="text-4xl font-black text-yellow block mb-2">2500 ج.م</strong>
+              <span className="text-white/80 text-sm font-medium block">شاملة الأدوات التقنية، قوالب الـ AI، وملفات التدريب الكاملة.</span>
+            </div>
             
             <a
-              href="https://wa.me/201097828846"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative inline-flex items-center justify-center gap-4 bg-yellow-v2 text-[var(--color-brand-dark)] font-black text-2xl px-14 py-6 rounded-full transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_30px_-10px_rgba(239,182,27,0.4)] hover:bg-yellow"
-            >
-              <i className="fa-brands fa-whatsapp text-4xl text-[#25D366]" />
-              سجل مكانك الآن
-              <i className="fa-solid fa-arrow-left text-lg opacity-50 group-hover:-translate-x-3 transition-transform" />
-            </a>
+              href={FORM_LINK} target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center justify-center gap-4 bg-yellow-v2 text-[var(--color-brand-dark)] font-black text-2xl px-14 py-6 rounded-full transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_30px_-10px_rgba(239,182,27,0.4)] hover:bg-yellow"><i className="fa-solid fa-file-signature text-3xl" />احجز مقعدك الآن<i className="fa-solid fa-arrow-left text-lg opacity-50 group-hover:-translate-x-3 transition-transform" /></a>
             
             <div className="flex items-center justify-center gap-3 mt-10 text-yellow text-base md:text-lg font-bold">
               <div className="w-3 h-3 rounded-full bg-yellow animate-pulse" />
