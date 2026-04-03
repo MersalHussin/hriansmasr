@@ -216,7 +216,7 @@ function HiddenMarketPage() {
                       <i className="fa-solid fa-bullseye text-2xl text-[var(--color-brand-dark)]"></i>
                     </div>
                     <div>
-                      <strong className="block text-white text-lg font-black mb-0.5">أ. أحمد ناجي الدخميسي</strong>
+                      <strong className="block text-white text-lg font-black mb-0.5">أحمد ناجي الدخميسي</strong>
                       <span className="block text-white/70 text-sm font-medium">مستشار موارد بشرية وتنمية مهارات بشرية بخبرة ١٤ عام</span>
                     </div>
                   </div>
@@ -265,7 +265,7 @@ function HiddenMarketPage() {
           <h2 className="title text-white animate-on-scroll fade-in-up drop-shadow-lg">هل بتعاني من إنك</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12">
             {[
-              "بتبعت CV على طول ومش بتلاقي رد",
+              "خبراتك ومؤهلاتك أكبر بكتير من الوظائف اللي بتتعرض بشكل تقليدي",
               "بتحس إن الوظائف المعلنة مش كافية",
               "مش عارف تبني علاقات مهنية صح",
               "LinkedIn بروفايلك مش بيجيب نتيجة",
