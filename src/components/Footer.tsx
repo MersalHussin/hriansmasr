@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
                 <li className="hidden sm:block text-white/50">|</li>
                 <li><span onClick={() => scrollToSection('about')} className="hover:text-yellow-v2 transition-colors duration-200 cursor-pointer">{t('about')}</span></li>
                 <li className="hidden sm:block text-white/50">|</li>
-                <li><span onClick={() => scrollToSection('services')} className="hover:text-yellow-v2 transition-colors duration-200 cursor-pointer">{t('services')}</span></li>
+                <li><Link to="/services" className="hover:text-yellow-v2 transition-colors duration-200 cursor-pointer">{t('services')}</Link></li>
                 <li className="hidden sm:block text-white/50">|</li>
                 <li><span onClick={() => scrollToSection('clients')} className="hover:text-yellow-v2 transition-colors duration-200 cursor-pointer">{t('clients')}</span></li>
                 <li className="hidden sm:block text-white/50">|</li>
@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
                 <li className="hidden sm:block text-white/50">|</li>
                 <li><Link to="/#about" className="hover:text-yellow-v2 transition-colors duration-200">{t('about')}</Link></li>
                 <li className="hidden sm:block text-white/50">|</li>
-                <li><Link to="/#services" className="hover:text-yellow-v2 transition-colors duration-200">{t('services')}</Link></li>
+                <li><Link to="/services" className="hover:text-yellow-v2 transition-colors duration-200">{t('services')}</Link></li>
                 <li className="hidden sm:block text-white/50">|</li>
                 <li><Link to="/#clients" className="hover:text-yellow-v2 transition-colors duration-200">{t('clients')}</Link></li>
                 <li className="hidden sm:block text-white/50">|</li>
@@ -77,6 +77,17 @@ const Footer: React.FC = () => {
               <i className={`${social.icon} text-2xl sm:text-3xl`}></i>
             </a>
           ))}
+        </div>
+
+        {/* سياسة الخصوصية والشروط */}
+        <div className="flex justify-center items-center gap-3 mb-6 text-sm">
+          <Link to="/privacy-policy" className="text-white/70 hover:text-yellow-v2 transition-colors duration-200">
+            {t('privacyPolicy')}
+          </Link>
+          <span className="text-white/30">|</span>
+          <Link to="/terms" className="text-white/70 hover:text-yellow-v2 transition-colors duration-200">
+            {t('terms')}
+          </Link>
         </div>
 
         {/* زر التصميم */}

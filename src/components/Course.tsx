@@ -17,8 +17,17 @@ const Course = () => {
                     </div>
                 ))}
             </div>
-        </div>
-    );
-}
+            <div className="flex justify-center mt-12">
+                <a 
+                    href="https://courses.hriansmasr.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="bg-primary text-white font-bold py-4 px-10 rounded-full text-xl shadow-lg hover:bg-opacity-90 transition-all hover:scale-105"
+                >
+                    اكتشف برامجنا
+                </a>
+            </div>
+            </div>
+            )}
 
-export default Course;
+export default Course

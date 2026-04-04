@@ -60,7 +60,7 @@ const ServiceCard = ({ image, titleEn, titleAr, subtitle, customWhatsapp, Icon }
         {/* الزر */}
         <div className="mt-6 transition-all duration-500">
           <span className="flex items-center gap-2 bg-white text-blue-900 px-6 py-2 rounded-full text-sm font-bold shadow-lg hover:bg-blue-50 active:bg-blue-100 transition-colors">
-            <span>استفسر الآن</span>
+            <span>اضغط هنا</span>
           </span>
         </div>
 
