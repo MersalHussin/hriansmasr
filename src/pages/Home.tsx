@@ -16,7 +16,7 @@ function Home() {
       />
       <section className="relative min-h-[calc(100vh-90px)] overflow-hidden py-14 md:py-20 px-4 bg-slate-50 font-sans" dir="rtl">
         {/* Background Gradients (Simple & Elegant) */}
-        <div className="absolute top-0 right-0 w-full h-[500px] bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
+        <div className="absolute top-0 right-0 w-full h-[500px] bg-linear-to-b from-primary/5 to-transparent pointer-events-none" />
         <div className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute top-1/3 -left-32 w-96 h-96 bg-yellow/15 rounded-full blur-[100px] pointer-events-none" />
 
@@ -42,7 +42,7 @@ function Home() {
             {/* Course 1: Hidden Market */}
             <Link
               to="/hidden-market-masterclass"
-              className="group bg-white rounded-[32px] overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_50px_-15px_rgba(28,84,179,0.2)] transition-all duration-500 hover:-translate-y-2 border border-slate-100 flex flex-col relative"
+              className="group bg-white rounded-4xl overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_50px_-15px_rgba(28,84,179,0.2)] transition-all duration-500 hover:-translate-y-2 border border-slate-100 flex flex-col relative"
             >
               {/* Card Image */}
               <div className="relative h-64 md:h-72 w-full overflow-hidden bg-slate-100">
@@ -52,7 +52,7 @@ function Home() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   onError={(e) => { e.currentTarget.src = 'https://placehold.co/800x600/0A2552/FFFFFF/png?text=The+Hidden+Market+Masterclass&font=Montserrat' }}
                 />
-                <div className="absolute top-5 right-5 bg-yellow text-[var(--color-brand-dark)] text-xs font-black px-4 py-2 rounded-lg shadow-lg">
+                <div className="absolute top-5 right-5 bg-yellow text-brand-dark text-xs font-black px-4 py-2 rounded-lg shadow-lg">
                   🔥 للمحترفين فقط
                 </div>
               </div>
@@ -77,7 +77,7 @@ function Home() {
             {/* Course 2: HR Roadmap */}
             <Link
               to="/hr-roadmap"
-              className="group bg-white rounded-[32px] overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_50px_-15px_rgba(239,138,27,0.2)] transition-all duration-500 hover:-translate-y-2 border border-slate-100 flex flex-col relative"
+              className="group bg-white rounded-4xl overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_50px_-15px_rgba(239,138,27,0.2)] transition-all duration-500 hover:-translate-y-2 border border-slate-100 flex flex-col relative"
             >
               {/* Card Image */}
               <div className="relative h-64 md:h-72 w-full overflow-hidden bg-slate-100">

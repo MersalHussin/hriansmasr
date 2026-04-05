@@ -11,7 +11,6 @@ const Footer: React.FC = () => {
     { icon: 'fa-brands fa-linkedin', href: 'https://www.linkedin.com/in/ahmednagyeldokmesy/', label: 'LinkedIn' },
     { icon: 'fa-brands fa-instagram', href: 'https://www.instagram.com/ahmedeldokhmesyoffical/?hl=ar', label: 'Instagram' },
     { icon: 'fa-brands fa-youtube', href: 'https://www.youtube.com/@AhmednagyEldokhmesy', label: 'YouTube' },
-    { icon: 'fa-brands fa-tiktok', href: '#', label: 'TikTok' },
   ];
 
   return (
@@ -25,13 +24,15 @@ const Footer: React.FC = () => {
           
           {/* Logo & About */}
           <div className="col-span-1 md:col-span-5 flex flex-col items-center md:items-start">
-            <Link to="/" className="mb-6 block bg-white/5 backdrop-blur-md p-4 rounded-3xl border border-white/10 hover:border-yellow/30 transition-colors">
+            <a href="http://hriansmasr.com/" className="mb-6 block bg-white/5 backdrop-blur-md p-4 rounded-3xl border border-white/10 hover:border-yellow/30 transition-colors">
               {isHiddenMarket ? (
-                <img src="/Logo_Hidden.svg" alt="The Hidden Market Logo" className="h-14 md:h-16 object-contain" />
+                <img src="/images/logo.png" alt="The Hidden Market Logo" className="h-14 md:h-16 object-contain" />
+              ) : location.pathname === '/hr-roadmap' ? (
+                <img src="/images/logo.png" alt="HR Roadmap Logo" className="h-14 md:h-16 object-contain" />
               ) : (
                 <img src="/images/logo.png" alt="HRians Egypt Logo" className="h-14 md:h-16 object-contain" />
               )}
-            </Link>
+            </a>
             <p className="text-white/70 text-sm md:text-base text-center md:text-right leading-relaxed max-w-sm mb-6">
               أكاديمية أتش أرجية مصر بقيادة أحمد ناجي الدخميسي، بتوفرلك برامج تدريبية ومسارات مهنية حقيقية هتساعدك تطور كاريرك وتبني علامتك الشخصية في سوق العمل.
             </p>

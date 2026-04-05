@@ -13,6 +13,12 @@ const hiddenMarketLinks = [
   { to: '#reels-feedback', label: 'تجارب المتدربين' },
 ]
 
+const hrRoadmapLinks = [
+  { to: '#pillars', label: 'المحاور الرئيسية' },
+  { to: '#gallery', label: 'التدريب العملي' },
+  { to: '#reels-feedback', label: 'آراء المتدربين' },
+]
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const location = useLocation()
@@ -22,6 +28,15 @@ function Navbar() {
   const isActive = (path: string) => location.pathname === path
   
   const isHiddenMarket = location.pathname === '/hidden-market-masterclass'
+  const isHrRoadmap = location.pathname === '/hr-roadmap'
+
+  const scrollToTop = (e: React.MouseEvent) => {
+    e.preventDefault()
+    closeMenu()
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const hoverClass = isHrRoadmap ? 'hover:text-[#ee8a1c]' : 'hover:text-yellow-v2'
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault()
@@ -35,27 +50,35 @@ function Navbar() {
     }
   }
 
+  // Determine current active section's links
+  const activePageLinks = isHiddenMarket ? hiddenMarketLinks : isHrRoadmap ? hrRoadmapLinks : null
+
   return (
     <header className="fixed top-0 left-0 w-full z-50 flex flex-col">
       {isHiddenMarket && (
-        <div className="bg-gradient-to-r from-yellow-300 to-yellow-500 py-1.5 sm:py-2 px-2 sm:px-4 w-full flex items-center justify-center gap-2 sm:gap-4 shadow-sm border-b border-yellow-600/20 z-[60] overflow-hidden whitespace-nowrap">
-          <div className="flex items-center gap-1 sm:gap-2 text-[var(--color-brand-dark)] text-[10px] sm:text-sm font-black text-center mx-auto truncate">
+        <div className="bg-linear-to-r from-yellow-300 to-yellow-500 py-1.5 sm:py-2 px-2 sm:px-4 w-full flex items-center justify-center gap-2 sm:gap-4 shadow-sm border-b border-yellow-600/20 z-60 overflow-hidden whitespace-nowrap">
+          <div className="flex items-center gap-1 sm:gap-2 text-brand-dark text-[10px] sm:text-sm font-black text-center mx-auto truncate">
             <span className="flex items-center gap-1 sm:gap-1.5 justify-center truncate">
               <i className="fa-solid fa-clock text-xs sm:text-base animate-pulse hidden sm:inline-block" />
               <p className='text-[9px] sm:text-sm truncate'>
                الكورس يوم واحد لمدة 6 ساعات متواصلة. الدفعة القادمة هتبدأ يوم 
               </p>
-              <span className="bg-white/50 px-1.5 sm:px-2 py-0.5 rounded text-[var(--color-brand-dark)] font-black text-[9px] sm:text-sm shrink-0">18 أبريل</span>
+              <span className="bg-white/50 px-1.5 sm:px-2 py-0.5 rounded text-brand-dark font-black text-[9px] sm:text-sm shrink-0">18 أبريل</span>
             </span>
           </div>
         </div>
       )}
-      <nav className={`${isHiddenMarket ? 'bg-[#0A2552] border-b border-white/5' : 'bg-primary'} h-[90px] w-full flex items-center transition-colors relative z-[55]`}>
+      <nav className={`${isHiddenMarket ? 'bg-brand-dark border-b border-white/5' : isHrRoadmap ? 'bg-[#1c54b3] border-b border-white/5' : 'bg-primary'} h-[90px] w-full flex items-center transition-colors relative z-55`}>
         <div className='container mx-auto px-4 flex items-center justify-between text-white'>
+        {/* LOGO */}
         {isHiddenMarket ? (
-          <Link to="/" onClick={closeMenu}>
+          <a href="#" onClick={scrollToTop}>
             <img src="/Logo_Hidden.svg" className='h-8 md:h-12 cursor-pointer object-contain' alt="The Hidden Market Masterclass" />
-          </Link>
+          </a>
+        ) : isHrRoadmap ? (
+          <a href="#" onClick={scrollToTop}>
+            <img src="/hr-roadmap.png" className='h-8 md:h-12 cursor-pointer object-contain' alt="HR Roadmap" />
+          </a>
         ) : (
           <Link to="/" onClick={closeMenu}>
             <img src="/images/logo.png" className='h-8 md:h-12 cursor-pointer object-contain' alt="HRians Egypt" />
@@ -69,24 +92,29 @@ function Navbar() {
 
         {/* Desktop Menu */}
         <ul className='hidden lg:flex flex-row items-center gap-2'>
-          {isHiddenMarket ? (
+          {activePageLinks ? (
             <>
               <li>
-                <Link to="/" className="hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors">
+                <a href="#" onClick={scrollToTop} className={`${hoverClass} px-3 py-2 font-bold rounded transition-colors cursor-pointer`}>
                   الرئيسية
-                </Link>
+                </a>
               </li>
-              {hiddenMarketLinks.map(link => (
+              {activePageLinks.map(link => (
                 <li key={link.to}>
                   <a
                     href={link.to}
                     onClick={(e) => handleScroll(e, link.to)}
-                    className="hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors cursor-pointer"
+                    className={`${hoverClass} px-3 py-2 font-bold rounded transition-colors cursor-pointer`}
                   >
                     {link.label}
                   </a>
                 </li>
               ))}
+              <li>
+                <Link to="/" onClick={closeMenu} className={`${hoverClass} px-3 py-2 font-bold rounded transition-colors`}>
+                  دورات أخرى
+                </Link>
+              </li>
             </>
           ) : (
             <>
@@ -120,7 +148,7 @@ function Navbar() {
             href="https://docs.google.com/forms/d/1XBIyFfwF98HRQexWtOojaZNTxd5RDwuqP63GetjF-N0/viewform?chromeless=1&edit_requested=true"
             target="_blank"
             rel="noopener noreferrer"
-            className='bg-yellow text-white px-4 py-2 rounded cursor-pointer text-base font-bold hover:bg-yellow-v2 transition-colors'
+            className={`${isHrRoadmap ? 'bg-[#ee8a1c] hover:bg-[#e67e22]' : 'bg-yellow hover:bg-yellow-v2'} text-white px-4 py-2 rounded cursor-pointer text-base font-bold transition-colors`}
           >
             سجّل دلوقتي
           </a>
@@ -128,34 +156,41 @@ function Navbar() {
 
         {/* Mobile Menu Drawer */}
         <div className={`fixed top-0 left-0 h-screen w-64 shadow-2xl transform transition-transform duration-300 ease-in-out lg:hidden z-50 ${
-          isHiddenMarket ? 'bg-[#0A2552]' : 'bg-primary'
+          isHiddenMarket ? 'bg-brand-dark' : isHrRoadmap ? 'bg-[#1c54b3]' : 'bg-primary'
         } ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
           <div className='h-[90px] flex items-center px-6 border-b border-white/5'>
             {isHiddenMarket ? (
-              <img src="/Logo_Hidden.svg" className='h-8 cursor-pointer object-contain' alt="The Hidden Market Masterclass" onClick={closeMenu} />
+              <img src="/Logo_Hidden.svg" className='h-8 cursor-pointer object-contain' alt="The Hidden Market Masterclass" onClick={scrollToTop} />
+            ) : isHrRoadmap ? (
+              <img src="/hr-roadmap.png" className='h-8 cursor-pointer object-contain' alt="HR Roadmap" onClick={scrollToTop} />
             ) : (
               <img src="/images/logo.png" className='h-8 cursor-pointer object-contain' alt="HRians Egypt" onClick={closeMenu} />
             )}
           </div>
           <ul className='flex flex-col p-6 space-y-2'>
-            {isHiddenMarket ? (
+            {activePageLinks ? (
               <>
                 <li>
-                  <Link to="/" onClick={closeMenu} className="block px-3 py-2 font-bold rounded transition-colors hover:text-yellow-v2">
+                  <a href="#" onClick={scrollToTop} className={`block px-3 py-2 font-bold rounded transition-colors ${hoverClass}`}>
                     الرئيسية
-                  </Link>
+                  </a>
                 </li>
-                {hiddenMarketLinks.map(link => (
+                {activePageLinks.map(link => (
                   <li key={link.to}>
                     <a
                       href={link.to}
                       onClick={(e) => handleScroll(e, link.to)}
-                      className="block px-3 py-2 font-bold rounded transition-colors hover:text-yellow-v2 cursor-pointer"
+                      className={`block px-3 py-2 font-bold rounded transition-colors ${hoverClass} cursor-pointer`}
                     >
                       {link.label}
                     </a>
                   </li>
                 ))}
+                <li>
+                  <Link to="/" onClick={closeMenu} className={`block px-3 py-2 font-bold rounded transition-colors ${hoverClass}`}>
+                    دورات أخرى
+                  </Link>
+                </li>
               </>
             ) : (
               <>
@@ -188,7 +223,7 @@ function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={closeMenu}
-                className='bg-yellow text-white px-6 py-2 rounded font-bold hover:bg-yellow-v2 transition-colors w-full block text-center'
+                className={`${isHrRoadmap ? 'bg-[#ee8a1c] hover:bg-[#e67e22]' : 'bg-yellow hover:bg-yellow-v2'} text-white px-6 py-2 rounded font-bold transition-colors w-full block text-center`}
               >
                 سجّل دلوقتي
               </a>

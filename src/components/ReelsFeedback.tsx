@@ -3,7 +3,10 @@ import Slider from "react-slick"
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-const ReelsFeedback = () => {
+interface ReelsFeedbackProps { videoLinks?: string[]; isLandscape?: boolean; brandColor?: string; }
+
+const ReelsFeedback = ({ videoLinks, isLandscape = false, brandColor }: ReelsFeedbackProps) => {
+    const customStyles = brandColor ? { '--color-brand-dark': brandColor, '--color-brand-light': brandColor } as React.CSSProperties : {};
     const [isMobile, setIsMobile] = useState(false)
 
     useEffect(() => {
@@ -32,9 +35,11 @@ const ReelsFeedback = () => {
         'https://youtube.com/shorts/x6loNLVKfR8?si=M45QYHVbXvDLyDNk',
     ]
 
-    const reels = reelLinks
+    const activeLinks = videoLinks || reelLinks;
+
+    const reels = activeLinks
         .map((link) => {
-            const match = link.match(/(?:youtube\.com\/shorts\/|youtu\.be\/)([A-Za-z0-9_-]{11})/)
+            const match = link.match(/(?:youtube\.com\/(?:shorts\/|watch\?v=)|youtu\.be\/)([A-Za-z0-9_-]{11})/)
             return match ? { id: match[1], link } : null
         })
         .filter((item): item is { id: string; link: string } => item !== null)
@@ -44,7 +49,7 @@ const ReelsFeedback = () => {
         arrows: true,
         infinite: true,
         speed: 600,
-        slidesToShow: isMobile ? 1 : 3,
+        slidesToShow: isMobile ? 1 : (isLandscape ? 2 : 3),
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 4500,
@@ -52,7 +57,7 @@ const ReelsFeedback = () => {
     }
 
     return (
-        <section className="py-20 bg-white relative overflow-hidden">
+        <section className="py-20 bg-white relative overflow-hidden" style={customStyles}>
             <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-[0.03] grayscale pointer-events-none" />
             <div className="absolute top-0 right-0 h-96 w-96 rounded-full bg-var(--color-brand-dark)/5 blur-[100px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-yellow/5 blur-[100px] pointer-events-none" />
@@ -78,7 +83,7 @@ const ReelsFeedback = () => {
                                     <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm relative group">
                                         <div className="absolute inset-0 bg-[var(--color-brand-dark)]/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10" />
                                         <iframe
-                                            className="w-full aspect-9/16 bg-black"
+                                            className={`w-full bg-black ${isLandscape ? 'aspect-video' : 'aspect-[9/16]'}`}
                                             src={`https://www.youtube.com/embed/${reel.id}?rel=0&playsinline=1`}
                                             title={`Student reel ${index + 1}`}
                                             loading="lazy"

@@ -58,6 +58,8 @@ const outcomes = [
   { text: "تحصل على عروض وظيفية بدون تقديم", icon: "fa-solid fa-envelope-open-text" },
 ]
 
+
+
 const features = [
   {
     icon: "fa-solid fa-briefcase",
@@ -180,7 +182,7 @@ function HiddenMarketPage() {
                   href={FORM_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative flexitems-center justify-center bg-gradient-to-r from-yellow to-yellow-v2 text-[var(--color-brand-dark)] font-extrabold text-lg px-8 py-3 rounded-xl overflow-hidden shadow-[0_15px_30px_-10px_rgba(239,138,27,0.5)] transition-all duration-300 hover:scale-[1.02] flex-1 text-center flex"
+                  className="group relative flexitems-center justify-center bg-linear-to-r from-yellow to-yellow-v2 text-brand-dark font-extrabold text-lg px-8 py-3 rounded-xl overflow-hidden shadow-[0_15px_30px_-10px_rgba(239,138,27,0.5)] transition-all duration-300 hover:scale-[1.02] flex-1 text-center flex"
                 >
                   <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                   <span className="relative flex items-center justify-center gap-3">
