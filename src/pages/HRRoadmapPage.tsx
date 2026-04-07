@@ -3,8 +3,9 @@ import SEO from "../components/SEO"
 import ReelsFeedback from "../components/ReelsFeedback"
 import { t } from "i18next"
 import Gallery from "../components/Gallery";
+import { Link } from "react-router-dom";
 
-const FORM_LINK = "https://wa.me/201097828846?text=" + encodeURIComponent("مرحباً، أريد الاستفسار عن كورس HR Roadmap");
+const FORM_LINK = "/hr-roadmap/book";
 
 const programPillars = [
   {
@@ -109,12 +110,12 @@ function HRRoadmapPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4 animate-on-scroll fade-in-up" style={{ animationDelay: '0.3s' }}>
-            <a
-              href={FORM_LINK} target="_blank" rel="noopener noreferrer"
+            <Link
+              to={FORM_LINK}
               className="bg-[#ee8a1c] hover:bg-[#e67e22] text-white font-black text-xl px-10 py-4 rounded-2xl transition-all hover:-translate-y-1 shadow-[0_15px_30px_-10px_rgba(238,138,28,0.5)] flex items-center justify-center gap-3"
             >
               ابدأ رحلتك الآن <i className="fa-solid fa-rocket" />
-            </a>
+            </Link>
             <button
               onClick={() => document.getElementById("pillars")?.scrollIntoView({ behavior: "smooth" })}
               className="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xl px-10 py-4 rounded-2xl transition-all flex items-center justify-center gap-3"
@@ -192,9 +193,9 @@ function HRRoadmapPage() {
               <p className="text-slate-600 text-lg font-bold leading-relaxed mb-8">
                 الكثير من محترفي الموارد البشرية يستهلكون طاقاتهم في مهام شؤون العاملين والإجراءات الورقية الروتينية دون أي تدخل حقيقي في رسم استراتيجية الشركة أو تحديد أهدافها. هذا التجاهل يعود لافتقارهم للأدوات الإدارية الحديثة.
               </p>
-              <a href={FORM_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#1c54b3] font-black text-lg hover:text-[#ee8a1c] transition-colors">
+              <Link to={FORM_LINK} className="inline-flex items-center gap-2 text-[#1c54b3] font-black text-lg hover:text-[#ee8a1c] transition-colors">
                 وقت التغيير قد حان <i className="fa-solid fa-arrow-left text-sm" />
-              </a>
+              </Link>
             </div>
 
             <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-5 w-full">
@@ -288,12 +289,12 @@ function HRRoadmapPage() {
           <p className="text-slate-600 text-xl font-bold mb-10 leading-relaxed">
             الشركات تبحث عن من يمتلك الرؤية والإدارة، وليس فقط من يُجيد متابعة الحضور والانصراف. انضم إلينا واكتسب عقلية الشريك الاستراتيجي.
           </p>
-          <a
-            href={FORM_LINK} target="_blank" rel="noopener noreferrer" 
+          <Link
+            to={FORM_LINK}
             className="group inline-flex items-center gap-3 bg-[#1c54b3] text-white font-black text-2xl px-12 py-5 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-[#11367a]"
           >
             احجز مقعدك الآن <i className="fa-solid fa-arrow-left group-hover:-translate-x-2 transition-transform" />
-          </a>
+          </Link>
         </div>
       </section>
     </>
