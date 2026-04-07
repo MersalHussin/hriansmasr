@@ -469,24 +469,24 @@ function HiddenMarketPage() {
           
           {/* أسسنا شبكة Grid احترافية لعرض الصور بنمط ذكي (Bento Grid) */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[250px] md:auto-rows-[300px]">
-            
-            {/* Wide 1 (تأخذ مساحة عمودين) */}
-            <div className="animate-on-scroll fade-in-up group overflow-hidden rounded-3xl border border-white/10 shadow-2xl relative block md:col-span-2 md:row-span-1" style={{ animationDelay: '0.1s' }}>
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-dark)]/80 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-10" />
-              <img
-                src="https://scontent.fcai19-11.fna.fbcdn.net/v/t39.30808-6/658585923_26428782573408490_2506700317568725263_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeHdj8WuNmLtXOqrwUP8dnfwiVdjXk0v4rOJV2NeTS_isx8Fmq71s6v51L2XMQMGiVI2uSgBk2Md2Hoyfpdsaz0a&_nc_ohc=QXMWf55fDvAQ7kNvwEicTSs&_nc_oc=AdplGK8dZLrJDVzI8N7IAxkFYmH08S3lLlYoYCe6H24aXK_WjU_e2JYDu7rb3lregjs&_nc_zt=23&_nc_ht=scontent.fcai19-11.fna&_nc_gid=YrVPqg2c3QLRBBlGBsxa0w&_nc_ss=7a3a8&oh=00_Af2SOfvdl9yA57XFbsJTsSf_MBuPDwEkHRdm62zu39FxJw&oe=69D48A6B"
-                alt="تدريب السوق الخفي"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 relative z-0"
-                loading="lazy"
-              />
-            </div>
 
             {/* Vertical 1 (تأخذ ارتفاع صفين وعرض عمود واحد) */}
             <div className="animate-on-scroll fade-in-up group overflow-hidden rounded-3xl border border-white/10 shadow-2xl relative block md:col-span-1 md:row-span-2" style={{ animationDelay: '0.2s' }}>
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-dark)]/80 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-10" />
               <img
-                src="https://scontent.fcai19-4.fna.fbcdn.net/v/t39.30808-6/660985895_26428772886742792_1263854306626122597_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeEBUs6HOQIBp-p-eJjrMloJ4tukWvPzzG_i26Ra8_PMb8XuTU8LmVXsGc1rT2GDolQRVNTJYvPHoG85nTTwxT-j&_nc_ohc=3TJdxqfeIKAQ7kNvwESDx-b&_nc_oc=AdpC2yVq6raI1-9N8jTIhdBN4Vn8l9uZ2CbHER6nL50sRWMwcp7ZPFSWmxN1mSO1f0c&_nc_zt=23&_nc_ht=scontent.fcai19-4.fna&_nc_gid=3BCrStEBF0Onl1tnI9_Rug&_nc_ss=7a3a8&oh=00_Af2vElXSxSDL0-06UbcOGVKH0s5CZqFNHHl3bo7iLipnsg&oe=69D49EEE"
+                src="./images/Course/TheHidden/4.jpg"
                 alt="تفاعل وتدريب عملي"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 relative z-0"
+                loading="lazy"
+              />
+            </div>
+            
+            {/* Wide 1 (تأخذ مساحة عمودين) */}
+            <div className="animate-on-scroll fade-in-up group overflow-hidden rounded-3xl border border-white/10 shadow-2xl relative block md:col-span-2 md:row-span-1" style={{ animationDelay: '0.1s' }}>
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-dark)]/80 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-10" />
+              <img
+                src="./images/Course/TheHidden/1.jpg"
+                alt="تدريب السوق الخفي"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 relative z-0"
                 loading="lazy"
               />
@@ -496,7 +496,7 @@ function HiddenMarketPage() {
             <div className="animate-on-scroll fade-in-up group overflow-hidden rounded-3xl border border-white/10 shadow-2xl relative block md:col-span-1 md:row-span-2" style={{ animationDelay: '0.3s' }}>
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-dark)]/80 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-10" />
               <img
-                src="https://scontent.fcai19-4.fna.fbcdn.net/v/t39.30808-6/659801783_26428771773409570_3920793003010735135_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeEiwL2ilrPQ124TsmoEHTaO3kBaIxt2-4zeQFojG3b7jDWzM71RR55W-dpEsn1mcd_pZET7EEo3_V5aI9Nk_V7h&_nc_ohc=KznaEZ_Ux4YQ7kNvwFsGT68&_nc_oc=AdrYsLz8RJFb3vZHjTdC3L5tDPDDWldBlYgclfs6h576Ktmfg2fXge-Hci2Ocr3u2kw&_nc_zt=23&_nc_ht=scontent.fcai19-4.fna&_nc_gid=nNu6r_7Mlh-or470yrrmGA&_nc_ss=7a3a8&oh=00_Af3sURNUPQar8MS-hwtVf5820celf4a8CnnItsRHinAXSQ&oe=69D49823"
+                src="./images/Course/TheHidden/3.jpg"
                 alt="نقاشات الورشة"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 relative z-0"
                 loading="lazy"
@@ -507,7 +507,7 @@ function HiddenMarketPage() {
             <div className="animate-on-scroll fade-in-up group overflow-hidden rounded-3xl border border-white/10 shadow-2xl relative block md:col-span-2 md:row-span-1" style={{ animationDelay: '0.4s' }}>
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-dark)]/80 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-10" />
               <img
-                src="https://scontent.fcai19-4.fna.fbcdn.net/v/t39.30808-6/657726655_26428782873408460_4552988750096273614_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeGTQpbr1mHtl0_0o8_nvxCgwZBCaJVJb8TBkEJolUlvxIlGO_WWSGgQ-DqzjXBznijMlveh1WtHDb3KlsTHjzAq&_nc_ohc=G_qpB_lZRtwQ7kNvwEdVgrY&_nc_oc=AdpHFBUKhaC8k5H0ME-PJZZZyxR-Qj5JNiM2fHjlHKUUpFiL0UpARIIoWDDeDL__yGE&_nc_zt=23&_nc_ht=scontent.fcai19-4.fna&_nc_gid=MtXMCCuC8M3Sfur7hg1vIA&_nc_ss=7a3a8&oh=00_Af30VW1dJurNuR2wX4Cxn3H33WLYnAjwCpq9-nkBhnYZww&oe=69D4B5FD"
+                src="./images/Course/TheHidden/2.jpg"
                 alt="صورة جماعية"
                 className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700 relative z-0"
                 loading="lazy"
@@ -518,7 +518,7 @@ function HiddenMarketPage() {
             <div className="animate-on-scroll fade-in-up group overflow-hidden rounded-3xl border border-white/10 shadow-2xl relative block md:col-span-4 md:row-span-1" style={{ animationDelay: '0.5s' }}>
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-dark)]/80 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-10" />
               <img
-                src="https://scontent.fcai19-11.fna.fbcdn.net/v/t39.30808-6/660106537_26428778646742216_5394434949459489937_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeECTjmwQ33_Z2SP4C_Us2gG9NpPDKaAGfD02k8MpoAZ8PJ2d3ZJDNuxUNz3-PGBZeyfu7aCENiKtxIMp8xLJ4HS&_nc_ohc=-3eAqDFpQ9oQ7kNvwFZoHH3&_nc_oc=AdrhAgfjmeLnoMJ5v0VAZt1oDYHxbR17Qy98hzKLYv4lcecy3MUy60zDSksnVrZfbyM&_nc_zt=23&_nc_ht=scontent.fcai19-11.fna&_nc_gid=TF9MQNIsRcz76Feu9BEmBg&_nc_ss=7a3a8&oh=00_Af3mvbQqPWlECWsAotXH69qOufcTyTZCxI3_Y2WJcST1zw&oe=69D4888A"
+                src="./images/Course/TheHidden/5.jpg"
                 alt="تطبيق عملي"
                 className="w-full h-full object-cover object-[center_30%] group-hover:scale-110 transition-transform duration-700 relative z-0"
                 loading="lazy"
@@ -601,7 +601,7 @@ function HiddenMarketPage() {
                     <i className="fa-solid fa-location-dot text-yellow-v2 text-4xl mb-4 drop-shadow-md"></i>
                     <span className="text-white/60 text-sm mb-2 font-bold uppercase tracking-wider">المكان</span>
                     <strong className="text-xl">The GrEEK Campus</strong>
-                    <span className="text-yellow text-sm mt-2 font-bold bg-yellow/10 py-1 px-3 rounded-full self-center">ومتاح أونلاين</span>
+                    <span className="text-yellow text-sm mt-2 font-bold bg-yellow/10 py-1 px-3 rounded-full self-center">اوفلاين فقط</span>
                   </div>
                   <div className="flex flex-col justify-center p-6 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
                     <i className="fa-solid fa-calendar-days text-yellow-v2 text-4xl mb-4 drop-shadow-md"></i>
