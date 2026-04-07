@@ -201,7 +201,7 @@ function HiddenMarketPage() {
 
             {/* IMAGE COLUMN */}
             <div className="hidden lg:flex w-full relative h-[500px] items-center justify-center">
-              <div className="absolute -inset-4 bg-gradient-to-br from-[var(--color-brand-light)] to-[#0c224a] rounded-[2.5rem] transform rotate-3 scale-105 opacity-40 blur-2xl pointer-events-none"></div>
+              <div className="absolute -inset-4 bg-linear-to-br from-brand-light to-[#0c224a] rounded-[2.5rem] transform rotate-3 scale-105 opacity-40 blur-2xl pointer-events-none"></div>
               <div className="absolute inset-0 border-4 border-yellow-v2/30 rounded-[2.5rem] transform -rotate-3 scale-[1.02] pointer-events-none transition-transform hover:rotate-0 hover:scale-100 duration-500"></div>
               
               <div className="hero-rec relative w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl border-2 border-white/10 group cursor-pointer">
@@ -212,10 +212,10 @@ function HiddenMarketPage() {
                 />
                 
                 {/* Overlay Badge */}
-                <div className="absolute bottom-6 right-6 left-6 bg-[calc(var(--color-brand-dark)/0.85)] backdrop-blur-md border border-white/10 p-4 rounded-xl transform translate-y-2 group-hover:translate-y-0 opacity-90 group-hover:opacity-100 transition-all duration-300">
+                <div className="absolute bottom-6 right-6 left-6 bg-position-[calc(var(--color-brand-dark)/0.85)] backdrop-blur-md border border-white/10 p-4 rounded-xl transform translate-y-2 group-hover:translate-y-0 opacity-90 group-hover:opacity-100 transition-all duration-300">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-yellow rounded-xl flex items-center justify-center shrink-0">
-                      <i className="fa-solid fa-bullseye text-2xl text-[var(--color-brand-dark)]"></i>
+                      <i className="fa-solid fa-bullseye text-2xl text-brand-dark"></i>
                     </div>
                     <div>
                       <strong className="block text-white text-lg font-black mb-0.5">أحمد ناجي الدخميسي</strong>

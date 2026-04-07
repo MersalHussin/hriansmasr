@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react"
 import SEO from "../components/SEO"
 import ReelsFeedback from "../components/ReelsFeedback"
 import { t } from "i18next"
+import Gallery from "../components/Gallery";
 
 const FORM_LINK = "https://wa.me/201097828846?text=" + encodeURIComponent("مرحباً، أريد الاستفسار عن كورس HR Roadmap");
 
@@ -79,7 +80,7 @@ function HRRoadmapPage() {
   return (
     <>
       <SEO
-        title="HR Executive Roadmap | HRians Egypt"
+        title="HR Executive Roadmap"
         description="ارتقِ من المهام الروتينية إلى القيادة الاستراتيجية. احترف كافة أقسام إدارة الموارد البشرية بأسلوب عملي تطبيقي."
         keywords="HR roadmap, موارد بشرية, كورس HR, تدريب HR, إدارة موارد بشرية, Business Partner"
       />
@@ -235,6 +236,7 @@ function HRRoadmapPage() {
           </div>
         </div>
       </section>
+      
 
       {/* ===== PILLARS (Bento Grid instead of Timeline) ===== */}
       <section id="pillars" className="py-24 bg-[#1c54b3] relative overflow-hidden" dir="rtl">
@@ -261,6 +263,11 @@ function HRRoadmapPage() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Gallery */}
+      <section id="pillars" className="pt-24 bg-slate-50 relative overflow-hidden" dir="rtl">
+            <Gallery/>
       </section>
 
 

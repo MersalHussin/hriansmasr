@@ -118,11 +118,6 @@ function Navbar() {
             </>
           ) : (
             <>
-              <li>
-                <Link to="/" className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors ${isActive('/') ? 'text-yellow-v2' : ''}`}>
-                  الرئيسية
-                </Link>
-              </li>
               {courseLinks.map(link => (
                 <li key={link.to}>
                   <Link
@@ -133,11 +128,6 @@ function Navbar() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link to="/contact" className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors ${isActive('/contact') ? 'text-yellow-v2' : ''}`}>
-                  تواصل معنا
-                </Link>
-              </li>
             </>
           )}
         </ul>
@@ -145,12 +135,12 @@ function Navbar() {
         {/* Desktop CTA */}
         <div className='hidden lg:flex items-center gap-2'>
           <a
-            href="https://docs.google.com/forms/d/1XBIyFfwF98HRQexWtOojaZNTxd5RDwuqP63GetjF-N0/viewform?chromeless=1&edit_requested=true"
+            href={isHiddenMarket ? "https://docs.google.com/forms/d/1XBIyFfwF98HRQexWtOojaZNTxd5RDwuqP63GetjF-N0/viewform?chromeless=1&edit_requested=true" : isHrRoadmap ? "https://wa.me/201097828846?text=" + encodeURIComponent("مرحباً، أريد الاستفسار عن كورس HR Roadmap") : "https://wa.me/201097828846"}
             target="_blank"
             rel="noopener noreferrer"
             className={`${isHrRoadmap ? 'bg-[#ee8a1c] hover:bg-[#e67e22]' : 'bg-yellow hover:bg-yellow-v2'} text-white px-4 py-2 rounded cursor-pointer text-base font-bold transition-colors`}
           >
-            سجّل دلوقتي
+            {(!isHiddenMarket && !isHrRoadmap) ? 'تواصل معنا' : 'سجّل دلوقتي'}
           </a>
         </div>
 
@@ -194,11 +184,6 @@ function Navbar() {
               </>
             ) : (
               <>
-                <li>
-                  <Link to="/" onClick={closeMenu} className={`block px-3 py-2 font-bold rounded transition-colors hover:text-yellow-v2 ${isActive('/') ? 'text-yellow-v2' : ''}`}>
-                    الرئيسية
-                  </Link>
-                </li>
                 {courseLinks.map(link => (
                   <li key={link.to}>
                     <Link
@@ -210,24 +195,19 @@ function Navbar() {
                     </Link>
                   </li>
                 ))}
-                <li>
-                  <Link to="/contact" onClick={closeMenu} className={`block px-3 py-2 font-bold rounded transition-colors hover:text-yellow-v2 ${isActive('/contact') ? 'text-yellow-v2' : ''}`}>
-                    تواصل معنا
-                  </Link>
-                </li>
               </>
             )}
             <li className='pt-4'>
-              <a
-                href="https://docs.google.com/forms/d/1XBIyFfwF98HRQexWtOojaZNTxd5RDwuqP63GetjF-N0/viewform?chromeless=1&edit_requested=true"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={closeMenu}
-                className={`${isHrRoadmap ? 'bg-[#ee8a1c] hover:bg-[#e67e22]' : 'bg-yellow hover:bg-yellow-v2'} text-white px-6 py-2 rounded font-bold transition-colors w-full block text-center`}
-              >
-                سجّل دلوقتي
-              </a>
-            </li>
+                <a
+                  href={isHiddenMarket ? "https://docs.google.com/forms/d/1XBIyFfwF98HRQexWtOojaZNTxd5RDwuqP63GetjF-N0/viewform?chromeless=1&edit_requested=true" : isHrRoadmap ? "https://wa.me/201097828846?text=" + encodeURIComponent("مرحباً، أريد الاستفسار عن كورس HR Roadmap") : "https://wa.me/201097828846"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeMenu}
+                  className={`${isHrRoadmap ? 'bg-[#ee8a1c] hover:bg-[#e67e22]' : 'bg-yellow hover:bg-yellow-v2'} text-white px-6 py-2 rounded font-bold transition-colors w-full block text-center`}
+                >
+                  {(!isHiddenMarket && !isHrRoadmap) ? 'تواصل معنا' : 'سجّل دلوقتي'}
+                </a>
+              </li>
           </ul>
         </div>
 
