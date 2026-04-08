@@ -134,14 +134,23 @@ function Navbar() {
 
         {/* Desktop CTA */}
         <div className='hidden lg:flex items-center gap-2'>
-          <a
-            href={isHiddenMarket ? "https://docs.google.com/forms/d/1XBIyFfwF98HRQexWtOojaZNTxd5RDwuqP63GetjF-N0/viewform?chromeless=1&edit_requested=true" : isHrRoadmap ? "https://wa.me/201097828846?text=" + encodeURIComponent("مرحباً، أريد الاستفسار عن كورس HR Roadmap") : "https://wa.me/201097828846"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`${isHrRoadmap ? 'bg-[#ee8a1c] hover:bg-[#e67e22]' : 'bg-yellow hover:bg-yellow-v2'} text-white px-4 py-2 rounded cursor-pointer text-base font-bold transition-colors`}
-          >
-            {(!isHiddenMarket && !isHrRoadmap) ? 'تواصل معنا' : 'سجّل دلوقتي'}
-          </a>
+          {isHrRoadmap ? (
+            <Link
+              to="/hr-roadmap/book"
+              className="bg-[#ee8a1c] hover:bg-[#e67e22] text-white px-4 py-2 rounded cursor-pointer text-base font-bold transition-colors"
+            >
+              سجّل دلوقتي
+            </Link>
+          ) : (
+            <a
+              href={isHiddenMarket ? "https://docs.google.com/forms/d/1XBIyFfwF98HRQexWtOojaZNTxd5RDwuqP63GetjF-N0/viewform?chromeless=1&edit_requested=true" : "https://wa.me/201097828846"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-yellow hover:bg-yellow-v2 text-white px-4 py-2 rounded cursor-pointer text-base font-bold transition-colors"
+            >
+              {!isHiddenMarket ? 'تواصل معنا' : 'سجّل دلوقتي'}
+            </a>
+          )}
         </div>
 
         {/* Mobile Menu Drawer */}
@@ -198,15 +207,25 @@ function Navbar() {
               </>
             )}
             <li className='pt-4'>
-                <a
-                  href={isHiddenMarket ? "https://docs.google.com/forms/d/1XBIyFfwF98HRQexWtOojaZNTxd5RDwuqP63GetjF-N0/viewform?chromeless=1&edit_requested=true" : isHrRoadmap ? "https://wa.me/201097828846?text=" + encodeURIComponent("مرحباً، أريد الاستفسار عن كورس HR Roadmap") : "https://wa.me/201097828846"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={closeMenu}
-                  className={`${isHrRoadmap ? 'bg-[#ee8a1c] hover:bg-[#e67e22]' : 'bg-yellow hover:bg-yellow-v2'} text-white px-6 py-2 rounded font-bold transition-colors w-full block text-center`}
-                >
-                  {(!isHiddenMarket && !isHrRoadmap) ? 'تواصل معنا' : 'سجّل دلوقتي'}
-                </a>
+                {isHrRoadmap ? (
+                  <Link
+                    to="/hr-roadmap/book"
+                    onClick={closeMenu}
+                    className="bg-[#ee8a1c] hover:bg-[#e67e22] text-white px-6 py-2 rounded font-bold transition-colors w-full block text-center"
+                  >
+                    سجّل دلوقتي
+                  </Link>
+                ) : (
+                  <a
+                    href={isHiddenMarket ? "https://docs.google.com/forms/d/1XBIyFfwF98HRQexWtOojaZNTxd5RDwuqP63GetjF-N0/viewform?chromeless=1&edit_requested=true" : "https://wa.me/201097828846"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={closeMenu}
+                    className="bg-yellow hover:bg-yellow-v2 text-white px-6 py-2 rounded font-bold transition-colors w-full block text-center"
+                  >
+                    {!isHiddenMarket ? 'تواصل معنا' : 'سجّل دلوقتي'}
+                  </a>
+                )}
               </li>
           </ul>
         </div>
