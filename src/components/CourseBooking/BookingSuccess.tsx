@@ -5,7 +5,7 @@ interface BookingSuccessProps {
   seoTitle: string;
   seoDescription: string;
   courseName: string;
-  whatsappMessageTemplate: (formData: any) => string;
+  whatsappMessageTemplate: (formData: f) => string;
   fallbackRoute: string;
 }
 

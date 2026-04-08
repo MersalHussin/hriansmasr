@@ -1,7 +1,14 @@
 import BookingSuccess from "../../components/CourseBooking/BookingSuccess";
 
+interface FormData {
+  name: string;
+  mobile: string;
+  email: string;
+  jobLevel: string;
+}
+
 export default function HiddenMarketSuccessPage() {
-  const getWhatsappMessage = (formData: any) => `مرحباً، لقد سجلت في كورس The Hidden Market وأريد إتمام الدفع لتأكيد حجزي. 
+  const getWhatsappMessage = (formData: FormData) => `مرحباً، لقد سجلت في كورس The Hidden Market وأريد إتمام الدفع لتأكيد حجزي. 
 الاسم: ${formData.name}
 الموبايل: ${formData.mobile}
 البريد: ${formData.email}

@@ -14,6 +14,18 @@ interface AdminDashboardProps {
   storageKey: string;
 }
 
+interface Booking {
+  id: string;
+  name: string;
+  mobile: string;
+  email: string;
+  jobLevel: string;
+  questions?: string;
+  courseName?: string;
+  isConfirmed: boolean;
+  createdAt?: { toMillis: () => number };
+}
+
 export default function AdminDashboard({
   seoTitle,
   pageTitle,
@@ -28,7 +40,7 @@ export default function AdminDashboard({
   const [authError, setAuthError] = useState("");
   const [isChecking, setIsChecking] = useState(false);
 
-  const [bookings, setBookings] = useState<any[]>([]);
+  const [bookings, setBookings] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(true);
 
   // Check session storage on mount
@@ -114,7 +126,7 @@ export default function AdminDashboard({
       let data = querySnapshot.docs.map(doc => ({
         id: doc.id,
         ...doc.data()
-      })) as any[];
+      })) as Booking[];
       
       // Filter logically if we have a shared collection
       if (courseNameFilter) {

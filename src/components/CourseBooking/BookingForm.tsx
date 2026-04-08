@@ -48,9 +48,9 @@ export default function BookingForm({
         createdAt: serverTimestamp(),
       });
       navigate(successRoute, { state: { formData } });
-    } catch (error: any) {
+    } catch (error) {
       console.error("Error adding document: ", error);
-      alert("حدث خطأ أثناء إرسال البيانات: " + (error.message || "يرجى المحاولة مرة أخرى."));
+      alert("حدث خطأ أثناء إرسال البيانات: " + (error instanceof Error ? error.message : "يرجى المحاولة مرة أخرى."));
     } finally {
       setIsLoading(false);
     }
