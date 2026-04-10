@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import SEO from "../SEO";
 import { Link, useLocation, Navigate } from "react-router-dom";
 
@@ -27,13 +28,16 @@ export default function BookingSuccess({
   const location = useLocation();
   const formData = location.state?.formData;
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (!formData) {
     return <Navigate to={fallbackRoute} replace />;
   }
 
   const whatsappMessage = whatsappMessageTemplate(formData);
   const whatappLink = "https://wa.me/201097828846?text=" + encodeURIComponent(whatsappMessage);
-
   return (
     <>
       <SEO title={seoTitle} description={seoDescription} />

@@ -286,13 +286,82 @@ function HRRoadmapPage() {
 
       {/* ===== CTA (Clean and Direct) ===== */}
       <section className="py-24 bg-slate-100 text-center relative overflow-hidden" dir="rtl">
-        <div className="container mx-auto px-4 relative z-10 max-w-3xl">
-          <h2 className="text-[#1c54b3] font-black text-3xl md:text-5xl mb-6">
-            استثمار اليوم هو ترقية الغد
-          </h2>
-          <p className="text-slate-600 text-xl font-bold mb-10 leading-relaxed">
-            الشركات تبحث عن من يمتلك الرؤية والإدارة، وليس فقط من يُجيد متابعة الحضور والانصراف. انضم إلينا واكتسب عقلية الشريك الاستراتيجي.
-          </p>
+        <div className="container mx-auto px-4 relative z-10 max-w-5xl">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-[#1c54b3] font-black text-3xl md:text-5xl mb-6">
+              استثمار اليوم هو ترقية الغد
+            </h2>
+            <p className="text-slate-600 text-xl font-bold mb-10 leading-relaxed">
+              الشركات تبحث عن من يمتلك الرؤية والإدارة، وليس فقط من يُجيد متابعة الحضور والانصراف. انضم إلينا واكتسب عقلية الشريك الاستراتيجي.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl p-6 md:p-10 mb-12 shadow-2xl shadow-[#1c54b3]/10 border-2 border-[#1c54b3]/5 relative overflow-hidden text-right">
+            {/* Decorative Background Elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#ee8a1c]/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#1c54b3]/10 rounded-full blur-3xl -ml-20 -mb-20 pointer-events-none"></div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 relative z-10 w-full mt-2">
+              
+              {/* Location Card (Teal/Cyan) */}
+              <div className="flex items-center gap-5 p-5 md:p-6 rounded-2xl bg-gradient-to-l from-cyan-50 to-white border border-cyan-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md group">
+                <div className="w-16 h-16 shrink-0 rounded-2xl bg-cyan-100 flex items-center justify-center text-cyan-600 group-hover:scale-110 transition-transform">
+                  <i className="fa-solid fa-location-dot text-3xl" />
+                </div>
+                <div>
+                  <span className="text-slate-500 text-sm md:text-base font-bold block mb-1">مقر التدريب</span>
+                  <span className="text-cyan-700 font-black text-xl md:text-2xl block">مدينة نصر</span>
+                </div>
+              </div>
+
+              {/* Duration Card (Orange) */}
+              <div className="flex items-center gap-5 p-5 md:p-6 rounded-2xl bg-gradient-to-l from-orange-50 to-white border border-orange-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md group">
+                <div className="w-16 h-16 shrink-0 rounded-2xl bg-orange-100 flex items-center justify-center text-orange-600 group-hover:scale-110 transition-transform">
+                  <i className="fa-regular fa-clock text-3xl" />
+                </div>
+                <div>
+                  <span className="text-slate-500 text-sm md:text-base font-bold block mb-1">مدة التدريب</span>
+                  <span className="text-orange-700 font-black text-xl md:text-2xl block">٢٠ ساعة</span>
+                </div>
+              </div>
+
+              {/* Methodology Card (Purple) */}
+              <div className="flex items-center gap-5 p-5 md:p-6 rounded-2xl bg-gradient-to-l from-purple-50 to-white border border-purple-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md group">
+                <div className="w-16 h-16 shrink-0 rounded-2xl bg-purple-100 flex items-center justify-center text-purple-600 group-hover:scale-110 transition-transform">
+                  <i className="fa-solid fa-laptop-file text-2xl" />
+                </div>
+                <div>
+                  <span className="text-slate-500 text-sm md:text-base font-bold block mb-1">نظام التطبيق</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-purple-700 font-black text-lg md:text-xl">٨٠٪ عملي</span>
+                    <span className="text-slate-300">|</span>
+                    <span className="text-slate-600 font-bold text-lg md:text-xl">٢٠٪ نظري</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Pricing Card (Green) */}
+              <div className="flex items-center gap-5 p-5 md:p-6 rounded-2xl bg-gradient-to-l from-emerald-50 to-white border-2 border-emerald-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md relative overflow-hidden group">
+                <div className="absolute top-2 left-2 md:top-3 md:left-3 bg-red-500 text-white text-xs md:text-sm font-black px-3 py-1 rounded-full shadow-md shadow-red-500/40 -rotate-3 z-20">
+                  وفر ١٥٠٠ ج.م 🔥
+                </div>
+                
+                <div className="absolute top-0 right-0 w-2 h-full bg-emerald-500 opacity-80"></div>
+                <div className="w-16 h-16 shrink-0 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-600 group-hover:scale-110 transition-transform">
+                  <i className="fa-solid fa-tags text-2xl" />
+                </div>
+                <div>
+                  <span className="text-slate-500 text-sm md:text-base font-bold block mb-1">استثمار الدورة</span>
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl md:text-3xl font-black text-emerald-700 leading-none">٣٥٠٠ ج.م</span>
+                    <span className="text-sm md:text-base font-bold text-slate-400 line-through decoration-red-500/70 decoration-2 leading-none mt-1">٥٠٠٠ ج.م</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
           <Link
             to={FORM_LINK}
             className="group inline-flex items-center gap-3 bg-[#1c54b3] text-white font-black text-2xl px-12 py-5 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-[#11367a]"

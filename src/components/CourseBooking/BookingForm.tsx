@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SEO from "../SEO";
 import { useNavigate } from "react-router-dom";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
@@ -32,6 +32,10 @@ export default function BookingForm({
     jobLevel: "",
     questions: "",
   });
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []); 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     let value = e.target.value;

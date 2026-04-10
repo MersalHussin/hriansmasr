@@ -45,6 +45,7 @@ export default function AdminDashboard({
 
   // Check session storage on mount
   useEffect(() => {
+        window.scrollTo(0, 0);
     const savedAuth = sessionStorage.getItem(storageKey);
     if (savedAuth === "true") {
       setIsAuthenticated(true);

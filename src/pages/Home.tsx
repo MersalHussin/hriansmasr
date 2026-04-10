@@ -25,7 +25,7 @@ function Home() {
           {/* Header Title Section */}
           <div className="text-center mb-16 flex flex-col items-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-5 py-2 text-sm font-bold text-primary mb-6 shadow-sm">
-              <i className="rubik fa-solid fa-gem text-yellow"></i> استثمر في قيمتك المهنية
+              <i className=" fa-solid fa-gem text-yellow"></i> استثمر في قيمتك المهنية
             </span>
             <h1 className=" rubik text-primary font-extrabold text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight drop-shadow-sm">
               مكانك الحقـــــيقي
