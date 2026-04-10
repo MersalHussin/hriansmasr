@@ -4,7 +4,7 @@ import ReelsFeedback from "../components/ReelsFeedback"
 import { t } from "i18next"
 import Gallery from "../components/Gallery";
 import { Link } from "react-router-dom";
-
+import ReactPixel from 'react-facebook-pixel';
 const FORM_LINK = "/hr-roadmap/book";
 
 const programPillars = [
@@ -69,6 +69,10 @@ function HRRoadmapPage() {
   const observerRef = useRef<IntersectionObserver | null>(null)
 
   useEffect(() => {
+  ReactPixel.track('ViewContent',{
+  content_name: 'HR Roadmap Course',
+  content_category: 'Courses'
+});
     window.scrollTo(0, 0)
     observerRef.current = new IntersectionObserver(
       (entries) => entries.forEach(e => e.isIntersecting && e.target.classList.add("show")),

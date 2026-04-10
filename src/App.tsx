@@ -1,6 +1,8 @@
 import './App.css'
 import './index.css'
 import './i18n'
+import React, { useEffect } from 'react';
+import ReactPixel from 'react-facebook-pixel';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import Navbar from './components/Navbar'
@@ -38,6 +40,11 @@ function Layout({ children }: { children: React.ReactNode }) {
 }
 
 function App() {
+useEffect(() => {
+    ReactPixel.init('3650506688423849'); 
+    ReactPixel.pageView(); 
+  }, []);
+
   return (
     <HelmetProvider>
     <BrowserRouter>

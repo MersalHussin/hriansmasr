@@ -1,11 +1,19 @@
 import SEO from "../SEO";
 import { Link, useLocation, Navigate } from "react-router-dom";
 
+interface FormData {
+  name: string;
+  mobile: string;
+  email: string;
+  jobLevel: string;
+  questions?: string;
+}
+
 interface BookingSuccessProps {
   seoTitle: string;
   seoDescription: string;
   courseName: string;
-  whatsappMessageTemplate: (formData: f) => string;
+  whatsappMessageTemplate: (formData: FormData) => string;
   fallbackRoute: string;
 }
 

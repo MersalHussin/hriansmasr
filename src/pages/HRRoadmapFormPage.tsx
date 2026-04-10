@@ -1,6 +1,12 @@
+import { useEffect } from "react";
 import BookingForm from "../components/CourseBooking/BookingForm";
+import ReactPixel from 'react-facebook-pixel';
+
 
 export default function HRRoadmapFormPage() {
+  useEffect(() => {
+    ReactPixel.track('InitiateCheckout'); 
+  }, []);
   return (
     <BookingForm
       seoTitle="تأكيد حجز كورس HR Executive Roadmap"
