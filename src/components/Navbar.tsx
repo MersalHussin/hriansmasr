@@ -79,6 +79,7 @@ function Navbar() {
               <li className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded cursor-pointer ${activeSection === 'home' ? 'text-yellow-v2' : ''}`} onClick={() => scrollToSection('home')}>{t('home')}</li>
               <li className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded cursor-pointer ${activeSection === 'about' ? 'text-yellow-v2' : ''}`} onClick={() => scrollToSection('about')}>{t('about')}</li>
               <li className="hover:text-yellow-v2 px-3 py-2 font-bold rounded cursor-pointer"><Link to="/services">{t('services')}</Link></li>
+              <li className="hover:text-yellow-v2 px-3 py-2 font-bold rounded cursor-pointer"><a href="http://courses.hriansmasr.com/" target="_blank" rel="noopener noreferrer">{t('programs')}</a></li>
               <li className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded cursor-pointer ${activeSection === 'clients' ? 'text-yellow-v2' : ''}`} onClick={() => scrollToSection('clients')}>{t('clients')}</li>
               <li className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded cursor-pointer ${activeSection === 'faq' ? 'text-yellow-v2' : ''}`} onClick={() => scrollToSection('faq')}>{t('faq')}</li>
             </>
@@ -87,6 +88,7 @@ function Navbar() {
               <li className='hover:text-yellow-v2 px-3 py-2 font-bold rounded'><Link to="/#home">{t('home')}</Link></li>
               <li className='hover:text-yellow-v2 px-3 py-2 font-bold rounded'><Link to="/#about">{t('about')}</Link></li>
               <li className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded ${location.pathname === '/services' ? 'text-yellow-v2' : ''}`}><Link to="/services">{t('services')}</Link></li>
+              <li className="hover:text-yellow-v2 px-3 py-2 font-bold rounded"><a href="http://courses.hriansmasr.com/" target="_blank" rel="noopener noreferrer">{t('programs')}</a></li>
               <li className='hover:text-yellow-v2 px-3 py-2 font-bold rounded'><Link to="/#clients">{t('clients')}</Link></li>
               <li className='hover:text-yellow-v2 px-3 py-2 font-bold rounded'><Link to="/#faq">{t('faq')}</Link></li>
             </>
@@ -106,6 +108,7 @@ function Navbar() {
                 <li className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors cursor-pointer ${activeSection === 'home' ? 'text-yellow-v2' : ''}`} onClick={() => scrollToSection('home')}>{t('home')}</li>
                 <li className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors cursor-pointer ${activeSection === 'about' ? 'text-yellow-v2' : ''}`} onClick={() => scrollToSection('about')}>{t('about')}</li>
                 <li className="hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors cursor-pointer"><Link to="/services" onClick={closeMenu}>{t('services')}</Link></li>
+                <li className="hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors cursor-pointer"><a href="http://courses.hriansmasr.com/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>{t('programs')}</a></li>
                 <li className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors cursor-pointer ${activeSection === 'clients' ? 'text-yellow-v2' : ''}`} onClick={() => scrollToSection('clients')}>{t('clients')}</li>
                 <li className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors cursor-pointer ${activeSection === 'faq' ? 'text-yellow-v2' : ''}`} onClick={() => scrollToSection('faq')}>{t('faq')}</li>
               </>
@@ -114,6 +117,7 @@ function Navbar() {
                 <li className='hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors'><Link to="/#home" onClick={closeMenu}>{t('home')}</Link></li>
                 <li className='hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors'><Link to="/#about" onClick={closeMenu}>{t('about')}</Link></li>
                 <li className={`hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors ${location.pathname === '/services' ? 'text-yellow-v2' : ''}`}><Link to="/services" onClick={closeMenu}>{t('services')}</Link></li>
+                <li className="hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors"><a href="http://courses.hriansmasr.com/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>{t('programs')}</a></li>
                 <li className='hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors'><Link to="/#clients" onClick={closeMenu}>{t('clients')}</Link></li>
                 <li className='hover:text-yellow-v2 px-3 py-2 font-bold rounded transition-colors'><Link to="/#faq" onClick={closeMenu}>{t('faq')}</Link></li>
               </>

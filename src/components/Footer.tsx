@@ -41,6 +41,8 @@ const Footer: React.FC = () => {
                 <li className="hidden sm:block text-white/50">|</li>
                 <li><Link to="/services" className="hover:text-yellow-v2 transition-colors duration-200 cursor-pointer">{t('services')}</Link></li>
                 <li className="hidden sm:block text-white/50">|</li>
+                <li><a href="http://courses.hriansmasr.com/" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-v2 transition-colors duration-200 cursor-pointer">{t('programs')}</a></li>
+                <li className="hidden sm:block text-white/50">|</li>
                 <li><span onClick={() => scrollToSection('clients')} className="hover:text-yellow-v2 transition-colors duration-200 cursor-pointer">{t('clients')}</span></li>
                 <li className="hidden sm:block text-white/50">|</li>
                 <li><span onClick={() => scrollToSection('faq')} className="hover:text-yellow-v2 transition-colors duration-200 cursor-pointer">{t('faq')}</span></li>
@@ -54,6 +56,8 @@ const Footer: React.FC = () => {
                 <li><Link to="/#about" className="hover:text-yellow-v2 transition-colors duration-200">{t('about')}</Link></li>
                 <li className="hidden sm:block text-white/50">|</li>
                 <li><Link to="/services" className="hover:text-yellow-v2 transition-colors duration-200">{t('services')}</Link></li>
+                <li className="hidden sm:block text-white/50">|</li>
+                <li><a href="http://courses.hriansmasr.com/" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-v2 transition-colors duration-200">{t('programs')}</a></li>
                 <li className="hidden sm:block text-white/50">|</li>
                 <li><Link to="/#clients" className="hover:text-yellow-v2 transition-colors duration-200">{t('clients')}</Link></li>
                 <li className="hidden sm:block text-white/50">|</li>
