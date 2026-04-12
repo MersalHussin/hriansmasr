@@ -47,7 +47,7 @@ const programPillars = [
 ]
 
 const targetAudience = [
-  { title: "المبتدئون وحديثي التخرج", desc: "لتأسيس علمي وعملي قوي يجعلك قادراً على دخول سوق العمل بخطى ثابتة واحترافية.", icon: "fa-solid fa-seedling" },
+  { title: "الخبراء والراغبون في تغيير المسار (Career Shift)", desc: "للخبراء والمهنيين الراغبين في دخول مجال الموارد البشرية بتأسيس علمي وعملي قوي يضمن نجاحهم بخطى ثابتة واحترافية.", icon: "fa-solid fa-users-gear" },
   { title: "أخصائيو الموارد البشرية", desc: "كل من يطمح للترقية والانتقال من دور المنفذ (Operational) للإدارة الشاملة.", icon: "fa-solid fa-user-tie" },
   { title: "مديرو الموارد البشرية", desc: "لتحديث استراتيجياتهم وتطوير قدراتهم في اتخاذ قرارات مبنية على تحليلات دقيقة.", icon: "fa-solid fa-briefcase" },
   { title: "أصحاب الأعمال", desc: "لتمكينهم من بناء هياكل قوية وفرق عمل تدعم رؤية شركاتهم من اليوم الأول.", icon: "fa-solid fa-building" }
@@ -106,11 +106,11 @@ function HRRoadmapPage() {
           </div>
           
           <h1 className="text-white text-5xl md:text-7xl font-black max-w-4xl mx-auto leading-tight mb-6 animate-on-scroll fade-in-up" style={{ animationDelay: '0.1s' }}>
-            بداية صحيحة وتطور سريع نحو <span className="text-transparent bg-clip-text bg-linear-to-r from-[#ee8a1c] to-[#f9a445]">احتراف المهنة</span>
+            تغيير مسار ناجح وتطور سريع نحو <span className="text-transparent bg-clip-text bg-linear-to-r from-[#ee8a1c] to-[#f9a445]">احتراف المهنة</span>
           </h1>
 
           <p className="text-white/80 text-lg md:text-2xl max-w-3xl mx-auto mb-12 font-medium leading-relaxed animate-on-scroll fade-in-up" style={{ animationDelay: '0.2s' }}>
-            سواء كنت تخطو خطواتك الأولى، أو تسعى للتطور لمرحلة مدير، كورس <strong className="text-white font-black">HR Executive Roadmap</strong> دليلك العملي لفهم وتطبيق جميع المهام باحتراف.
+            سواء كنت من الخبراء في مجالات أخرى وتقوم بتغيير مسارك المهني (Career Shift) لدخول الموارد البشرية، أو تسعى للتطور لمرحلة مدير، كورس <strong className="text-white font-black">HR Executive Roadmap</strong> دليلك العملي لفهم وتطبيق جميع المهام باحتراف.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4 animate-on-scroll fade-in-up" style={{ animationDelay: '0.3s' }}>
@@ -225,7 +225,7 @@ function HRRoadmapPage() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16 animate-on-scroll fade-in-up">
             <h2 className="text-3xl md:text-5xl font-black text-[#1c54b3] mb-4">لمن هذا البرنامج؟</h2>
-            <p className="text-slate-600 text-lg font-bold">صُمم هذا المحتوى ليكون رفيقك من البداية لتضع قدمك في المجال، وحتى توصلك لمستوى قيادي.</p>
+            <p className="text-slate-600 text-lg font-bold">صُمم هذا المحتوى ليكون رفيقك منذ انتقالك (Career Shift) لتضع قدمك في المجال باحترافية، وحتى وصولك لمستوى قيادي.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

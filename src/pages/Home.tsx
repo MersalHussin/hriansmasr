@@ -97,9 +97,9 @@ function Home() {
                 <h2 className="text-primary font-black text-2xl md:text-3xl mb-3 flex items-center justify-between" style={{fontFamily: "Calistoga"}}>
                   HR Roadmap
                 </h2>
-                <span className="text-primary/60 font-bold text-lg mb-4 block">نبني معك أساساً صلباً</span>
+                <span className="text-primary/60 font-bold text-lg mb-4 block">نبني معك أساساً صلباً لاحتراف الـ HR</span>
                 <p className="text-slate-600 text-base leading-relaxed mb-10 flex-1 font-medium">
-                  استثمر في بدايتك الصحيحة بمجال الموارد البشرية. خطة متكاملة تأخذ بيدك من الشغف الأولي إلى الاحتراف الحقيقي، لتصبح كادراً مؤثراً يضيف قيمة لأي مؤسسة.
+                  استثمر في تطوير مسارك المهني (Career Shift) لدخول مجال الموارد البشرية. خطة متكاملة تأخذ بيدك من خبرتك السابقة إلى الاحتراف الحقيقي، لتصبح كادراً مؤثراً يضيف قيمة لأي مؤسسة.
                 </p>
                 
                 {/* Card Button */}
