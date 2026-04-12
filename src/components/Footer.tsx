@@ -79,7 +79,8 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="https://hriansmasr.com/terms" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-yellow transition-colors flex items-center gap-2">
+                <a href="https://hriansmasr.com/
+                " target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-yellow transition-colors flex items-center gap-2">
                   <i className="fa-solid fa-angle-left text-xs"></i> الشروط والاحكام
                 </a>
               </li>
