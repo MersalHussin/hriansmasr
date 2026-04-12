@@ -73,6 +73,16 @@ const Footer: React.FC = () => {
                   <i className="fa-solid fa-angle-left text-xs"></i> تواصل معنا
                 </Link>
               </li>
+              <li>
+                <a href="https://hriansmasr.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-yellow transition-colors flex items-center gap-2">
+                  <i className="fa-solid fa-angle-left text-xs"></i> سياسة الخصوصية
+                </a>
+              </li>
+              <li>
+                <a href="https://hriansmasr.com/terms" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-yellow transition-colors flex items-center gap-2">
+                  <i className="fa-solid fa-angle-left text-xs"></i> الشروط والاحكام
+                </a>
+              </li>
             </ul>
           </div>
 
