@@ -55,7 +55,7 @@ function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 flex flex-col">
-      {isHiddenMarket && (
+      {/* {isHiddenMarket && (
         <div className="bg-linear-to-r from-yellow-300 to-yellow-500 py-1.5 sm:py-2 px-2 sm:px-4 w-full flex items-center justify-center gap-2 sm:gap-4 shadow-sm border-b border-yellow-600/20 z-60 overflow-hidden whitespace-nowrap">
           <div className="flex items-center gap-1 sm:gap-2 text-brand-dark text-[10px] sm:text-sm font-black text-center mx-auto truncate">
             <span className="flex items-center gap-1 sm:gap-1.5 justify-center truncate">
@@ -67,7 +67,7 @@ function Navbar() {
             </span>
           </div>
         </div>
-      )}
+      )} */}
       <nav className={`${isHiddenMarket ? 'bg-brand-dark border-b border-white/5' : isHrRoadmap ? 'bg-[#1c54b3] border-b border-white/5' : 'bg-primary'} h-[90px] w-full flex items-center transition-colors relative z-55`}>
         <div className='container mx-auto px-4 flex items-center justify-between text-white'>
         {/* LOGO */}

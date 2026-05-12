@@ -596,7 +596,7 @@ function HiddenMarketPage() {
                 <h3 className="text-3xl md:text-4xl font-black mb-12 text-center flex items-center justify-center gap-4 drop-shadow-md">
                   التفاصيل التنفيذية
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
                   <div className="flex flex-col justify-center p-6 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
                     <i className="fa-solid fa-location-dot text-yellow-v2 text-4xl mb-4 drop-shadow-md"></i>
                     <span className="text-white/60 text-sm mb-2 font-bold uppercase tracking-wider">المكان</span>
@@ -606,23 +606,13 @@ function HiddenMarketPage() {
                   <div className="flex flex-col justify-center p-6 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
                     <i className="fa-solid fa-calendar-days text-yellow-v2 text-4xl mb-4 drop-shadow-md"></i>
                     <span className="text-white/60 text-sm mb-2 font-bold uppercase tracking-wider">الموعد</span>
-                    <strong className="text-xl mt-1">السبت</strong>
-                    <strong className="text-2xl text-yellow mt-1 font-black">18-04-2026</strong>
+                    <strong className="text-xl mt-1">قريباً</strong>
                   </div>
                   <div className="flex flex-col justify-center p-6 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
                     <i className="fa-solid fa-clock text-yellow-v2 text-4xl mb-4 drop-shadow-md"></i>
                     <span className="text-white/60 text-sm mb-2 font-bold uppercase tracking-wider">التوقيت</span>
                     <strong className="text-xl">من 2:00 ظهراً</strong>
                     <strong className="text-xl text-white/90">حتى 7:00 مساءً</strong>
-                  </div>
-                  <div className="flex flex-col justify-center p-6 bg-gradient-to-b from-yellow/20 to-yellow/5 border border-yellow/30 rounded-3xl relative overflow-hidden group">
-                    <div className="absolute inset-0 bg-yellow/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                    <div className="relative z-10">
-                      <i className="fa-solid fa-chair text-yellow text-4xl mb-3 animate-bounce drop-shadow-md"></i>
-                      <span className="text-white/80 block text-sm mb-1 font-bold">العدد المتبقي</span>
-                      <strong className="text-3xl font-black text-yellow block mb-1">3 مقاعد</strong>
-                      <span className="text-white/50 text-xs font-medium">من أصل 15 متدرباً</span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -640,7 +630,7 @@ function HiddenMarketPage() {
             
             <div className="mb-6 inline-flex flex-wrap items-center justify-center gap-2 bg-yellow-v2/10 border border-yellow-v2/20 text-yellow-v2 px-6 py-2.5 rounded-full font-bold text-base md:text-lg shadow-lg">
               <i className="fa-solid fa-hourglass-half" />
-              <span>الدفعة القادمة: <span className="bg-yellow-v2 text-[var(--color-brand-dark)] px-2 rounded font-black mr-1">١٨ أبريل</span></span>
+              <span>الدفعة القادمة: <span className="bg-yellow-v2 text-[var(--color-brand-dark)] px-2 rounded font-black mr-1">قريباً</span></span>
             </div>
 
             <h2 className="text-white font-black text-3xl  text-yellow-v2 lg:text-4xl mb-4 leading-tight drop-shadow-sm">
