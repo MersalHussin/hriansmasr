@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import SEO from "../SEO";
 import { Link, useLocation, Navigate } from "react-router-dom";
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "../../firebase";
 
 interface FormData {
   name: string;
@@ -27,10 +29,24 @@ export default function BookingSuccess({
 }: BookingSuccessProps) {
   const location = useLocation();
   const formData = location.state?.formData;
+  const docId = location.state?.docId;
+  const collectionName = location.state?.collectionName;
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handlePaymentClick = async () => {
+    if (docId && collectionName) {
+      try {
+        await updateDoc(doc(db, collectionName, docId), {
+          paymentStatus: 'ذهب للدفع'
+        });
+      } catch (error) {
+        console.error("Error updating document status:", error);
+      }
+    }
+  };
 
   if (!formData) {
     return <Navigate to={fallbackRoute} replace />;
@@ -75,6 +91,7 @@ export default function BookingSuccess({
               href={whatappLink}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handlePaymentClick}
               className="w-full inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1fa950] text-white font-black text-xl py-4 rounded-xl transition-all hover:-translate-y-1 shadow-[0_10px_20px_-10px_rgba(37,211,102,0.5)] mb-4"
             >
               <i className="fa-brands fa-whatsapp text-2xl" /> إتمام الدفع الآن (عبر واتسآب)

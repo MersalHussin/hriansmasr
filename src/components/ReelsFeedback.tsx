@@ -108,6 +108,7 @@ const ReelsFeedback = ({ videoLinks, isLandscape = false, brandColor }: ReelsFee
                         ))}
                     </Slider>
                 </div>
+
             </div>
 
             <style>{`

@@ -15,7 +15,7 @@ const hiddenMarketLinks = [
 
 const hrRoadmapLinks = [
   { to: '#pillars', label: 'المحاور الرئيسية' },
-  { to: '#gallery', label: 'التدريب العملي' },
+  { to: '#gallery', label: 'الدفعات السابقة' },
   { to: '#reels-feedback', label: 'آراء المتدربين' },
 ]
 
@@ -141,14 +141,21 @@ function Navbar() {
             >
               سجّل دلوقتي
             </Link>
+          ) : isHiddenMarket ? (
+            <Link
+              to="/hidden-market-masterclass/book"
+              className="bg-yellow hover:bg-yellow-v2 text-white px-4 py-2 rounded cursor-pointer text-base font-bold transition-colors"
+            >
+              سجل الآن
+            </Link>
           ) : (
             <a
-              href={isHiddenMarket ? "https://docs.google.com/forms/d/1XBIyFfwF98HRQexWtOojaZNTxd5RDwuqP63GetjF-N0/viewform?chromeless=1&edit_requested=true" : "https://wa.me/201097828846"}
+              href="https://wa.me/201097828846"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-yellow hover:bg-yellow-v2 text-white px-4 py-2 rounded cursor-pointer text-base font-bold transition-colors"
             >
-              {!isHiddenMarket ? 'تواصل معنا' : 'سجّل دلوقتي'}
+              تواصل معنا
             </a>
           )}
         </div>

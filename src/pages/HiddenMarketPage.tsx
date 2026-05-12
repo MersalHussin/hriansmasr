@@ -1,8 +1,11 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import SEO from "../components/SEO"
 // import Feedback from "../components/Feedback"
 import ReelsFeedback from "../components/ReelsFeedback"
 import { t } from "i18next"
+import { Link } from "react-router-dom"
+import FloatBookingButton from "../components/FloatBookingButton";
+import BookButton from "../components/BookButton"
 
 const courseStages = [
   {
@@ -47,55 +50,23 @@ const courseStages = [
   }
 ]
 
-const FORM_LINK = "https://docs.google.com/forms/d/1XBIyFfwF98HRQexWtOojaZNTxd5RDwuqP63GetjF-N0/viewform?chromeless=1&edit_requested=true";
+const FORM_LINK = "/hidden-market-masterclass/book";
 
 const outcomes = [
   { text: "توصل لوظائف مش بتتعلن للعامة", icon: "fa-solid fa-briefcase" },
   { text: "تبني شبكة علاقات مهنية قوية", icon: "fa-solid fa-users" },
   { text: "تحوّل LinkedIn لمصدر فرص حقيقي", icon: "fa-brands fa-linkedin-in" },
-  { text: "تعرف تتواصل مع decision makers", icon: "fa-solid fa-handshake" },
+  { text: " تتواصل مع decision makers", icon: "fa-solid fa-handshake" },
   { text: "تبني Personal Brand مميزة", icon: "fa-solid fa-star" },
   { text: "تحصل على عروض وظيفية بدون تقديم", icon: "fa-solid fa-envelope-open-text" },
 ]
 
 
 
-const features = [
-  {
-    icon: "fa-solid fa-briefcase",
-    title: "محتوى حصري للمحترفين",
-    desc: "تدريب عملي 100% مصمم خصيصاً لأصحاب الخبرات والمناصب لتجاوز الطرق التقليدية في التوظيف، والدخول مباشرة في دائرة صناع القرار."
-  },
-  {
-    icon: "fa-solid fa-user-secret",
-    title: "اختراق السوق الخفي",
-    desc: "تعلم استراتيجيات الوصول للوظائف اللي مبتنزلش في إعلانات، وإزاي تخلي الشركات هي اللي تتفاوض معاك مش العكس."
-  },
-  {
-    icon: "fa-solid fa-wand-magic-sparkles",
-    title: "مساعد الـ AI الشخصي",
-    desc: "هتتعلم توظف الذكاء الاصطناعي بشكل احترافي عشان يبنيلك بروفايل قوي ومحتوى يومي بيعكس خبرتك في دقائق."
-  },
-  {
-    icon: "fa-solid fa-file-signature",
-    title: "قوالب (Templates) ونماذج جاهزة",
-    desc: "مش هتبدأ من الصفر. هتاخد Scripts جاهزة للتواصل المباشر مع المديرين التنفيذيين والـ Headhunters بطريقة تضمن الرد."
-  },
-  {
-    icon: "fa-solid fa-handshake-angle",
-    title: "توجيه وتطبيق مباشر",
-    desc: "بتمشي خطوة بخطوة وبتطبق على أرض الواقع عشان تضمن أفضل النتايج لبروفايلك ولشبكة علاقاتك في أسرع وقت."
-  },
-  {
-    icon: "fa-solid fa-money-bill-trend-up",
-    title: "استراتيجيات التسعير والتفاوض",
-    desc: "إزاي تسعّر خبرتك صح، وتسوق لنفسك كـ (استشاري) مش مجرد موظف، وتقفل صفقاتك التفاوضية بقوة وبثقة."
-  }
-]
-
 
 
 function HiddenMarketPage() {
+  const [expandedStage, setExpandedStage] = useState<number | null>(null)
   const observerRef = useRef<IntersectionObserver | null>(null)
 
   useEffect(() => {
@@ -115,6 +86,8 @@ function HiddenMarketPage() {
         description="اكتشف السوق الخفي للوظائف وتعلم كيف توصل للفرص اللي مش بتتعلن مع أحمد ناجي الدخميسي"
         keywords="hidden market, وظائف, linkedin, personal brand, HR, موارد بشرية"
       />
+
+      <FloatBookingButton to={FORM_LINK} />
 
       {/* ===== HERO ===== */}
       <section className="relative overflow-hidden min-h-[calc(100vh-90px)] flex items-center bg-[linear-gradient(135deg,var(--color-brand-dark)_0%,var(--color-brand-light)_100%)] pt-[90px]">
@@ -178,17 +151,15 @@ function HiddenMarketPage() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 w-full max-w-lg">
-                <a
-                  href={FORM_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to={FORM_LINK}
                   className="group relative flexitems-center justify-center bg-linear-to-r from-yellow to-yellow-v2 text-brand-dark font-extrabold text-lg px-8 py-3 rounded-xl overflow-hidden shadow-[0_15px_30px_-10px_rgba(239,138,27,0.5)] transition-all duration-300 hover:scale-[1.02] flex-1 text-center flex"
                 >
                   <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                   <span className="relative flex items-center justify-center gap-3">
-                   سجل دلوقتي <i className="fa-solid fa-file-signature text-xl" />
+                   سجل الآن <i className="fa-solid fa-file-signature text-xl" />
                   </span>
-                </a>
+                </Link>
                 <button
                   onClick={() => document.getElementById("modules")?.scrollIntoView({ behavior: "smooth" })}
                   className="group flex flex-1 items-center justify-center border border-white/20 bg-white/5 backdrop-blur-md text-white font-bold text-lg px-8 py-3 rounded-xl hover:bg-white/10 hover:border-white/40 transition-all duration-300"
@@ -288,124 +259,82 @@ function HiddenMarketPage() {
           </div>
           <div className="mt-16 animate-on-scroll fade-in-up">
             <div className="inline-block bg-gradient-to-r from-yellow/20 via-yellow-v2/20 to-yellow/20 p-[1px] rounded-2xl">
-              <div className="bg-[var(--color-brand-dark)] backdrop-blur-xl rounded-2xl px-8 py-5">
-                <p className="text-yellow-v2 font-extrabold text-2xl md:text-3xl">
-                  الكورس ده هيغير طريقة تفكيرك في البحث عن الشغل 💡
-                </p>
-              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ===== FEATURES ===== */}
-      <section id="features" className="py-24 bg-slate-50 relative overflow-hidden text-right" dir="rtl">
-        <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-[0.03] pointer-events-none grayscale" />
-        <div className="absolute -top-32 -left-32 w-80 h-80 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-1/4 -right-20 w-64 h-64 bg-yellow/10 rounded-full blur-[80px] pointer-events-none" />
-        
-        <div className="container mx-auto px-4 max-w-6xl relative z-10">
-          <div className="text-center mb-16 animate-on-scroll fade-in-up">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-brand-dark)]/20 bg-[var(--color-brand-dark)]/5 px-4 py-2 text-sm font-bold text-[var(--color-brand-dark)] mb-4">
-              <i className="fa-solid fa-star text-yellow-v2"></i> القيم المضافة
-            </span>
-            <h2 className="text-3xl md:text-5xl font-black text-[var(--color-brand-dark)] mb-4">
-              ايه اللي بيميز <span className="text-primary">The Hidden Market</span>؟
-            </h2>
-            <div className="w-24 h-1.5 bg-[var(--color-brand-dark)] rounded-full mx-auto" />
-            <p className="text-slate-600 max-w-2xl mx-auto text-lg mt-6 font-bold">
-              الأسلوب والأدوات اللي هتغير مفهومك عن البحث عن فرص العمل، من الانتظار السلبي إلى الاستهداف المباشر لصناع القرار.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feature, i) => (
-              <div 
-                key={i}
-                className="animate-on-scroll fade-in-up group flex flex-col bg-white border border-slate-200 p-8 rounded-3xl transition-all duration-300 hover:-translate-y-2 hover:border-[var(--color-brand-dark)]/30 hover:shadow-[0_20px_40px_-20px_rgba(10,37,82,0.15)] relative overflow-hidden"
-                style={{ animationDelay: `${i * 0.1}s` }}
-              >
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-slate-100 to-transparent rounded-bl-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
-                
-                <div className="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center mb-6 shadow-sm group-hover:bg-[var(--color-brand-dark)] group-hover:border-[var(--color-brand-dark)] transition-all duration-300">
-                  <i className={`${feature.icon} text-2xl text-[var(--color-brand-dark)] group-hover:text-yellow-v2 transition-colors duration-300`} />
-                </div>
-                
-                <h3 className="text-[var(--color-brand-dark)] font-extrabold text-xl mb-3 relative z-10">
-                  {feature.title}
-                </h3>
-                
-                <p className="text-slate-600 text-base leading-relaxed font-bold relative z-10">
-                  {feature.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+        <BookButton to="book" variant="yellow" />
         </div>
       </section>
 
       {/* ===== MODULES (TIMELINE) ===== */}
-      <section id="modules" className="py-24 bg-[linear-gradient(135deg,#1C54B3_0%,var(--color-brand-light)_45%,var(--color-brand-dark)_100%)] relative overflow-hidden text-right" dir="rtl">
+      <section id="modules" className="py-24 bg-white relative overflow-hidden text-right" dir="rtl">
         {/* Background Details */}
-        <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-5 mix-blend-overlay pointer-events-none" />
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-yellow/10 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute top-1/2 -left-32 w-80 h-80 bg-yellow-v2/10 rounded-full blur-[90px] pointer-events-none" />
+        <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-[0.03] grayscale pointer-events-none" />
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-[var(--color-brand-light)]/5 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/2 -left-32 w-80 h-80 bg-yellow/5 rounded-full blur-[90px] pointer-events-none" />
 
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
           <div className="text-center mb-16 animate-on-scroll fade-in-up">
-            <span className="inline-flex items-center gap-2 rounded-full border border-yellow/20 bg-yellow/10 px-4 py-2 text-sm font-bold text-yellow mb-4">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-brand-dark)]/20 bg-slate-50 px-5 py-2 text-sm font-bold text-[var(--color-brand-dark)] mb-4 shadow-sm">
               خطة الرحلة
             </span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">مراحل الكورس</h2>
-            <p className="text-white/70 max-w-2xl mx-auto text-lg">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-[var(--color-brand-dark)] mb-4">مراحل الكورس</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto text-lg font-bold">
               برنامج متكامل ينقلك من التفكير التقليدي في الوظائف إلى بناء منظومة متكاملة تجذب الفرص وتصنع النفوذ
             </p>
           </div>
 
-          <div className="relative max-w-4xl mx-auto before:absolute before:inset-0 before:mr-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-transparent before:via-white/20 before:to-transparent">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start relative max-w-5xl mx-auto z-10 w-full pb-16">
             {courseStages.map((stage, i) => (
               <div
                 key={i}
-                className="animate-on-scroll fade-in-up relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active mb-12"
+                onClick={() => setExpandedStage(expandedStage === i ? null : i)}
+                className="animate-on-scroll fade-in-up cursor-pointer relative flex flex-col bg-white border border-slate-200 rounded-[2rem] p-6 md:p-8 transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(10,37,82,0.1)] hover:-translate-y-2 hover:border-[var(--color-brand-light)]/30"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
-                {/* Icon Marker */}
-                <div className="flex items-center justify-center w-12 h-12 rounded-full border-4 border-[var(--color-brand-dark)] bg-gradient-to-br from-yellow to-yellow-v2 text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_15px_rgba(239,138,27,0.5)] z-10 transition-transform duration-500 group-hover:scale-110 ml-0 md:ml-0 mr-[-0.3rem] md:mr-0">
-                  <i className={`${stage.icon} text-xl`} />
+                
+                {/* Number Badge Background */}
+                <div className="absolute top-2 left-6 text-7xl font-black text-slate-100 select-none pointer-events-none group-hover:text-[var(--color-brand-light)]/5 transition-colors duration-500 z-0">
+                  0{i + 1}
                 </div>
                 
-                {/* Card Container */}
-                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] relative z-10 flex flex-col bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-8 transition-all duration-500 hover:bg-white/10 hover:-translate-y-2 hover:shadow-[0_20px_40px_-20px_rgba(239,138,27,0.3)] hover:border-yellow/30">
-                  
-                  {/* Number Badge Background */}
-                  <div className="absolute top-2 left-6 text-7xl font-black text-white/5 select-none pointer-events-none group-hover:text-yellow/5 transition-colors duration-500 z-0">
-                    0{i + 1}
-                  </div>
-                  
-                  {/* Card Header */}
-                  <div className="relative z-10 mb-6 border-b border-white/10 pb-5">
-                    <h3 className="font-extrabold text-white text-2xl md:text-3xl mb-2">{stage.title}</h3>
-                    <div className="inline-block bg-white/10 text-yellow text-sm font-bold px-3 py-1 rounded-md">
-                      {stage.subtitle}
+                {/* Card Header */}
+                <div className={`relative z-10 transition-all ${expandedStage === i ? 'mb-6 border-b border-slate-200 pb-5' : ''}`}>
+                  <div className="flex items-center gap-4 mb-2">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full border-2 border-white bg-gradient-to-br from-yellow to-yellow-v2 text-white shrink-0 shadow-md">
+                      <i className={`${stage.icon} text-xl`} />
                     </div>
+                    <h3 className="font-extrabold text-[var(--color-brand-dark)] text-xl md:text-2xl">{stage.title}</h3>
                   </div>
+                  <div className="inline-block bg-slate-100 text-[var(--color-brand-dark)] text-sm font-bold px-3 py-1 rounded-md mt-2">
+                    {stage.subtitle}
+                  </div>
+                </div>
 
-                  {/* Card Content (Points) */}
-                  <ul className="relative z-10 space-y-4">
+                {/* Expanded Content (Points) */}
+                <div className={`overflow-hidden transition-all duration-500 ${expandedStage === i ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                  <ul className="relative z-10 space-y-4 pt-4">
                     {stage.points.map((point, idx) => (
                       <li key={idx} className="flex items-start gap-4">
-                        <div className="mt-2 w-2 h-2 rounded-full bg-yellow shrink-0 shadow-[0_0_8px_rgba(239,138,27,0.8)]" />
-                        <p className="text-white/80 leading-relaxed text-sm md:text-base font-medium">
-                          <strong className="text-white ml-2 drop-shadow-sm">{point.highlight}</strong>
+                        <div className="mt-2 w-2 h-2 rounded-full bg-[var(--color-brand-light)] shrink-0" />
+                        <p className="text-slate-700 leading-relaxed text-sm md:text-base font-medium">
+                          <strong className="text-[var(--color-brand-dark)] ml-2">{point.highlight}</strong>
                           {point.text}
                         </p>
                       </li>
                     ))}
                   </ul>
                 </div>
+
+                {/* Arrow Icon */}
+                <div className="absolute top-8 left-6 text-slate-300">
+                  <i className={`fa-solid fa-chevron-down transition-transform duration-300 text-xl ${expandedStage === i ? 'rotate-180 text-[var(--color-brand-dark)]' : ''}`}></i>
+                </div>
+
               </div>
             ))}
           </div>
+
+                  <BookButton to="book" className="m-auto" variant="yellow" />
         </div>
       </section>
 
@@ -420,11 +349,8 @@ function HiddenMarketPage() {
               المخرجات
             </span>
             <h2 className="text-4xl md:text-5xl font-black text-[var(--color-brand-dark)] mb-6 animate-on-scroll fade-in-up">
-              هتخرج من الكورس وعندك ايه؟
+              هتخرج من الكورس وانت عارف
             </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto text-lg md:text-xl font-bold animate-on-scroll fade-in-up" style={{ animationDelay: "0.1s" }}>
-              كل اللى هتحتاجه عشان تبدأ وتنجح وتطور مسارك المهنى فى مجال الموارد البشرية هتلاقيه مجهز ليك فى الكورس
-            </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -450,7 +376,9 @@ function HiddenMarketPage() {
               </div>
             ))}
           </div>
+
         </div>
+                            <BookButton to="book" className="m-auto mt-6" variant="yellow" />
       </section>
 
       {/* ===== COURSE IMAGES ===== */}
@@ -474,7 +402,7 @@ function HiddenMarketPage() {
             <div className="animate-on-scroll fade-in-up group overflow-hidden rounded-3xl border border-white/10 shadow-2xl relative block md:col-span-1 md:row-span-2" style={{ animationDelay: '0.2s' }}>
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-dark)]/80 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-10" />
               <img
-                src="./images/Course/TheHidden/4.jpg"
+                src="./images/Course/TheHidden/4.webp"
                 alt="تفاعل وتدريب عملي"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 relative z-0"
                 loading="lazy"
@@ -485,7 +413,7 @@ function HiddenMarketPage() {
             <div className="animate-on-scroll fade-in-up group overflow-hidden rounded-3xl border border-white/10 shadow-2xl relative block md:col-span-2 md:row-span-1" style={{ animationDelay: '0.1s' }}>
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-dark)]/80 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-10" />
               <img
-                src="./images/Course/TheHidden/1.jpg"
+                src="./images/Course/TheHidden/1.webp"
                 alt="تدريب السوق الخفي"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 relative z-0"
                 loading="lazy"
@@ -496,7 +424,7 @@ function HiddenMarketPage() {
             <div className="animate-on-scroll fade-in-up group overflow-hidden rounded-3xl border border-white/10 shadow-2xl relative block md:col-span-1 md:row-span-2" style={{ animationDelay: '0.3s' }}>
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-dark)]/80 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-10" />
               <img
-                src="./images/Course/TheHidden/3.jpg"
+                src="./images/Course/TheHidden/3.webp"
                 alt="نقاشات الورشة"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 relative z-0"
                 loading="lazy"
@@ -507,31 +435,42 @@ function HiddenMarketPage() {
             <div className="animate-on-scroll fade-in-up group overflow-hidden rounded-3xl border border-white/10 shadow-2xl relative block md:col-span-2 md:row-span-1" style={{ animationDelay: '0.4s' }}>
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-dark)]/80 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-10" />
               <img
-                src="./images/Course/TheHidden/2.jpg"
+                src="./images/Course/TheHidden/2.webp"
                 alt="صورة جماعية"
                 className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700 relative z-0"
                 loading="lazy"
               />
             </div>
-
-            {/* Wide 3 (تأخذ العرض بالكامل من الأسفل) */}
-            <div className="animate-on-scroll fade-in-up group overflow-hidden rounded-3xl border border-white/10 shadow-2xl relative block md:col-span-4 md:row-span-1" style={{ animationDelay: '0.5s' }}>
+                 <div className="animate-on-scroll fade-in-up group overflow-hidden rounded-3xl border border-white/10 shadow-2xl relative block md:col-span-2 md:row-span-1" style={{ animationDelay: '0.4s' }}>
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-dark)]/80 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-10" />
               <img
-                src="./images/Course/TheHidden/5.jpg"
-                alt="تطبيق عملي"
-                className="w-full h-full object-cover object-[center_30%] group-hover:scale-110 transition-transform duration-700 relative z-0"
+                src="./images/Course/TheHidden/6.webp"
+                alt="صورة جماعية"
+                className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700 relative z-0"
                 loading="lazy"
               />
             </div>
+                 <div className="animate-on-scroll fade-in-up group overflow-hidden rounded-3xl border border-white/10 shadow-2xl relative block md:col-span-2 md:row-span-1" style={{ animationDelay: '0.4s' }}>
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-dark)]/80 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-10" />
+              <img
+                src="./images/Course/TheHidden/7.webp"
+                alt="صورة جماعية"
+                className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700 relative z-0"
+                loading="lazy"
+              />
+            </div>
+    
             
           </div>
+                <BookButton to="book" className="m-auto mt-6" variant="yellow" />
         </div>
       </section>
 
       {/* ===== FEEDBACK ===== */}
       <div id="reels-feedback">
         <ReelsFeedback />
+                        <BookButton to="book" className="m-auto my-6" variant="yellow" />
+
       </div>
 
       {/* ===== EXECUTIVE DETAILS ===== */}
@@ -539,30 +478,6 @@ function HiddenMarketPage() {
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             
-            {/* Why This Round is Different */}
-            <div className="bg-white p-8 md:p-10 rounded-[2rem] border border-slate-200 shadow-[0_20px_40px_-20px_rgba(10,37,82,0.08)]">
-              <h3 className="text-2xl md:text-3xl font-black text-[var(--color-brand-dark)] mb-8 flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-yellow/20 flex items-center justify-center shrink-0">
-                  <i className="fa-solid fa-star text-yellow-v2 text-xl"></i>
-                </div>
-                لماذا هذا الراوند مختلف؟
-              </h3>
-              <ul className="space-y-6 text-slate-700 font-bold">
-                <li className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-[var(--color-brand-light)]/10 flex items-center justify-center shrink-0 mt-1">
-                    <i className="fa-solid fa-certificate text-[var(--color-brand-light)] text-sm"></i>
-                  </div>
-                  <p className="leading-relaxed"><strong className="text-[var(--color-brand-dark)] block text-lg mb-1 font-black">شهادة نجاح واقعية:</strong>النجاح لا يُحكى بل يُرى؛ مستوى الحضور القوي في الدفعة الأولى هو أكبر دليل على جودة المحتوى وقوة شبكة العلاقات (Networking) التي ستنضم إليها.</p>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-[var(--color-brand-light)]/10 flex items-center justify-center shrink-0 mt-1">
-                    <i className="fa-solid fa-crown text-[var(--color-brand-light)] text-sm"></i>
-                  </div>
-                  <p className="leading-relaxed"><strong className="text-[var(--color-brand-dark)] block text-lg mb-1 font-black">سقف التوقعات:</strong>بعد أن شرفنا في الدفعة السابقة القامة البيعية الأستاذ/ أحمد قطقطة كضيف شرف، نعدكم بمفاجأة في هذا الراوند ستكون هي "الضربة القاضية" في مسارك المهني.</p>
-                </li>
-              </ul>
-            </div>
-
             {/* Attendance Conditions */}
             <div className="bg-white p-8 md:p-10 rounded-[2rem] border border-slate-200 shadow-[0_20px_40px_-20px_rgba(10,37,82,0.08)]">
               <h3 className="text-2xl md:text-3xl font-black text-[var(--color-brand-dark)] mb-8 flex items-center gap-4">
@@ -588,35 +503,48 @@ function HiddenMarketPage() {
               </ul>
             </div>
 
-          </div>
-
-          <div className="bg-[linear-gradient(135deg,var(--color-brand-dark)_0%,#0e2e66_100%)] rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden shadow-2xl text-white border-4 border-white">
+          <div className="bg-[linear-gradient(135deg,var(--color-brand-dark)_0%,#0e2e66_100%)] rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden shadow-2xl text-white">
               <div className="absolute top-0 left-0 w-64 h-64 bg-yellow/10 rounded-full blur-[80px] pointer-events-none" />
               <div className="relative z-10">
-                <h3 className="text-3xl md:text-4xl font-black mb-12 text-center flex items-center justify-center gap-4 drop-shadow-md">
+                <h3 className="text-3xl md:text-4xl font-black mb-12 text-center drop-shadow-md">
                   التفاصيل التنفيذية
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
-                  <div className="flex flex-col justify-center p-6 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
-                    <i className="fa-solid fa-location-dot text-yellow-v2 text-4xl mb-4 drop-shadow-md"></i>
-                    <span className="text-white/60 text-sm mb-2 font-bold uppercase tracking-wider">المكان</span>
-                    <strong className="text-xl">The GrEEK Campus</strong>
-                    <span className="text-yellow text-sm mt-2 font-bold bg-yellow/10 py-1 px-3 rounded-full self-center">اوفلاين فقط</span>
+                <div className="grid grid-cols-1 gap-6">
+                  <div className="flex items-center gap-5 p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                    <div className="w-16 h-16 rounded-2xl bg-yellow/20 flex items-center justify-center text-yellow-v2 shrink-0">
+                      <i className="fa-solid fa-location-dot text-3xl drop-shadow-md"></i>
+                    </div>
+                    <div className="text-right flex-1">
+                      <span className="text-white/60 text-sm mb-1 font-bold block">المكان</span>
+                      <strong className="text-2xl block">The GrEEK Campus</strong>
+                      <span className="text-yellow text-sm mt-1 font-bold inline-block bg-yellow/10 py-1 px-3 rounded-full">اوفلاين فقط</span>
+                    </div>
                   </div>
-                  <div className="flex flex-col justify-center p-6 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
-                    <i className="fa-solid fa-calendar-days text-yellow-v2 text-4xl mb-4 drop-shadow-md"></i>
-                    <span className="text-white/60 text-sm mb-2 font-bold uppercase tracking-wider">الموعد</span>
-                    <strong className="text-xl mt-1">قريباً</strong>
+                  
+                  <div className="flex items-center gap-5 p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                    <div className="w-16 h-16 rounded-2xl bg-yellow/20 flex items-center justify-center text-yellow-v2 shrink-0">
+                      <i className="fa-solid fa-calendar-days text-3xl drop-shadow-md"></i>
+                    </div>
+                    <div className="text-right flex-1">
+                      <span className="text-white/60 text-sm mb-1 font-bold block">الموعد</span>
+                      <strong className="text-2xl block">قريباً</strong>
+                    </div>
                   </div>
-                  <div className="flex flex-col justify-center p-6 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
-                    <i className="fa-solid fa-clock text-yellow-v2 text-4xl mb-4 drop-shadow-md"></i>
-                    <span className="text-white/60 text-sm mb-2 font-bold uppercase tracking-wider">التوقيت</span>
-                    <strong className="text-xl">من 2:00 ظهراً</strong>
-                    <strong className="text-xl text-white/90">حتى 7:00 مساءً</strong>
+                  
+                  <div className="flex items-center gap-5 p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                    <div className="w-16 h-16 rounded-2xl bg-yellow/20 flex items-center justify-center text-yellow-v2 shrink-0">
+                      <i className="fa-solid fa-clock text-3xl drop-shadow-md"></i>
+                    </div>
+                    <div className="text-right flex-1">
+                      <span className="text-white/60 text-sm mb-1 font-bold block">التوقيت</span>
+                      <strong className="text-xl block">من 2:00 ظهراً حتى 7:00 مساءً</strong>
+                    </div>
                   </div>
                 </div>
               </div>
           </div>
+          </div>
+
         </div>
       </section>
 
@@ -647,13 +575,8 @@ function HiddenMarketPage() {
               <span className="text-white/80 text-sm font-medium block">شاملة الأدوات التقنية، قوالب الـ AI، وملفات التدريب الكاملة.</span>
             </div>
             
-            <a
-              href={FORM_LINK} target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center justify-center gap-4 bg-yellow-v2 text-[var(--color-brand-dark)] font-black text-2xl px-14 py-6 rounded-full transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_30px_-10px_rgba(239,182,27,0.4)] hover:bg-yellow"><i className="fa-solid fa-file-signature text-3xl" />احجز مقعدك الآن<i className="fa-solid fa-arrow-left text-lg opacity-50 group-hover:-translate-x-3 transition-transform" /></a>
-            
-            <div className="flex items-center justify-center gap-3 mt-10 text-yellow text-base md:text-lg font-bold">
-              <div className="w-3 h-3 rounded-full bg-yellow animate-pulse" />
-              يسعدنا الرد على استفساراتك عبر واتساب في أي وقت
-            </div>
+            <Link
+              to={FORM_LINK} className="group relative inline-flex items-center justify-center gap-4 bg-yellow-v2 text-[var(--color-brand-dark)] font-black text-2xl px-14 py-6 rounded-full transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_30px_-10px_rgba(239,182,27,0.4)] hover:bg-yellow">سجل حضورك الآن<i className="fa-solid fa-arrow-left text-lg opacity-50 group-hover:-translate-x-3 transition-transform" /></Link>
             
           </div>
         </div>

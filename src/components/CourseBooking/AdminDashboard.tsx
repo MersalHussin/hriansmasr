@@ -23,6 +23,7 @@ interface Booking {
   questions?: string;
   courseName?: string;
   isConfirmed: boolean;
+  paymentStatus?: string;
   createdAt?: { toMillis: () => number };
 }
 
@@ -95,6 +96,7 @@ export default function AdminDashboard({
       "الوقت": booking.createdAt 
         ? new Date(booking.createdAt.toMillis()).toLocaleTimeString('ar-EG') 
         : "-",
+      "حالة الدفع": booking.paymentStatus || "سجل البيانات فقط",
       "حالة الحجز": booking.isConfirmed ? "مؤكد" : "قيد الانتظار"
     }));
 
@@ -320,6 +322,7 @@ export default function AdminDashboard({
                       <th className="p-5 font-black">الموبايل</th>
                       <th className="p-5 font-black hidden md:table-cell">تاريخ الحجز</th>
                       <th className="p-5 font-black">الوظيفة</th>
+                      <th className="p-5 font-black text-center">حالة الدفع</th>
                       <th className="p-5 font-black text-center">حالة الحجز</th>
                       <th className="p-5 font-black text-center">تحديث</th>
                     </tr>
@@ -344,6 +347,15 @@ export default function AdminDashboard({
                           }) : "-"}
                         </td>
                         <td className="p-5 text-slate-600 text-sm font-medium">{booking.jobLevel}</td>
+                        <td className="p-5 text-center">
+                          <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-black border ${
+                            booking.paymentStatus === 'ذهب للدفع'
+                              ? 'bg-blue-50 text-blue-700 border-blue-200' 
+                              : 'bg-slate-100 text-slate-600 border-slate-200'
+                          }`}>
+                            {booking.paymentStatus || 'سجل البيانات فقط'}
+                          </span>
+                        </td>
                         <td className="p-5 text-center">
                           <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-black border ${
                             booking.isConfirmed 

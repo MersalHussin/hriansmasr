@@ -3,6 +3,7 @@ import SEO from "../SEO";
 import { useNavigate } from "react-router-dom";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../../firebase";
+import BookingNavbar from "./BookingNavbar";
 
 interface BookingFormProps {
   seoTitle: string;
@@ -50,12 +51,13 @@ export default function BookingForm({
     setIsLoading(true);
 
     try {
-      await addDoc(collection(db, collectionName), {
+      const docRef = await addDoc(collection(db, collectionName), {
         ...formData,
         courseName,
         createdAt: serverTimestamp(),
+        paymentStatus: 'سجل البيانات فقط', // Initial status
       });
-      navigate(successRoute, { state: { formData } });
+      navigate(successRoute, { state: { formData, docId: docRef.id, collectionName } });
     } catch (error) {
       console.error("Error adding document: ", error);
       alert("حدث خطأ أثناء إرسال البيانات: " + (error instanceof Error ? error.message : "يرجى المحاولة مرة أخرى."));
@@ -67,16 +69,8 @@ export default function BookingForm({
   return (
     <>
       <SEO title={seoTitle} description={seoDescription} />
-
-      <div className="fixed top-0 w-full p-4 z-50 pointer-events-none">
-        <button
-          onClick={() => navigate(-1)}
-          className="pointer-events-auto bg-white/80 backdrop-blur border border-slate-200 text-slate-700 w-12 h-12 rounded-full flex items-center justify-center hover:bg-[#1c54b3] hover:text-white transition-all shadow-sm"
-          title="العودة"
-        >
-          <i className="fa-solid fa-arrow-right" />
-        </button>
-      </div>
+      
+      <BookingNavbar courseName={courseName} />
 
       <section className="min-h-screen pt-32 pb-24 bg-slate-50 flex items-center justify-center font-sans" dir="rtl">
         <div className="container mx-auto px-4 max-w-xl">

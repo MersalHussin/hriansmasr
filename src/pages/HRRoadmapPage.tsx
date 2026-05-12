@@ -5,6 +5,8 @@ import { t } from "i18next"
 import Gallery from "../components/Gallery";
 import { Link } from "react-router-dom";
 import ReactPixel from 'react-facebook-pixel';
+import FloatBookingButton from "../components/FloatBookingButton";
+import BookButton from "../components/BookButton";
 const FORM_LINK = "/hr-roadmap/book";
 
 const programPillars = [
@@ -90,6 +92,8 @@ function HRRoadmapPage() {
         keywords="HR roadmap, موارد بشرية, كورس HR, تدريب HR, إدارة موارد بشرية, Business Partner"
       />
 
+      <FloatBookingButton to={FORM_LINK} />
+
       {/* ===== HERO (Centered & Modern) ===== */}
       <section className="relative pt-[120px] pb-24 lg:pt-40 lg:pb-32 bg-[#1c54b3] overflow-hidden text-center rounded-b-[3rem] lg:rounded-b-[5rem]">
         <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-5 mix-blend-overlay" />
@@ -118,7 +122,7 @@ function HRRoadmapPage() {
               to={FORM_LINK}
               className="bg-[#ee8a1c] hover:bg-[#e67e22] text-white font-black text-xl px-10 py-4 rounded-2xl transition-all hover:-translate-y-1 shadow-[0_15px_30px_-10px_rgba(238,138,28,0.5)] flex items-center justify-center gap-3"
             >
-              ابدأ رحلتك الآن <i className="fa-solid fa-rocket" />
+              احجز مكانك <i className="fa-solid fa-rocket" />
             </Link>
             <button
               onClick={() => document.getElementById("pillars")?.scrollIntoView({ behavior: "smooth" })}
@@ -138,7 +142,7 @@ function HRRoadmapPage() {
           <div className="flex flex-col items-center gap-2">
             <div className="w-12 h-12 rounded-xl bg-[#1c54b3]/10 flex items-center justify-center text-[#1c54b3] text-xl mb-2"><i className="fa-solid fa-layer-group" /></div>
             <strong className="text-[#1c54b3] font-black text-lg">منهجية تطبيقية</strong>
-            <span className="text-slate-500 text-sm font-bold">لابتعد عن النظريات</span>
+            <span className="text-slate-500 text-sm font-bold">التطبيق العملي بشكل مستمر</span>
           </div>
           <div className="flex flex-col items-center gap-2">
             <div className="w-12 h-12 rounded-xl bg-[#ee8a1c]/10 flex items-center justify-center text-[#ee8a1c] text-xl mb-2"><i className="fa-solid fa-file-invoice" /></div>
@@ -159,7 +163,7 @@ function HRRoadmapPage() {
       </section>
 
           {/* ===== FOUNDER / INSTRUCTOR ===== */}
-      <section className="about-founder py-20 bg-slate-50 relative overflow-hidden">
+      <section className="about-founder py-20  relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/Hero-Background.jpg')] bg-cover bg-center opacity-[0.03] pointer-events-none grayscale" />
         <h1 className="title text-[#1c54b3] relative z-10">{t('founderPageTitle')}</h1>
         <div className="container max-w-7xl mx-auto px-4 flex flex-col-reverse md:flex-row justify-evenly items-center gap-8 relative z-10">
@@ -198,7 +202,7 @@ function HRRoadmapPage() {
                 الكثير من محترفي الموارد البشرية يستهلكون طاقاتهم في مهام شؤون العاملين والإجراءات الورقية الروتينية دون أي تدخل حقيقي في رسم استراتيجية الشركة أو تحديد أهدافها. هذا التجاهل يعود لافتقارهم للأدوات الإدارية الحديثة.
               </p>
               <Link to={FORM_LINK} className="inline-flex items-center gap-2 text-[#1c54b3] font-black text-lg hover:text-[#ee8a1c] transition-colors">
-                وقت التغيير قد حان <i className="fa-solid fa-arrow-left text-sm" />
+                احجز مكانك <i className="fa-solid fa-arrow-left text-sm" />
               </Link>
             </div>
 
@@ -220,6 +224,8 @@ function HRRoadmapPage() {
         </div>
       </section>
 
+    
+
       {/* ===== TARGET AUDIENCE (Cards) ===== */}
       <section className="py-20 bg-white border-y border-slate-100" dir="rtl">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -228,18 +234,22 @@ function HRRoadmapPage() {
             <p className="text-slate-600 text-lg font-bold">صُمم هذا المحتوى ليكون رفيقك منذ انتقالك (Career Shift) لتضع قدمك في المجال باحترافية، وحتى وصولك لمستوى قيادي.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {targetAudience.map((aud, i) => (
-              <div key={i} className="bg-slate-50 border border-slate-100 p-8 rounded-3xl text-center hover:-translate-y-2 transition-transform duration-300 animate-on-scroll fade-in-up" style={{ animationDelay: `${i * 0.15}s` }}>
-                <div className="w-20 h-20 mx-auto bg-white shadow-xl shadow-[#1c54b3]/10 text-[#1c54b3] flex items-center justify-center rounded-2xl text-4xl mb-6 transform -rotate-3 hover:rotate-0 transition-transform">
+              <div key={i} className="bg-slate-50 border border-slate-100 p-8 rounded-3xl hover:-translate-y-2 transition-all duration-300 animate-on-scroll fade-in-up hover:shadow-xl hover:shadow-[#1c54b3]/10 flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-right" style={{ animationDelay: `${i * 0.15}s` }}>
+                <div className="w-20 h-20 shrink-0 bg-white shadow-lg shadow-[#1c54b3]/10 text-[#1c54b3] flex items-center justify-center rounded-2xl text-4xl transform -rotate-3 hover:rotate-0 transition-transform">
                   <i className={aud.icon} />
                 </div>
-                <h3 className="text-2xl font-black text-[#1c54b3] mb-3">{aud.title}</h3>
-                <p className="text-slate-600 font-bold leading-relaxed">{aud.desc}</p>
+                <div>
+                  <h3 className="text-2xl font-black text-[#1c54b3] mb-3">{aud.title}</h3>
+                  <p className="text-slate-600 font-bold leading-relaxed">{aud.desc}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
+                                 <BookButton to="book" className="mt-5" variant="orange"/>
+
       </section>
       
 
@@ -268,10 +278,11 @@ function HRRoadmapPage() {
             ))}
           </div>
         </div>
+                         <BookButton to="book" className="mt-5" variant="orange"/>
       </section>
 
       {/* Gallery */}
-      <section id="pillars" className="pt-24 bg-slate-50 relative overflow-hidden" dir="rtl">
+      <section id="gallery" className="pt-24 bg-slate-50 relative overflow-hidden" dir="rtl">
             <Gallery/>
       </section>
 
@@ -279,9 +290,11 @@ function HRRoadmapPage() {
 
 
       {/* ===== FEEDBACK ===== */}
-      <div id="reels-feedback" className="bg-slate-50 py-10">
+      <div id="reels-feedback" className=" py-10 bg-white">
         <ReelsFeedback videoLinks={feedbackVideos} isLandscape={true} brandColor="#1c54b3" />
+                         <BookButton to="book" variant="orange"/>
       </div>
+
 
 
       {/* ===== CTA (Clean and Direct) ===== */}
@@ -301,7 +314,7 @@ function HRRoadmapPage() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#ee8a1c]/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#1c54b3]/10 rounded-full blur-3xl -ml-20 -mb-20 pointer-events-none"></div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 relative z-10 w-full mt-2">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 relative z-10 w-full mt-2">
               
               {/* Location Card (Teal/Cyan) */}
               <div className="flex items-center gap-5 p-5 md:p-6 rounded-2xl bg-gradient-to-l from-cyan-50 to-white border border-cyan-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md group">
@@ -340,34 +353,12 @@ function HRRoadmapPage() {
                 </div>
               </div>
 
-              {/* Pricing Card (Green) */}
-              <div className="flex items-center gap-5 p-5 md:p-6 rounded-2xl bg-gradient-to-l from-emerald-50 to-white border-2 border-emerald-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md relative overflow-hidden group">
-                <div className="absolute top-2 left-2 md:top-3 md:left-3 bg-red-500 text-white text-xs md:text-sm font-black px-3 py-1 rounded-full shadow-md shadow-red-500/40 -rotate-3 z-20">
-                  وفر ١٥٠٠ ج.م 🔥
-                </div>
-                
-                <div className="absolute top-0 right-0 w-2 h-full bg-emerald-500 opacity-80"></div>
-                <div className="w-16 h-16 shrink-0 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-600 group-hover:scale-110 transition-transform">
-                  <i className="fa-solid fa-tags text-2xl" />
-                </div>
-                <div>
-                  <span className="text-slate-500 text-sm md:text-base font-bold block mb-1">استثمار الدورة</span>
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl md:text-3xl font-black text-emerald-700 leading-none">٣٥٠٠ ج.م</span>
-                    <span className="text-sm md:text-base font-bold text-slate-400 line-through decoration-red-500/70 decoration-2 leading-none mt-1">٥٠٠٠ ج.م</span>
-                  </div>
-                </div>
-              </div>
+              {/* Pricing Card Removed */}
 
             </div>
           </div>
+                         <BookButton to="book" variant="orange"/>
 
-          <Link
-            to={FORM_LINK}
-            className="group inline-flex items-center gap-3 bg-[#1c54b3] text-white font-black text-2xl px-12 py-5 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-[#11367a]"
-          >
-            احجز مقعدك الآن <i className="fa-solid fa-arrow-left group-hover:-translate-x-2 transition-transform" />
-          </Link>
         </div>
       </section>
     </>
