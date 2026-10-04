@@ -10,8 +10,8 @@ interface IProps {
 }
 
 const ServiceCard = ({ image, titleEn, titleAr, subtitle, customWhatsapp, Icon }: IProps) => {
-  const whatsappMessage = ` ${titleEn}  السلام عليكم دكتور احمد كنت عاوز استفسر عن خدمة`;
-  const whatsappUrl = customWhatsapp || `https://wa.me/201141778555?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappMessage = ` ${titleEn}  السلام عليكم كنت عاوز استفسر عن خدمة`;
+  const whatsappUrl = customWhatsapp || `https://wa.me/201097828846?text=${encodeURIComponent(whatsappMessage)}`;
   
   return (
     // التغيير هنا: استبدلنا h-96 بـ aspect-square

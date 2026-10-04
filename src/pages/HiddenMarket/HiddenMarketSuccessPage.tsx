@@ -20,6 +20,7 @@ export default function HiddenMarketSuccessPage() {
       seoDescription="تم تسجيل بياناتك بنجاح في كورس The Hidden Market."
       courseName="The Hidden Market"
       whatsappMessageTemplate={getWhatsappMessage}
+      whatsappNumber="201097828846"
       fallbackRoute="/hidden-market-masterclass/book"
     />
   );

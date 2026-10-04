@@ -45,6 +45,12 @@ const programPillars = [
     desc: "فهم لغة الأرقام وتحليل البيانات (HR Analytics) للمشاركة في صنع قرارات الإدارة العليا.",
     icon: "fa-solid fa-chart-pie",
     span: "col-span-1 md:col-span-2 border border-[#1c54b3]/20 bg-slate-50 text-[#1c54b3]"
+  },
+  {
+    title: "واجهتك المهنية وأدوات الـ AI",
+    desc: "تخرج بـ CV وبروفايل محدّثين وأدوات AI متثبتة على جهازك.",
+    icon: "fa-solid fa-robot",
+    span: "col-span-1 border border-[#1c54b3]/20 bg-white text-[#1c54b3]"
   }
 ]
 
@@ -106,7 +112,7 @@ function HRRoadmapPage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="inline-flex items-center gap-2 bg-[#ee8a1c]/10 border border-[#ee8a1c]/20 text-[#ee8a1c] px-4 py-2 rounded-full mb-8 font-bold text-sm shadow-lg animate-on-scroll fade-in-up">
             <span className="w-2.5 h-2.5 bg-[#ee8a1c] rounded-full animate-pulse" />
-            من الدخول للمجال وحتى المناصب القيادية في الـ HR
+            الدفعة 33 — [التاريخ] · حضور أو أونلاين · أكثر من 32 دفعة سابقة
           </div>
           
           <h1 className="text-white text-5xl md:text-7xl font-black max-w-4xl mx-auto leading-tight mb-6 animate-on-scroll fade-in-up" style={{ animationDelay: '0.1s' }}>
@@ -323,7 +329,7 @@ function HRRoadmapPage() {
                 </div>
                 <div>
                   <span className="text-slate-500 text-sm md:text-base font-bold block mb-1">مقر التدريب</span>
-                  <span className="text-cyan-700 font-black text-xl md:text-2xl block">مدينة نصر</span>
+                  <span className="text-cyan-700 font-black text-xl md:text-2xl block">مدينة نصر أو أونلاين تفاعلي</span>
                 </div>
               </div>
 

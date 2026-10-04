@@ -58,7 +58,7 @@ const outcomes = [
   { text: "تحوّل LinkedIn لمصدر فرص حقيقي", icon: "fa-brands fa-linkedin-in" },
   { text: " تتواصل مع decision makers", icon: "fa-solid fa-handshake" },
   { text: "تبني Personal Brand مميزة", icon: "fa-solid fa-star" },
-  { text: "تحصل على عروض وظيفية بدون تقديم", icon: "fa-solid fa-envelope-open-text" },
+  { text: "تبني عرض استشاري وتقدّمه لشركات كبيرة", icon: "fa-solid fa-envelope-open-text" },
 ]
 
 
@@ -235,15 +235,15 @@ function HiddenMarketPage() {
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[100px] pointer-events-none" />
         
         <div className="container mx-auto px-4 max-w-4xl text-center relative z-10">
-          <h2 className="title text-white animate-on-scroll fade-in-up drop-shadow-lg">هل بتعاني من إنك</h2>
+          <h2 className="title text-white animate-on-scroll fade-in-up drop-shadow-lg">لو إنت قيادي وحاسس إن</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12">
             {[
-              "خبراتك ومؤهلاتك أكبر بكتير من الوظائف اللي بتتعرض بشكل تقليدي",
-              "بتحس إن الوظائف المعلنة مش كافية",
+              "الفرص والصفقات الكبيرة بتتقفل قبل ما توصلك",
+              "صناع القرار مش عارفين إنت بتضيف إيه",
               "مش عارف تبني علاقات مهنية صح",
-              "LinkedIn بروفايلك مش بيجيب نتيجة",
+              "بروفايلك أصغر من سمعتك",
               "بتحس إن في ناس بتاخد فرص أحسن منك",
-              "مش عارف توصل لـ decision makers",
+              "مش عارف تحوّل خبرتك لاستشارة وتسعّرها",
             ].map((p, i) => (
               <div
                 key={i}
@@ -569,11 +569,7 @@ function HiddenMarketPage() {
               "الفرص لا تُمنح لمن يتمنى.. بل لمن يستعد ويخترق."
             </p>
 
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 mb-10 w-full max-w-md mx-auto backdrop-blur-sm">
-              <span className="block text-white/70 text-sm font-bold mb-2">قيمة الاستثمار:</span>
-              <strong className="text-4xl font-black text-yellow block mb-2">2500 ج.م</strong>
-              <span className="text-white/80 text-sm font-medium block">شاملة الأدوات التقنية، قوالب الـ AI، وملفات التدريب الكاملة.</span>
-            </div>
+
             
             <Link
               to={FORM_LINK} className="group relative inline-flex items-center justify-center gap-4 bg-yellow-v2 text-[var(--color-brand-dark)] font-black text-2xl px-14 py-6 rounded-full transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_30px_-10px_rgba(239,182,27,0.4)] hover:bg-yellow">سجل حضورك الآن<i className="fa-solid fa-arrow-left text-lg opacity-50 group-hover:-translate-x-3 transition-transform" /></Link>

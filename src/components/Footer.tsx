@@ -69,9 +69,9 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <Link to="/contact" className="text-white/80 hover:text-yellow transition-colors flex items-center gap-2">
+                <a href="https://wa.me/201097828846" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-yellow transition-colors flex items-center gap-2">
                   <i className="fa-solid fa-angle-left text-xs"></i> تواصل معنا
-                </Link>
+                </a>
               </li>
               <li>
                 <a href="https://hriansmasr.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-yellow transition-colors flex items-center gap-2">
@@ -79,8 +79,7 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="https://hriansmasr.com/
-                " target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-yellow transition-colors flex items-center gap-2">
+                <a href="https://hriansmasr.com/terms" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-yellow transition-colors flex items-center gap-2">
                   <i className="fa-solid fa-angle-left text-xs"></i> الشروط والاحكام
                 </a>
               </li>

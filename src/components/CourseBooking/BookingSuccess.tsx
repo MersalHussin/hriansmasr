@@ -17,6 +17,7 @@ interface BookingSuccessProps {
   seoDescription: string;
   courseName: string;
   whatsappMessageTemplate: (formData: FormData) => string;
+  whatsappNumber?: string;
   fallbackRoute: string;
 }
 
@@ -25,6 +26,7 @@ export default function BookingSuccess({
   seoDescription,
   courseName,
   whatsappMessageTemplate,
+  whatsappNumber,
   fallbackRoute,
 }: BookingSuccessProps) {
   const location = useLocation();
@@ -53,7 +55,7 @@ export default function BookingSuccess({
   }
 
   const whatsappMessage = whatsappMessageTemplate(formData);
-  const whatappLink = "https://wa.me/201097828846?text=" + encodeURIComponent(whatsappMessage);
+  const whatappLink = "https://wa.me/" + (whatsappNumber || "201097828846") + "?text=" + encodeURIComponent(whatsappMessage);
   return (
     <>
       <SEO title={seoTitle} description={seoDescription} />
