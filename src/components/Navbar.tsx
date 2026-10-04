@@ -12,9 +12,11 @@ function Navbar() {
     if (i18n.language === 'en') {
       document.body.classList.add('ltr-text')
       document.documentElement.style.setProperty('--text-align', 'left')
+      document.documentElement.dir = 'ltr'
     } else {
       document.body.classList.remove('ltr-text')
       document.documentElement.style.setProperty('--text-align', 'right')
+      document.documentElement.dir = 'rtl'
     }
   }, [i18n.language])
 

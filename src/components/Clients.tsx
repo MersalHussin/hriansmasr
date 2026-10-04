@@ -16,7 +16,7 @@ const ClientsSection: React.FC = () => {
   ];
 
   return (
-    <div className="w-full bg-white py-16 px-4 sm:px-6 lg:px-8" dir="rtl">
+    <div className="w-full bg-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* العنوان */}
         <div className="text-center mb-12">

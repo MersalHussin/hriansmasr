@@ -1,6 +1,7 @@
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 const Course = () => {
+    const { t, i18n } = useTranslation();
     const images = Array.from({ length: 16 }, (_, i) => i + 1);
 
     return (
@@ -24,7 +25,7 @@ const Course = () => {
                     rel="noopener noreferrer" 
                     className="bg-primary text-white font-bold py-4 px-10 rounded-full text-xl shadow-lg hover:bg-opacity-90 transition-all hover:scale-105"
                 >
-                    اكتشف برامجنا
+                    {i18n.language === 'en' ? 'Discover Our Programs' : 'اكتشف برامجنا'}
                 </a>
             </div>
             </div>

@@ -11,7 +11,7 @@ interface IProps {
 
 const ServiceCard = ({ image, titleEn, titleAr, subtitle, customWhatsapp, Icon }: IProps) => {
   const whatsappMessage = ` ${titleEn}  السلام عليكم دكتور احمد كنت عاوز استفسر عن خدمة`;
-  const whatsappUrl = customWhatsapp || `https://wa.me/201141778555?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = customWhatsapp || `https://wa.me/201097828846?text=${encodeURIComponent(whatsappMessage)}`;
   
   return (
     // التغيير هنا: استبدلنا h-96 بـ aspect-square
@@ -53,7 +53,7 @@ const ServiceCard = ({ image, titleEn, titleAr, subtitle, customWhatsapp, Icon }
           {subtitle && <span className="text-sm block mt-1">({subtitle})</span>}
         </h3>
         
-        <p className="text-[12px] font-medium text-blue-100" dir="rtl">
+        <p className="text-[12px] font-medium text-blue-100">
           {titleAr}
         </p>
         

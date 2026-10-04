@@ -8,7 +8,7 @@ import Breadcrumb from '../components/Breadcrumb'
 import SEO from '../components/SEO'
 
 function FounderPage() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -45,21 +45,21 @@ function FounderPage() {
         <div className="container max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
-            { id: 1, titleKey: 'لقاء القناة الأولى', link: 'https://www.youtube.com/watch?v=Ql_otSqroa8' },
-            { id: 2, titleKey: 'لقاء CBC سُفرة', link: 'https://www.youtube.com/watch?v=qsl0LyKEGL4&t=167s' },
-            { id: 3, titleKey: 'لقاء الراديو 90:90', link: 'https://www.youtube.com/@AhmednagyEldokhmesy' },
-            { id: 4, titleKey: 'لقاء شعبي FM', link: 'https://www.youtube.com/@AhmednagyEldokhmesy' },
-            { id: 5, titleKey: 'لقاء MBC مصر الأول', link: 'https://www.facebook.com/reel/431350496724758' },
-            { id: 6, titleKey: 'لقاء قناة اليوم', link: 'https://www.youtube.com/watch?v=delb9D4XY9U' },
-            { id: 7, titleKey: 'لقاء قناة صدى البلد', link: 'https://www.youtube.com/watch?v=-JgimhOc37k' },
-            { id: 8, titleKey: 'لقاء MBC مصر الثاني', link: 'https://www.facebook.com/watch/?v=1094396469161703&rdid=jkVzeeiCy9zG1iFE' },
-            { id: 9, titleKey: 'لقاء MBC مصر الثالث', link: 'https://www.facebook.com/reel/629950543120114' },
+            { id: 1, titleAr: 'لقاء القناة الأولى', titleEn: 'Channel 1 Interview', link: 'https://www.youtube.com/watch?v=Ql_otSqroa8' },
+            { id: 2, titleAr: 'لقاء CBC سفرة', titleEn: 'CBC Sofra Interview', link: 'https://www.youtube.com/watch?v=qsl0LyKEGL4&t=167s' },
+            { id: 3, titleAr: 'لقاء الراديو 90:90', titleEn: 'Radio 90:90 Interview', link: 'https://www.youtube.com/@AhmednagyEldokhmesy' },
+            { id: 4, titleAr: 'لقاء شعبي FM', titleEn: 'Shaabi FM Interview', link: 'https://www.youtube.com/@AhmednagyEldokhmesy' },
+            { id: 5, titleAr: 'لقاء MBC مصر الأول', titleEn: 'MBC Masr First Interview', link: 'https://www.facebook.com/reel/431350496724758' },
+            { id: 6, titleAr: 'لقاء قناة اليوم', titleEn: 'Al Youm Channel Interview', link: 'https://www.youtube.com/watch?v=delb9D4XY9U' },
+            { id: 7, titleAr: 'لقاء قناة صدى البلد', titleEn: 'Sada El Balad Channel Interview', link: 'https://www.youtube.com/watch?v=-JgimhOc37k' },
+            { id: 8, titleAr: 'لقاء MBC مصر الثاني', titleEn: 'MBC Masr Second Interview', link: 'https://www.facebook.com/watch/?v=1094396469161703&rdid=jkVzeeiCy9zG1iFE' },
+            { id: 9, titleAr: 'لقاء MBC مصر الثالث', titleEn: 'MBC Masr Third Interview', link: 'https://www.facebook.com/reel/629950543120114' },
           ].map((episode) => (
             <a key={episode.id} href={episode.link} target="_blank" rel="noopener noreferrer" className="block group">
               <div className="relative overflow-hidden rounded-md border-primary border-5">
-                <img className="w-full h-auto transition-transform duration-300 group-hover:scale-110 group-active:scale-110" src={`/images/TV/${episode.id}.webp`} alt={t(episode.titleKey)} />
+                <img className="w-full h-auto transition-transform duration-300 group-hover:scale-110 group-active:scale-110" src={`/images/TV/${episode.id}.webp`} alt={i18n.language === 'en' ? episode.titleEn : episode.titleAr} />
                 <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-primary via-primary/80 to-transparent p-4 pt-8">
-                  <p className="text-white text-base md:text-lg font-bold text-center">{t(episode.titleKey)}</p>
+                  <p className="text-white text-base md:text-lg font-bold text-center">{i18n.language === 'en' ? episode.titleEn : episode.titleAr}</p>
                 </div>
               </div>
             </a>

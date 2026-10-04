@@ -11,6 +11,8 @@ import Services from './pages/ServicesPage'
 import Footer from './components/Footer'
 import PrivacyPolicy from './pages/PrivacyPolicyPage'
 import Terms from './pages/TermsPage'
+import Masar from './pages/MasarPage'
+import ProductPage from './pages/ProductPage'
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/founder" element={<Founder />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/masar" element={<Masar />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="*" element={<h1>Error</h1>} />

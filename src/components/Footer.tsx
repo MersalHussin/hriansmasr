@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-linear-to-r from-primary via-primary to-primary text-white py-12 px-4 sm:px-6 lg:px-8" dir="rtl">
+    <footer className="bg-linear-to-r from-primary via-primary to-primary text-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mt-[-50px] mx-auto">
         {/* الشعار */}
         <div className="flex justify-center mb-8">

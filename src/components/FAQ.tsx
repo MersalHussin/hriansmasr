@@ -36,7 +36,7 @@ export function FAQ({
   }
 
   return (
-    <section dir="rtl" className="faq-section w-full bg-white py-12 px-4 md:py-16 lg:py-20">
+    <section className="faq-section w-full bg-white py-12 px-4 md:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Right Section - Title and CTA */}
