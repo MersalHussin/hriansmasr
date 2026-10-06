@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 const Footer: React.FC = () => {
   const location = useLocation();
   const isHiddenMarket = location.pathname === '/hidden-market-masterclass';
+  const isHrRoadmap = location.pathname === '/hr-roadmap';
 
   const socialLinks = [
     { icon: 'fa-brands fa-whatsapp', href: 'https://wa.me/201097828846', label: 'WhatsApp' },
@@ -24,15 +25,15 @@ const Footer: React.FC = () => {
           
           {/* Logo & About */}
           <div className="col-span-1 md:col-span-5 flex flex-col items-center md:items-start">
-            <a href="http://hriansmasr.com/" className="mb-6 block bg-white/5 backdrop-blur-md p-4 rounded-3xl border border-white/10 hover:border-yellow/30 transition-colors">
+            <Link to="/" className="mb-6 block bg-white/5 backdrop-blur-md p-4 rounded-3xl border border-white/10 hover:border-yellow/30 transition-colors">
               {isHiddenMarket ? (
-                <img src="/images/logo.png" alt="The Hidden Market Logo" className="h-14 md:h-16 object-contain" />
-              ) : location.pathname === '/hr-roadmap' ? (
-                <img src="/images/logo.png" alt="HR Roadmap Logo" className="h-14 md:h-16 object-contain" />
+                <img src="/Logo_Hidden.svg" alt="The Hidden Market Logo" className="h-12 md:h-14 object-contain" />
+              ) : isHrRoadmap ? (
+                <img src="/hr-roadmap.png" alt="HR Roadmap Logo" className="h-12 md:h-14 object-contain" />
               ) : (
-                <img src="/images/logo.png" alt="HRians Egypt Logo" className="h-14 md:h-16 object-contain" />
+                <img src="/images/logo.png" alt="HRians Egypt Logo" className="h-12 md:h-14 object-contain" />
               )}
-            </a>
+            </Link>
             <p className="text-white/70 text-sm md:text-base text-center md:text-right leading-relaxed max-w-sm mb-6">
               أكاديمية أتش أرجية مصر بقيادة أحمد ناجي الدخميسي، بتوفرلك برامج تدريبية ومسارات مهنية حقيقية هتساعدك تطور كاريرك وتبني علامتك الشخصية في سوق العمل.
             </p>
@@ -94,24 +95,38 @@ const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-4">
               <li>
-                <Link to="/hidden-market-masterclass" className="group flex items-center gap-3 bg-white/5 border border-white/10 p-3 rounded-2xl hover:bg-white/10 hover:border-yellow/30 transition-all">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow to-yellow-v2 flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
-                    <i className="fa-solid fa-user-secret"></i>
+                <Link 
+                  to="/hidden-market-masterclass" 
+                  className="group flex items-center gap-3.5 bg-white/5 border border-white/10 p-3 rounded-2xl hover:bg-white/10 hover:border-yellow/40 transition-all duration-300"
+                >
+                  <div className="w-14 h-12 rounded-xl bg-brand-dark/90 border border-white/15 p-2 flex items-center justify-center shrink-0 group-hover:scale-105 group-hover:border-yellow/50 transition-all shadow-inner">
+                    <img 
+                      src="/Logo_Hidden.svg" 
+                      alt="The Hidden Market Logo" 
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                   <div>
-                    <h4 className="text-white font-bold text-sm">The Hidden Market</h4>
-                    <p className="text-white/50 text-xs mt-1">اكتشف الوظائف الخفية</p>
+                    <h4 className="text-white font-bold text-sm group-hover:text-yellow transition-colors">The Hidden Market</h4>
+                    <p className="text-white/60 text-xs mt-1">ماستركلاس اقتناص الوظائف الخفية</p>
                   </div>
                 </Link>
               </li>
               <li>
-                <Link to="/hr-roadmap" className="group flex items-center gap-3 bg-white/5 border border-white/10 p-3 rounded-2xl hover:bg-white/10 hover:border-yellow/30 transition-all">
-                  <div className="w-10 h-10 rounded-xl bg-orange-500 flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
-                    <i className="fa-solid fa-map-location-dot"></i>
+                <Link 
+                  to="/hr-roadmap" 
+                  className="group flex items-center gap-3.5 bg-white/5 border border-white/10 p-3 rounded-2xl hover:bg-white/10 hover:border-yellow/40 transition-all duration-300"
+                >
+                  <div className="w-14 h-12 rounded-xl bg-white/10 border border-white/15 p-1.5 flex items-center justify-center shrink-0 group-hover:scale-105 group-hover:border-yellow/50 transition-all shadow-inner">
+                    <img 
+                      src="/hr-roadmap.png" 
+                      alt="HR Roadmap Logo" 
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                   <div>
-                    <h4 className="text-white font-bold text-sm">HR Roadmap</h4>
-                    <p className="text-white/50 text-xs mt-1">خارطة طريق الموارد البشرية</p>
+                    <h4 className="text-white font-bold text-sm group-hover:text-yellow transition-colors">HR Roadmap</h4>
+                    <p className="text-white/60 text-xs mt-1">خارطة طريق احتراف الموارد البشرية</p>
                   </div>
                 </Link>
               </li>
