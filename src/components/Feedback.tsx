@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import Slider from "react-slick"
 import 'slick-carousel/slick/slick.css'
@@ -10,6 +10,7 @@ const Feedback = () => {
     const [currentImage, setCurrentImage] = useState(0)
     const [activeSlide, setActiveSlide] = useState(0)
     const [isMobile, setIsMobile] = useState(false)
+    const sliderRef = useRef<Slider>(null)
 
     useEffect(() => {
         const checkMobile = () => {
@@ -54,6 +55,8 @@ const Feedback = () => {
         if (index === activeSlide) {
             setCurrentImage(index)
             setIsOpen(true)
+        } else {
+            sliderRef.current?.slickGoTo(index)
         }
     }
 
@@ -75,19 +78,20 @@ const Feedback = () => {
         slidesToShow: isMobile ? 1 : 3,
         infinite: true,
         speed: 500,
-        focusOnSelect: true,
+        focusOnSelect: false,
         arrows: true,
         autoplay: true,
         autoplaySpeed: 5000,
+        rtl: false,
         afterChange: (current: number) => setActiveSlide(current)
     }
 
     return (
-        <section className="feedback bg-[url('/images/Feedback-Background.jpg')] bg-cover bg-center min-h-screen py-16 flex flex-col justify-center items-center relative">
+        <section dir="ltr" className="feedback bg-[url('/images/Feedback-Background.jpg')] bg-cover bg-center min-h-screen py-16 flex flex-col justify-center items-center relative">
             <h1 className="title text-white text-3xl md:text-5xl font-bold mb-8">{t('feedbackTitle')}</h1>
             
-            <div className="container mx-auto px-4 md:px-20">
-                <Slider {...settings}>
+            <div className="container mx-auto px-4 md:px-20" style={{ direction: 'ltr' }}>
+                <Slider ref={sliderRef} {...settings}>
                     {feedbacks.map((feedback, index) => (
                         <div key={index} className="px-2 md:px-4">
                             <img 
@@ -172,6 +176,19 @@ const Feedback = () => {
                 .slick-next {
                     right: 0;
                 }
+                
+                /* Force LTR styling regardless of global [dir="rtl"] */
+                .feedback .slick-slide {
+                    float: left !important;
+                }
+                html[dir="rtl"] .feedback .slick-slide,
+                [dir="rtl"] .feedback .slick-slide {
+                    float: left !important;
+                }
+                .feedback .slick-track {
+                    direction: ltr !important;
+                }
+
                 @media (max-width: 1080px) {
                     .slick-slide {
                         opacity: 1 !important;

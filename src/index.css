@@ -28,3 +28,8 @@ body {
     font-family: "Rubik", sans-serif;
     overflow-x: hidden;
 }
+
+.masar-page section {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}

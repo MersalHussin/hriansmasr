@@ -92,7 +92,7 @@ function Home() {
     </section>
     
     {/* Floating Stats Box */}
-    <div className="container max-w-[1250px] mx-auto px-2 md:px-4 relative z-20 -mt-10 lg:-mt-60 mb-6 lg:mb-10" dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className="container max-w-[1250px] mx-auto px-2 md:px-4 relative z-20 -mt-10 lg:-mt-40 mb-6 lg:mb-10" dir={isRtl ? 'rtl' : 'ltr'}>
       <div className="bg-white rounded-3xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100 p-6 lg:p-10 flex flex-col gap-6">
         <h3 className="text-center text-gray-400 font-extrabold text-sm md:text-base tracking-widest uppercase absolute -top-3 left-1/2 -translate-x-1/2">{isRtl ? 'الإحصائيات' : 'STATISTICS'}</h3>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 xl:gap-8 justify-items-center lg:justify-items-stretch items-start lg:items-center">
